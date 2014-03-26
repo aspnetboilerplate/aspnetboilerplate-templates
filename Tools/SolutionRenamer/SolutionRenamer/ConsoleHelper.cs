@@ -8,19 +8,30 @@ namespace SolutionRenamer
 {
     public static class ConsoleHelper
     {
-        public static string GetParameterFromConsole(string message)
+        public static string GetParameterFromConsole(string message, string[] restrictedValues = null)
         {
-            var input = "";
-            while (String.IsNullOrWhiteSpace(input))
+            string input;
+            while (true)
             {
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Console.Write(message);
                 Console.ForegroundColor = ConsoleColor.Yellow;
+                
                 input = Console.ReadLine();
+                
                 if (String.IsNullOrWhiteSpace(input))
                 {
                     WriteError("You should enter the value requested!");
                     Console.WriteLine();
+                }
+                else if (restrictedValues != null && !restrictedValues.Contains(input))
+                {
+                    WriteError("You should enter one of these values: " + string.Join(", ", restrictedValues));
+                    Console.WriteLine();
+                }
+                else
+                {
+                    break;
                 }
             }
 

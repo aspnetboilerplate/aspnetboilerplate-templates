@@ -7,10 +7,8 @@ namespace SolutionRenamer
 {
     public class Program
     {
-        private const string PlaceHolder = "MySpaProject";
-
-        private static string _templatePath = "SinglePageApplication";
-        
+        private static string _placeHolder = "";
+        private static string _templatePath = "";
         private static string _solutionName = "";
 
         static void Main(string[] args)
@@ -19,7 +17,7 @@ namespace SolutionRenamer
             {
                 GetAllParametersFromConsole();
                 RenameSolution();
-                
+
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("FINISHED!");
@@ -43,7 +41,22 @@ namespace SolutionRenamer
             Console.WriteLine();
             Console.WriteLine();
 
-            //TODO: Get template path (when there are multiple template)
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("1 - Single-Page Application");
+            Console.WriteLine("2 - Multi-Page Application");
+            var templateNo = ConsoleHelper.GetParameterFromConsole("Enter project type: ", new[] { "1", "2" });
+            switch (templateNo)
+            {
+                case "1":
+                    _templatePath = "SinglePageApplication";
+                    _placeHolder = "MySpaProject";
+                    break;
+                case "2":
+                    _templatePath = "MultiPageApplication";
+                    _placeHolder = "MyMvcProject";
+                    break;
+            }
+
             if (!Path.IsPathRooted(_templatePath))
             {
                 _templatePath = Path.Combine(Directory.GetCurrentDirectory(), _templatePath);
@@ -55,7 +68,7 @@ namespace SolutionRenamer
                 throw new Exception("Solution name can not contain spaces");
             }
         }
-        
+
         private static void RenameSolution()
         {
             RenameDirRecursively(_templatePath);
@@ -69,9 +82,9 @@ namespace SolutionRenamer
             foreach (var dir in dirs)
             {
                 var newDir = dir;
-                if (dir.Contains(PlaceHolder))
+                if (dir.Contains(_placeHolder))
                 {
-                    newDir = dir.Replace(PlaceHolder, _solutionName);
+                    newDir = dir.Replace(_placeHolder, _solutionName);
                     Directory.Move(dir, newDir);
                 }
 
@@ -84,9 +97,9 @@ namespace SolutionRenamer
             var files = Directory.GetFiles(rootPath, "*.*", SearchOption.AllDirectories);
             foreach (var file in files)
             {
-                if (file.Contains(PlaceHolder))
+                if (file.Contains(_placeHolder))
                 {
-                    File.Move(file, file.Replace(PlaceHolder, _solutionName));
+                    File.Move(file, file.Replace(_placeHolder, _solutionName));
                 }
             }
         }
@@ -107,7 +120,7 @@ namespace SolutionRenamer
                 }
 
                 var fileSize = GetFileSize(file);
-                if (fileSize < PlaceHolder.Length)
+                if (fileSize < _placeHolder.Length)
                 {
                     continue;
                 }
@@ -115,7 +128,7 @@ namespace SolutionRenamer
                 var encoding = GetEncoding(file);
 
                 var content = File.ReadAllText(file, encoding);
-                var newContent = content.Replace(PlaceHolder, _solutionName);
+                var newContent = content.Replace(_placeHolder, _solutionName);
                 if (newContent != content)
                 {
                     File.WriteAllText(file, newContent, encoding);

@@ -3,7 +3,7 @@
   <texts>
     <text name="HomePage" value="Home page" />
     <text name="About" value="About" />
-    <text name="WellcomeMessage" value="Wellcome to MyMvcProject!" />
+    <text name="WellcomeMessage" value="Welcome to MyMvcProject!" />
     <text name="Home_ThisIsATemplate" value="This project template is a starting point to develop web applicatins using..." />
     <text name="Home_AspNetDescription" value="ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that enables a clean separation of concerns and that gives you full control over markup for enjoyable, agile development." />
     <text name="Home_AspNetBoilerplateDescription" value="ASP.NET Boilerplate is a framework to build web based applications with best practices and most popular tools." />
