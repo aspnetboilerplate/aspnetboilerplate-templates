@@ -38,21 +38,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.1.7.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp, Version=0.1.8.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.0.1.7.0\lib\net451\Abp.dll</HintPath>
+      <HintPath>..\packages\Abp.0.1.8.0\lib\net451\Abp.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Application, Version=0.1.7.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Application, Version=0.1.8.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Application.0.1.7.0\lib\net451\Abp.Application.dll</HintPath>
+      <HintPath>..\packages\Abp.Application.0.1.8.0\lib\net451\Abp.Application.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web, Version=0.1.7.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Web, Version=0.1.8.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Web.0.1.7.0\lib\net451\Abp.Web.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.0.1.8.0\lib\net451\Abp.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Mvc, Version=0.1.7.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Web.Mvc, Version=0.1.8.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Web.Mvc.0.1.7.0\lib\net451\Abp.Web.Mvc.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.Mvc.0.1.8.0\lib\net451\Abp.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -169,17 +169,13 @@
     <Content Include="Abp\Framework\styles\abp.css" />
     <Content Include="Abp\Framework\styles\abp.min.css" />
     <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
-    <Content Include="App\Common\styles\main.css">
+    <Content Include="css\main.css">
       <DependentUpon>main.less</DependentUpon>
     </Content>
-    <Content Include="App\Common\styles\main.min.css">
+    <Content Include="css\main.min.css">
       <DependentUpon>main.css</DependentUpon>
     </Content>
-    <Content Include="App\Main\images\abp-logo.png" />
-    <Content Include="App\Main\main.js" />
-    <Content Include="App\Main\viewmodels\layout.js" />
-    <Content Include="App\Main\viewmodels\home.js" />
-    <Content Include="App\Main\viewmodels\about.js" />
+    <Content Include="images\abp-logo.png" />
     <Content Include="Content\bootstrap-cosmo.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -261,14 +257,10 @@
     <Content Include="README.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="App\Common\styles\main.less" />
-    <Content Include="App\Main\views\layout.cshtml" />
-    <Content Include="App\Main\views\home.cshtml" />
-    <Content Include="App\Main\views\web.config" />
-    <Content Include="App\Common\styles\main.css.map">
+    <Content Include="css\main.less" />
+    <Content Include="css\main.css.map">
       <DependentUpon>main.css</DependentUpon>
     </Content>
-    <Content Include="App\Main\views\about.cshtml" />
     <Content Include="Content\toastr.less" />
     <Content Include="log4net.config" />
     <Content Include="Abp\Framework\styles\abp.less" />
@@ -319,6 +311,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Localization\ApplicationLanguageInfo.cs" />
     <Compile Include="Localization\MyMvcProject\MyMvcProjectLocalizationSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\MyMvcProjectWebViewPageBase.cs" />
@@ -328,7 +321,9 @@
     <Content Include="packages.config" />
     <Content Include="Scripts\toastr.min.js.map" />
     <Content Include="Views\About\Index.cshtml" />
-    <Content Include="Views\Shared\_MainMenu.cshtml" />
+    <Content Include="Views\Shared\_TopBar.cshtml" />
+    <Content Include="Views\Shared\_LanguageSelection.cshtml" />
+    <Content Include="Views\Shared\_TopMenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -337,10 +332,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\Common\images\" />
-    <Folder Include="App\Common\scripts\" />
-    <Folder Include="App\Main\scripts\" />
-    <Folder Include="App\Main\styles\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,20 @@
+﻿@using MyMvcProject.Web.Localization
+@{
+    var currentLanguage = ApplicationLanguageInfo.CurrentLanguage;
+}
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="@currentLanguage.IconClass"></i>
+        <span>@currentLanguage.DisplayName</span>
+        <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+        @foreach (var language in ApplicationLanguageInfo.SupportedLanguages.Values)
+        {
+            if (language != currentLanguage)
+            {
+                <li><a href="/AbpLocalization/ChangeCulture?cultureName=@(language.Name)&returnUrl=@(Request.Url)"><i class="@language.IconClass"></i> @language.DisplayName</a></li>
+            }
+        }
+    </ul>
+</li>

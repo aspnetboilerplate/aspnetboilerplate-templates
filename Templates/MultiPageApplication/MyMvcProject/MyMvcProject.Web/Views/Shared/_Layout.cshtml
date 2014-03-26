@@ -21,9 +21,6 @@
     <!-- Style for Bootstrap -->
     <link href="~/Content/bootstrap-cosmo.min.css" rel="stylesheet">
 
-    <!-- Style for Durandal -->
-    <link href="~/Content/durandal.css" rel="stylesheet" />
-
     <!-- Styles for jQuery plug-ins -->
     <link href="~/Content/toastr.min.css" rel="stylesheet" />
 
@@ -36,7 +33,7 @@
         <script src="@Url.Content("~/Scripts/others/respond.min.js")"></script>
     <![endif]-->
     <!-- Common styles for the application -->
-    <link href="~/App/Common/styles/main.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />
 
     @RenderSection("styles", required: false)
 
@@ -50,7 +47,7 @@
 
 <body>
 
-    @Html.Partial("_MainMenu")
+    @Html.Partial("_TopBar")
 
     <div class="container">
         @RenderBody()

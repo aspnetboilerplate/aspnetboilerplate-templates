@@ -75,3 +75,102 @@ DEBUG 2014-03-24 20:43:17,914 [1    ] Abp.Modules.AbpModuleLoader              -
 DEBUG 2014-03-24 20:43:17,915 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectWebApiModule, MyMvcProject.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-03-24 20:43:17,943 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.Web.MyMvcProjectWebModule, MyMvcProject.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-03-24 20:43:18,003 [1    ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.
+DEBUG 2014-03-26 19:13:39,323 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-03-26 19:13:49,730 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:13:49,730 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:13:49,731 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:13:50,488 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:13:50,488 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectNHibernateModule, MyMvcProject.Infrastructure.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:13:50,551 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectCoreModule, MyMvcProject.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:13:50,551 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectApplicationModule, MyMvcProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:13:50,582 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectWebApiModule, MyMvcProject.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:13:51,012 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.Web.MyMvcProjectWebModule, MyMvcProject.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:13:51,018 [1    ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.
+DEBUG 2014-03-26 19:41:43,543 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-03-26 19:41:44,476 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:44,668 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:44,668 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:44,733 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:44,751 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectCoreModule, MyMvcProject.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:44,752 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectApplicationModule, MyMvcProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:44,752 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectNHibernateModule, MyMvcProject.Infrastructure.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:44,752 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectWebApiModule, MyMvcProject.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:44,781 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.Web.MyMvcProjectWebModule, MyMvcProject.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:45,087 [1    ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.
+DEBUG 2014-03-26 19:41:50,391 [18   ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-03-26 19:41:51,566 [18   ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:51,566 [18   ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:51,567 [18   ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:52,174 [18   ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:52,175 [18   ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectNHibernateModule, MyMvcProject.Infrastructure.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:52,192 [18   ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectCoreModule, MyMvcProject.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:52,192 [18   ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectApplicationModule, MyMvcProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:52,201 [18   ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectWebApiModule, MyMvcProject.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:52,577 [18   ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.Web.MyMvcProjectWebModule, MyMvcProject.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:41:52,584 [18   ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.
+DEBUG 2014-03-26 19:45:27,897 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-03-26 19:45:29,159 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:45:29,160 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:45:29,161 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:45:29,773 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:45:29,774 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectNHibernateModule, MyMvcProject.Infrastructure.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:45:29,792 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectCoreModule, MyMvcProject.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:45:29,793 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectApplicationModule, MyMvcProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:45:29,802 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectWebApiModule, MyMvcProject.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:45:30,184 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.Web.MyMvcProjectWebModule, MyMvcProject.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:45:30,191 [1    ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.
+DEBUG 2014-03-26 19:48:10,666 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-03-26 19:48:11,965 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:48:11,965 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:48:11,966 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:48:12,609 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:48:12,609 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectNHibernateModule, MyMvcProject.Infrastructure.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:48:12,627 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectCoreModule, MyMvcProject.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:48:12,628 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectApplicationModule, MyMvcProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:48:12,638 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectWebApiModule, MyMvcProject.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:48:13,051 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.Web.MyMvcProjectWebModule, MyMvcProject.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:48:13,057 [1    ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.
+DEBUG 2014-03-26 19:50:39,832 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-03-26 19:50:40,778 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:50:40,779 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:50:40,779 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:50:41,471 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:50:41,471 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectNHibernateModule, MyMvcProject.Infrastructure.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:50:41,480 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectCoreModule, MyMvcProject.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:50:41,480 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectApplicationModule, MyMvcProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:50:41,485 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectWebApiModule, MyMvcProject.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:50:41,860 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.Web.MyMvcProjectWebModule, MyMvcProject.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:50:41,866 [1    ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.
+DEBUG 2014-03-26 19:59:58,376 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-03-26 19:59:58,986 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:59:59,193 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:59:59,194 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:59:59,254 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.1.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:59:59,273 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectCoreModule, MyMvcProject.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:59:59,274 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectApplicationModule, MyMvcProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:59:59,274 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectNHibernateModule, MyMvcProject.Infrastructure.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:59:59,274 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectWebApiModule, MyMvcProject.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:59:59,303 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.Web.MyMvcProjectWebModule, MyMvcProject.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 19:59:59,363 [1    ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.
+DEBUG 2014-03-26 20:05:18,505 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-03-26 20:05:19,094 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:05:19,278 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:05:19,278 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:05:19,344 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:05:19,365 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectCoreModule, MyMvcProject.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:05:19,366 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectApplicationModule, MyMvcProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:05:19,366 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectNHibernateModule, MyMvcProject.Infrastructure.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:05:19,366 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectWebApiModule, MyMvcProject.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:05:19,397 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.Web.MyMvcProjectWebModule, MyMvcProject.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:05:19,458 [1    ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.
+DEBUG 2014-03-26 20:07:02,773 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-03-26 20:07:03,344 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:07:03,523 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:07:03,524 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:07:03,584 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:07:03,603 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectCoreModule, MyMvcProject.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:07:03,603 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectApplicationModule, MyMvcProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:07:03,603 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectNHibernateModule, MyMvcProject.Infrastructure.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:07:03,604 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.MyMvcProjectWebApiModule, MyMvcProject.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:07:03,635 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MyMvcProject.Web.MyMvcProjectWebModule, MyMvcProject.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-03-26 20:07:03,695 [1    ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.
