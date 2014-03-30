@@ -24,13 +24,3 @@
 	- json2
  
 See http://www.aspnetboilerplate.com
-
- TODO:
- + View & Controller bases
- + Localize the application!
- + Spinjs and blocking UI!
- + html5shiv & respond
- + Changing Language on UI!
- - Clear TaskSystem files & make it a template
- - Finish the article
- 
