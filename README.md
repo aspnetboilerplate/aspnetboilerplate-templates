@@ -1,27 +1,23 @@
 # ASP.NET Boilerplate Templates
 
 
-This document explains how to preparing a running Single Page Web Application from the template in 4 steps.
+This document explains how to preparing a running Single Page Web Application from the template in 3 simple steps.
 
 #### Step 1
 
-Create a temporary folder, Copy SinglePageApplication to this new folder. Then build Tools/SolutionRenamer and copy to same folder. Finally, your temporary should look like below:
+Go to http://www.aspnetboilerplate.com/Templates, select your template, enter a solution name and create your project.
 
-![ScreenShot](https://raw.github.com/aspnetboilerplate/templates/master/Docs/create_template_folders.png)
+![ScreenShot](https://raw.github.com/aspnetboilerplate/templates/master/Docs/create_template_site.png)
+
+A zip file will be created and downloaded automatically for you.
 
 #### Step 2
 
-Run the SolutionRenamer and select a solution name for you:
-
-![ScreenShot](https://raw.github.com/aspnetboilerplate/templates/master/Docs/create_template_renamer.png)
-
-#### Step 3
-
-To be able to run the application, you need to create an empty database in SQL Server. Database's name if your solution's name plus 'Db' suffix:
+To be able to run the application, you need to create an empty database in SQL Server. Database's name in your solution's name plus 'Db' suffix:
 
 ![ScreenShot](https://raw.github.com/aspnetboilerplate/templates/master/Docs/create_template_db.png)
 
-#### Step 4
+#### Step 3
 
 Open your solution in Visual Studio and run it:
 
@@ -29,4 +25,4 @@ Open your solution in Visual Studio and run it:
 
 That's it! Your solution is ready and running.
 
-So, what's next? I'm writing an acticle, it'll be finished in a week or two.
+So, what's next? I'm writing an acticle, it'll be finished in a few weeks.
