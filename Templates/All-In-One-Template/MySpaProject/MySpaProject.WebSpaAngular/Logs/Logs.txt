@@ -86,3 +86,19 @@ DEBUG 2014-06-16 20:40:55,719 [1    ] Abp.Modules.AbpModuleLoader              -
 DEBUG 2014-06-16 20:40:55,719 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MySpaProject.MySpaProjectWebApiModule, MySpaProject.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-06-16 20:40:55,748 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MySpaProject.WebSpaAngular.MySpaProjectWebModule, MySpaProject.WebSpaAngular, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-06-16 20:40:55,773 [1    ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.
+DEBUG 2014-06-20 22:35:32,772 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-06-20 22:35:34,093 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.2.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-20 22:35:34,261 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.2.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-20 22:35:34,261 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.2.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-20 22:35:34,317 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.2.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-20 22:37:34,132 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-06-20 22:37:34,618 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.2.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-20 22:37:34,791 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.2.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-20 22:37:34,791 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.2.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-20 22:37:34,848 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.2.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-20 22:37:35,020 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MySpaProject.MySpaProjectCoreModule, MySpaProject.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-20 22:37:35,020 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MySpaProject.MySpaProjectApplicationModule, MySpaProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-20 22:37:35,020 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MySpaProject.MySpaProjectDataModule, MySpaProject.Infrastructure.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-20 22:37:35,020 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MySpaProject.MySpaProjectWebApiModule, MySpaProject.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-20 22:37:35,048 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: MySpaProject.WebSpaAngular.MySpaProjectWebModule, MySpaProject.WebSpaAngular, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-20 22:37:35,073 [1    ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.

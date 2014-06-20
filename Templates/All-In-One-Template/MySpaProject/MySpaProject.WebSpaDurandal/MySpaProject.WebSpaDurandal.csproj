@@ -368,10 +368,6 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MySpaProject.Application\MySpaProject.Application.csproj">
-      <Project>{edf5d964-4c0f-4f19-b674-58a38a5e5401}</Project>
-      <Name>MySpaProject.Application</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MySpaProject.Infrastructure.NHibernate\MySpaProject.Infrastructure.NHibernate.csproj">
       <Project>{5b9b8451-736c-41f8-ad7e-d7e6885964ba}</Project>
       <Name>MySpaProject.Infrastructure.NHibernate</Name>

@@ -17,7 +17,6 @@ namespace MySpaProject.WebSpaDurandal
             return new[]
                    {
                        typeof(MySpaProjectDataModule),
-                       typeof(MySpaProjectApplicationModule),
                        typeof(MySpaProjectWebApiModule)
                    };
         }

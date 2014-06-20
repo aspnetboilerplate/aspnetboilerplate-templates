@@ -17,7 +17,6 @@ namespace MySpaProject.WebSpaAngular
             return new[]
                    {
                        typeof(MySpaProjectDataModule),
-                       typeof(MySpaProjectApplicationModule),
                        typeof(MySpaProjectWebApiModule)
                    };
         }
