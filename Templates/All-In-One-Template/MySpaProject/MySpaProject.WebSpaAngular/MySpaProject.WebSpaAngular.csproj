@@ -635,9 +635,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MySpaProject.Infrastructure.NHibernate\MySpaProject.Infrastructure.NHibernate.csproj">
-      <Project>{5B9B8451-736C-41F8-AD7E-D7E6885964BA}</Project>
-      <Name>MySpaProject.Infrastructure.NHibernate</Name>
+    <ProjectReference Include="..\MySpaProject.Infrastructure.EntityFramework\MySpaProject.Infrastructure.EntityFramework.csproj">
+      <Project>{3979f157-deb0-4878-ab1d-4cef6b5a1300}</Project>
+      <Name>MySpaProject.Infrastructure.EntityFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\MySpaProject.WebApi\MySpaProject.WebApi.csproj">
       <Project>{5EB52D3D-09FD-463A-B02A-8D9856BD3724}</Project>

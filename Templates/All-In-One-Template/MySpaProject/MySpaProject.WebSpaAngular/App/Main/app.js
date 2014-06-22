@@ -1,6 +1,8 @@
 ﻿(function () {
     'use strict';
 
+    var localize = abp.localization.getSource('MySpaProject');
+
     var app = angular.module('app', [
         'ngAnimate',
         'ngRoute',
@@ -12,42 +14,46 @@
         'abp'
     ]);
 
-    app.constant('routes', getRoutes());
-
-    function getRoutes() {
-        return [
+    app.constant('routes', [
             {
                 url: '/', //default: /home
                 config: {
                     templateUrl: '/App/Main/views/home/home.cshtml',
-                    menuItem: 'Home'
+                    menuText: localize('HomePage'),
+                    menuItem: 'HomePage'
                 }
             },
             {
                 url: '/about',
                 config: {
                     templateUrl: '/App/Main/views/about/about.cshtml',
+                    menuText: localize('About'),
                     menuItem: 'About'
                 }
             }
-        ];
-    }
+        ]);
 
-    app.config(['$routeProvider', 'routes', routeConfigurator]);
-    function routeConfigurator($routeProvider, routes) {
+    app.config([
+        '$routeProvider', 'routes',
+        function ($routeProvider, routes) {
+            routes.forEach(function (route) {
+                $routeProvider.when(route.url, route.config);
+            });
 
-        routes.forEach(function (r) {
-            $routeProvider.when(r.url, r.config);
-        });
+            $routeProvider.otherwise({
+                redirectTo: '/'
+            });
+        }
+    ]);
 
-        $routeProvider.otherwise({ redirectTo: abp.appPath });
-    }
-
-    app.run(['$rootScope', '$location', '$routeParams', '$route', function ($rootScope, $location, $routeParams, $route) {
-        $rootScope.$on('$routeChangeSuccess', function (event, next, current) {
-            if (next && next.$$route) {
-                $rootScope.activeMenu = next.$$route.menuItem;
-            }
-        });
-    }]);
+    app.run([
+        '$rootScope',
+        function ($rootScope) {
+            $rootScope.$on('$routeChangeSuccess', function (event, next, current) {
+                if (next && next.$$route) {
+                    $rootScope.activeMenu = next.$$route.menuItem; //Used in layout.cshtml to make selected menu 'active'.
+                }
+            });
+        }
+    ]);
 })();
