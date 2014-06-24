@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
+﻿using System.Data.Entity;
 using Abp.Domain.Repositories.EntityFramework;
 
 namespace MySpaProject.EntityFramework
@@ -11,7 +7,7 @@ namespace MySpaProject.EntityFramework
     {
         //TODO: Define an IDbSet for each Entity...
 
-        //public virtual IDbSet<MyEntity> People { get; set; } //Sample
+        //public virtual IDbSet<Person> People { get; set; } //Sample
 
         public MySpaProjectDbContext()
             : base("MainDb")
@@ -25,7 +21,7 @@ namespace MySpaProject.EntityFramework
 
             //TODO: Make additional model setup...
 
-            //modelBuilder.Entity<MyEntity>().ToTable("StsMyEntities"); //Sample
+            //modelBuilder.Entity<Person>().ToTable("TsPeople"); //Sample
         }
     }
 }
