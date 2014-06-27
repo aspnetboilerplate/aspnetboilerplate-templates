@@ -1,1 +1,0 @@
-﻿This is an empty project template to start with ASP.NET Boilerplate.

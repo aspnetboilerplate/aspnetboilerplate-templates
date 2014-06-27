@@ -267,7 +267,6 @@
     <Content Include="Localization\MySpaProject\MySpaProject.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="README.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="css\main.less" />

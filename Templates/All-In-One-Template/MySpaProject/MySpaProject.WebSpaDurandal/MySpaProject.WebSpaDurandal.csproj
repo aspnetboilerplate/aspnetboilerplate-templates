@@ -272,7 +272,6 @@
     <Content Include="Localization\AbpWeb\AbpWeb.xml" />
     <Content Include="Localization\MySpaProject\MySpaProject.tr.xml" />
     <Content Include="Localization\MySpaProject\MySpaProject.xml" />
-    <Content Include="README.txt" />
     <Content Include="Scripts\almond-custom.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
