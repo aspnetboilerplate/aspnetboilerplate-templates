@@ -16,7 +16,7 @@
 
     app.constant('routes', [
             {
-                url: '/', //default: /home
+                url: '/', //default
                 config: {
                     templateUrl: '/App/Main/views/home/home.cshtml',
                     menuText: localize('HomePage'),
