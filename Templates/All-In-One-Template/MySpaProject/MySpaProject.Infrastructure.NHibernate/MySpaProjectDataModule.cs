@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.Reflection;
 using Abp.Dependency;
 using Abp.Modules;
@@ -10,6 +11,15 @@ namespace MySpaProject
 {
     public class MySpaProjectDataModule : AbpModule
     {
+        public override Type[] GetDependedModules()
+        {
+            return new[]
+                   {
+                       typeof(AbpNHibernateModule),
+                       typeof(MySpaProjectCoreModule)
+                   };
+        }
+
         public override void PreInitialize(IAbpInitializationContext initializationContext)
         {
             base.PreInitialize(initializationContext);

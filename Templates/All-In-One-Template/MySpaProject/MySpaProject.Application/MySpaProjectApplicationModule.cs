@@ -3,6 +3,7 @@ using System.Reflection;
 using Abp.Dependency;
 using Abp.Modules;
 using Abp.Startup;
+using Abp.Startup.Application;
 
 namespace MySpaProject
 {
@@ -12,6 +13,7 @@ namespace MySpaProject
         {
             return new[]
                    {
+                       typeof(AbpApplicationModule),
                        typeof(MySpaProjectCoreModule)
                    };
         }
