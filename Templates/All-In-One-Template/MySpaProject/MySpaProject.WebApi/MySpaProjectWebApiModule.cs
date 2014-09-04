@@ -4,7 +4,6 @@ using Abp.Dependency;
 using Abp.Modules;
 using Abp.Startup;
 using Abp.Startup.Application;
-using Abp.Startup.Web;
 using Abp.WebApi.Startup;
 
 namespace MySpaProject
@@ -16,7 +15,6 @@ namespace MySpaProject
             return new[]
                    {
                        typeof(AbpApplicationModule),
-                       typeof(AbpWebModule),
                        typeof(AbpWebApiModule),
                        typeof(MySpaProjectApplicationModule)
                    };
