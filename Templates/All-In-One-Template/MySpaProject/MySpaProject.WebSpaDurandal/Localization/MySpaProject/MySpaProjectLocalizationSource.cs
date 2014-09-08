@@ -6,7 +6,7 @@ namespace MySpaProject.WebSpaDurandal.Localization.MySpaProject
     public class MySpaProjectLocalizationSource : XmlLocalizationSource
     {
         public MySpaProjectLocalizationSource()
-            : base("MySpaProject", HttpContext.Current.Server.MapPath("/Localization/MySpaProject"))
+            : base("MySpaProject", HttpContext.Current.Server.MapPath("~/Localization/MySpaProject"))
         {
         }
     }
