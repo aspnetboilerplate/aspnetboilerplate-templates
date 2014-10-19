@@ -11,12 +11,14 @@ namespace MySpaProject.WebSpaAngular
                 .AddItem(
                     new MenuItemDefinition(
                         "Home",
-                        new LocalizableString("HomePage", MySpaProjectConsts.LocalizationSourceName)
+                        new LocalizableString("HomePage", MySpaProjectConsts.LocalizationSourceName),
+                        url: "#/"
                         )
                 ).AddItem(
                     new MenuItemDefinition(
                         "About",
-                        new LocalizableString("About", MySpaProjectConsts.LocalizationSourceName)
+                        new LocalizableString("About", MySpaProjectConsts.LocalizationSourceName),
+                        url: "#/about"
                         )
                 );
         }

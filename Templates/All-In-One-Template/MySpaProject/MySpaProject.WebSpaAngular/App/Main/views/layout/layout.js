@@ -9,5 +9,7 @@
 
         vm.languages = abp.localization.languages;
         vm.currentLanguage = abp.localization.currentLanguage;
+
+        vm.menu = abp.nav.menus.MainMenu;
     }]);
 })();
