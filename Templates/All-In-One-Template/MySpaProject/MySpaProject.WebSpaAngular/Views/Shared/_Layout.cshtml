@@ -46,7 +46,7 @@
     <!-- Windows Phone 8 and Internet Explorer 10 FIX -->
     <script src="~/Abp/Framework/scripts/utils/ie10fix.js"></script>
 
-    <!-- Modernizr: for feature detection (All other scripts are included at the end of file for faster page load) -->
+    <!-- Modernizr -->
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
 
     <!-- jQuery and plugins -->
@@ -68,8 +68,9 @@
     <script src="~/Abp/Framework/scripts/libs/abp.blockUI.js"></script>
     <script src="~/Abp/Framework/scripts/libs/abp.spin.js"></script>
 
-    <!-- Dynamic script for client side localization (It's created on runtime) -->
+    <!-- Dynamic script of ABP system (It's created on runtime) -->
     <script src="~/AbpLocalization/GetScripts" type="text/javascript"></script>
+    <script src="~/AbpNavigation/GetScripts" type="text/javascript"></script>
 
     <!-- Custom scripts for views -->
     @RenderSection("scripts", required: false)
