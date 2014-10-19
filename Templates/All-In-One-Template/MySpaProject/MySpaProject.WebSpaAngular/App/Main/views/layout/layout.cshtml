@@ -17,10 +17,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="" data-toggle="dropdown"><i ng-class="vm.getLanguageFlagClass()"></i> <span>{{vm.getLanguageName()}}</span> <b class="caret"></b></a>
+                    <a href="" data-toggle="dropdown"><i class="{{vm.currentLanguage.icon}}"></i> <span>{{vm.currentLanguage.displayName}}</span> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li ng-hide="vm.isCurrentLanguage('tr')"><a href="/AbpLocalization/ChangeCulture?cultureName=tr"><i class="famfamfam-flag-tr"></i> Türkçe</a></li>
-                        <li ng-hide="vm.isCurrentLanguage('en')"><a href="/AbpLocalization/ChangeCulture?cultureName=en"><i class="famfamfam-flag-england"></i> English</a></li>
+                        <li ng-repeat="language in vm.languages" ng-hide="vm.currentLanguage == language.name"><a href="/AbpLocalization/ChangeCulture?cultureName={{language.name}}"><i ng-class="language.icon"></i> {{language.displayName}}</a></li>
                     </ul>
                 </li>
             </ul>
