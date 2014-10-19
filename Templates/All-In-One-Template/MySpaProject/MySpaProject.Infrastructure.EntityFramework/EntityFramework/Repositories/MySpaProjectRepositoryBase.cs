@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Abp.Domain.Entities;
-using Abp.Domain.Repositories.EntityFramework;
+﻿using Abp.Domain.Entities;
+using Abp.EntityFramework.Repositories;
 
 namespace MySpaProject.EntityFramework.Repositories
 {

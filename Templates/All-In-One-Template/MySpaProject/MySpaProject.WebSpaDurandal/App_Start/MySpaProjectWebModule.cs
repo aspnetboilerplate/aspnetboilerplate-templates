@@ -1,33 +1,25 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Abp.Dependency;
-using Abp.Localization;
+using Abp.Localization.Sources.Xml;
 using Abp.Modules;
-using Abp.Startup;
-using MySpaProject.WebSpaDurandal.Localization.MySpaProject;
 
 namespace MySpaProject.WebSpaDurandal
 {
+    [DependsOn(typeof(MySpaProjectDataModule),typeof(MySpaProjectApplicationModule),typeof(MySpaProjectWebApiModule))]
     public class MySpaProjectWebModule : AbpModule
     {
-        public override Type[] GetDependedModules()
+        public override void Initialize()
         {
-            return new[]
-                   {
-                       typeof(MySpaProjectDataModule),
-                       typeof(MySpaProjectApplicationModule),
-                       typeof(MySpaProjectWebApiModule)
-                   };
-        }
+            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
-        public override void Initialize(IAbpInitializationContext initializationContext)
-        {
-            base.Initialize(initializationContext);
-            IocManager.Instance.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
-
-            LocalizationHelper.RegisterSource<MySpaProjectLocalizationSource>();
+            Configuration.Localization.Sources.Add(
+                new XmlLocalizationSource(
+                    "MySpaProject",
+                    HttpContext.Current.Server.MapPath("~/Localization/MySpaProject")
+                    )
+                );
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);

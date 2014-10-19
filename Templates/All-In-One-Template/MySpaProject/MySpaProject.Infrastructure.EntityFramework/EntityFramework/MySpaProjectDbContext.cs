@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-using Abp.Domain.Repositories.EntityFramework;
+using Abp.EntityFramework;
 
 namespace MySpaProject.EntityFramework
 {
