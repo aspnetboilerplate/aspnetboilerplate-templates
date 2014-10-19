@@ -182,10 +182,10 @@
     </Content>
     <Content Include="App\Main\app.js" />
     <Content Include="App\Main\images\abp-logo.png" />
-    <Content Include="App\Main\styles\main.css">
+    <Content Include="App\Main\main.css">
       <DependentUpon>main.less</DependentUpon>
     </Content>
-    <Content Include="App\Main\styles\main.min.css">
+    <Content Include="App\Main\main.min.css">
       <DependentUpon>main.css</DependentUpon>
     </Content>
     <Content Include="App\Main\views\layout\header.js" />
@@ -277,7 +277,7 @@
     <Content Include="Scripts\angular-ui\ui-utils.min.js" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
-    <Content Include="App\Main\styles\main.less" />
+    <Content Include="App\Main\main.less" />
     <Content Include="App\Main\views\layout\layout.cshtml" />
     <Content Include="App\Main\views\home\home.cshtml" />
     <Content Include="App\Main\views\about\about.cshtml" />
@@ -1065,6 +1065,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\MySpaProjectNavigationProvider.cs" />
     <Compile Include="App_Start\MySpaProjectWebModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -1092,7 +1093,6 @@
   <ItemGroup>
     <Folder Include="App\Common\images\" />
     <Folder Include="App\Common\scripts\" />
-    <Folder Include="App\Main\scripts\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>

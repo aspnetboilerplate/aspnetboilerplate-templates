@@ -1,8 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
-    <!-- Standard meta tags -->
+    <!-- Common meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +27,7 @@
 
     <!-- Country flags -->
     <link href="~/Content/flags/famfamfam-flags.css" rel="stylesheet" />
-    
+
     <!-- Font awecome -->
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
 
@@ -45,7 +46,8 @@
         <script src="@Url.Content("~/Scripts/others/respond.min.js")"></script>
     <![endif]-->
 
-    <link href="~/App/Main/styles/main.css" rel="stylesheet" />
+    <!-- Application styles -->
+    @Styles.Render("~/Bundles/App/Main/css")
 
     <!-- Windows Phone 8 and Internet Explorer 10 FIX -->
     <script src="~/Abp/Framework/scripts/utils/ie10fix.js"></script>
@@ -86,13 +88,9 @@
     <script src="~/api/AbpServiceProxies/GetAll?type=angular"></script>
     <script src="~/AbpLocalization/GetScripts" type="text/javascript"></script>
     <script src="~/AbpNavigation/GetScripts" type="text/javascript"></script>
-    
+
     <!-- Application scripts -->
-    <script src="~/App/Main/app.js"></script>
-    <script src="~/App/Main/views/layout/layout.js"></script>
-    <script src="~/App/Main/views/layout/header.js"></script>
-    <script src="~/App/Main/views/home/home.js"></script>
-    <script src="~/App/Main/views/about/about.js"></script>
+    @Scripts.Render("~/Bundles/App/Main/js")
 
 </head>
 
