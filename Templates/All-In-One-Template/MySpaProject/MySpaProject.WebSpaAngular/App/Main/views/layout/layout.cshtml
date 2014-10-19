@@ -1,33 +1,111 @@
-﻿<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="app.controllers.views.layout as vm">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/">MySpaProject!</a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li ng-repeat="menuItem in vm.menu.items" ng-class="{active: '' == menuItem.name}">
-                    <a ng-href="{{menuItem.url}}">{{menuItem.displayName}}</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="" data-toggle="dropdown"><i ng-class="vm.currentLanguage.icon"></i> <span>{{vm.currentLanguage.displayName}}</span> <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li ng-repeat="language in vm.languages" ng-hide="vm.currentLanguage == language.name"><a href="/AbpLocalization/ChangeCulture?cultureName={{language.name}}"><i ng-class="language.icon"></i> {{language.displayName}}</a></li>
-                    </ul>
-                </li>
-            </ul>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Standard meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="~/favicon.ico">
+
+    <!-- Site title -->
+    <title>MySpaProject</title>
+
+    <!-- Style for jQueryUI -->
+    <link href="~/Content/themes/base/all.css" rel="stylesheet" />
+
+    <!-- Style for Bootstrap -->
+    <link href="~/Content/bootstrap-cosmo.min.css" rel="stylesheet">
+
+    <!-- Styles for jQuery plug-ins -->
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />
+
+    <!-- Country flags -->
+    <link href="~/Content/flags/famfamfam-flags.css" rel="stylesheet" />
+    
+    <!-- Font awecome -->
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Common styles for this application -->
+    <link href="~/App/Common/styles/main.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+        var abp = abp || {};
+        abp.appPath = '@ApplicationPath';
+    </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="@Url.Content("~/Scripts/others/html5shiv.js")"></script>
+        <script src="@Url.Content("~/Scripts/others/respond.min.js")"></script>
+    <![endif]-->
+
+    <link href="~/App/Main/styles/main.css" rel="stylesheet" />
+
+    <!-- Windows Phone 8 and Internet Explorer 10 FIX -->
+    <script src="~/Abp/Framework/scripts/utils/ie10fix.js"></script>
+
+    <!-- Modernizr -->
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+
+    <!-- jQuery and plugins -->
+    <script src="~/Scripts/json2.min.js"></script>
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui.min-1.11.1.js"></script>
+    <script src="~/Scripts/jquery.blockUI.min.js"></script>
+    <script src="~/Scripts/toastr.min.js"></script>
+    <script src="~/Scripts/others/spinjs/spin.js"></script>
+    <script src="~/Scripts/others/spinjs/jquery.spin.js"></script>
+
+    <!-- Twitter Bootstrap -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!-- Angular scripts -->
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-animate.min.js"></script>
+    <script src="~/Scripts/angular-sanitize.min.js"></script>
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-utils.min.js"></script>
+
+    <!-- Abp framework scripts -->
+    <script src="~/Abp/Framework/scripts/abp.js"></script>
+    <script src="~/Abp/Framework/scripts/libs/abp.jquery.js"></script>
+    <script src="~/Abp/Framework/scripts/libs/abp.toastr.js"></script>
+    <script src="~/Abp/Framework/scripts/libs/abp.blockUI.js"></script>
+    <script src="~/Abp/Framework/scripts/libs/abp.spin.js"></script>
+    <script src="~/Abp/Framework/scripts/libs/angularjs/abp.ng.js"></script>
+
+    <!-- Dynamic script of ABP system (It's created on runtime) -->
+    <script src="~/api/AbpServiceProxies/GetAll?type=angular"></script>
+    <script src="~/AbpLocalization/GetScripts" type="text/javascript"></script>
+    <script src="~/AbpNavigation/GetScripts" type="text/javascript"></script>
+    
+    <!-- Application scripts -->
+    <script src="~/App/Main/app.js"></script>
+    <script src="~/App/Main/views/layout/layout.js"></script>
+    <script src="~/App/Main/views/layout/header.js"></script>
+    <script src="~/App/Main/views/home/home.js"></script>
+    <script src="~/App/Main/views/about/about.js"></script>
+
+</head>
+
+<body>
+    <div ng-app="app">
+        <div ng-controller="app.views.layout as vm">
+            <div ng-include="'/App/Main/views/layout/header.cshtml'"></div>
+            <div class="container">
+                <div class="angular-animation-container">
+                    <div ui-view class="shuffle-animation"></div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
-<div class="container">
-    <div data-ng-view class="shuffle-animation"></div>
-</div>
-
+</body>
+</html>

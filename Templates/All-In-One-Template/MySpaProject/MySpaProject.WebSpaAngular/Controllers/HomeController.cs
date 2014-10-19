@@ -6,7 +6,7 @@ namespace MySpaProject.WebSpaAngular.Controllers
     {
         public ActionResult Index()
         { 
-            return View();
+            return View("~/App/Main/views/layout/layout.cshtml");
         }
 	}
 }

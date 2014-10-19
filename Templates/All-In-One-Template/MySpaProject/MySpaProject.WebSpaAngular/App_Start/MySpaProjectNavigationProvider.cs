@@ -12,13 +12,15 @@ namespace MySpaProject.WebSpaAngular
                     new MenuItemDefinition(
                         "Home",
                         new LocalizableString("HomePage", MySpaProjectConsts.LocalizationSourceName),
-                        url: "#/"
+                        url: "#/",
+                        icon: "fa fa-home"
                         )
                 ).AddItem(
                     new MenuItemDefinition(
                         "About",
                         new LocalizableString("About", MySpaProjectConsts.LocalizationSourceName),
-                        url: "#/about"
+                        url: "#/about",
+                        icon: "fa fa-info"
                         )
                 );
         }
