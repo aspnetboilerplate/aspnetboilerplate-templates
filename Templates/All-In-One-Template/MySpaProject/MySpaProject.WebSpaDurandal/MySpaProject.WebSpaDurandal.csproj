@@ -181,10 +181,10 @@
     <Content Include="Abp\Framework\styles\abp.min.css" />
     <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
     <Content Include="App\Main\images\abp-logo.png" />
-    <Content Include="App\Main\styles\main.css">
+    <Content Include="App\Main\main.css">
       <DependentUpon>main.less</DependentUpon>
     </Content>
-    <Content Include="App\Main\styles\main.min.css">
+    <Content Include="App\Main\main.min.css">
       <DependentUpon>main.css</DependentUpon>
     </Content>
     <Content Include="App\Main\main.js" />
@@ -199,6 +199,8 @@
     <Content Include="Content\durandal.css" />
     <Content Include="Content\flags\famfamfam-flags.css" />
     <Content Include="Content\flags\famfamfam-flags.png" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\images\icon.png" />
     <Content Include="Content\images\ios-startup-image-landscape.png" />
     <Content Include="Content\images\ios-startup-image-portrait.png" />
@@ -238,6 +240,7 @@
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Localization\AbpWeb\AbpWeb.tr.xml" />
@@ -261,11 +264,11 @@
     <Content Include="Scripts\durandal\plugins\widget.js" />
     <Content Include="Scripts\durandal\system.js" />
     <Content Include="Scripts\durandal\transitions\entrance.js" />
-    <Content Include="App\Main\styles\main.less" />
+    <Content Include="App\Main\main.less" />
     <Content Include="App\Main\views\layout.cshtml" />
     <Content Include="App\Main\views\home.cshtml" />
     <Content Include="App\Main\views\web.config" />
-    <Content Include="App\Main\styles\main.css.map">
+    <Content Include="App\Main\main.css.map">
       <DependentUpon>main.css</DependentUpon>
     </Content>
     <Content Include="App\Main\views\about.cshtml" />
@@ -279,6 +282,10 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Abp\Framework\styles\abp.less" />
     <Content Include="Abp\Framework\styles\abp.css.map" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\durandal\viewEngine.js" />
     <Content Include="Scripts\durandal\viewLocator.js" />
@@ -317,6 +324,8 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\MySpaProjectNavigationProvider.cs" />
     <Compile Include="App_Start\MySpaProjectWebModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -345,7 +354,6 @@
     <Folder Include="App\Common\images\" />
     <Folder Include="App\Common\scripts\" />
     <Folder Include="App\Common\styles\" />
-    <Folder Include="App\Main\scripts\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
