@@ -6,7 +6,7 @@ namespace MySpaProject.WebSpaAngular.Controllers
     {
         public ActionResult Index()
         { 
-            return View("~/App/Main/views/layout/layout.cshtml");
+            return View("~/App/Main/views/layout/layout.cshtml"); //Layout of the angular application.
         }
 	}
 }
