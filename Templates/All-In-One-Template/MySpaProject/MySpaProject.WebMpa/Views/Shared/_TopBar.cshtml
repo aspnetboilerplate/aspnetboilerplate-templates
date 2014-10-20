@@ -7,14 +7,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">MySpaProject!</a>
+            <a class="navbar-brand" href="~/"><i class="fa fa-cubes"></i> MySpaProject</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                @Html.Partial("_TopMenu")
+                @Html.Action("TopMenu", "Layout")
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                @Html.Partial("_LanguageSelection")
+                @Html.Action("LanguageSelection", "Layout")
             </ul>
         </div>
     </div>

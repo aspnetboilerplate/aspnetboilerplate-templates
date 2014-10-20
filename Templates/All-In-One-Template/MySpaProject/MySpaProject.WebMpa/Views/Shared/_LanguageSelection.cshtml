@@ -1,19 +1,16 @@
-﻿@using MySpaProject.WebMpa.Localization
-@{
-    var currentLanguage = ApplicationLanguageInfo.CurrentLanguage;
-}
+﻿@model MySpaProject.WebMpa.Models.Layout.LanguageSelectionViewModel
 <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <i class="@currentLanguage.IconClass"></i>
-        <span>@currentLanguage.DisplayName</span>
+        <i class="@Model.CurrentLanguage.Icon"></i>
+        <span>@Model.CurrentLanguage.DisplayName</span>
         <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-        @foreach (var language in ApplicationLanguageInfo.SupportedLanguages.Values)
+        @foreach (var language in Model.Languages)
         {
-            if (language != currentLanguage)
+            if (language.Name != Model.CurrentLanguage.Name)
             {
-                <li><a href="/AbpLocalization/ChangeCulture?cultureName=@(language.Name)&returnUrl=@(Request.Url)"><i class="@language.IconClass"></i> @language.DisplayName</a></li>
+                <li><a href="/AbpLocalization/ChangeCulture?cultureName=@(language.Name)&returnUrl=@(Request.Url)"><i class="@language.Icon"></i> @language.DisplayName</a></li>
             }
         }
     </ul>

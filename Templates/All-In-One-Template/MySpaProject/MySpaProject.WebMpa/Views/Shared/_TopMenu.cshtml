@@ -1,6 +1,13 @@
-﻿<li class="@(ViewBag.CurrentPage == "Home" ? "active" : "")">
-    <a href="@Url.Action("Index", "Home")">@L("HomePage")</a>
-</li>
-<li class="@(ViewBag.CurrentPage == "About" ? "active" : "")">
-    <a href="@Url.Action("Index", "About")">@L("About")</a>
-</li>
+﻿@model MySpaProject.WebMpa.Models.Layout.TopMenuViewModel
+@foreach (var menuItem in Model.MainMenu.Items)
+{
+    <li class="@(ViewBag.CurrentPage == menuItem.Name ? "active" : "")">
+        <a href="@menuItem.Url">
+            @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
+            {
+                <i class="@menuItem.Icon"></i>
+            }
+            @menuItem.DisplayName
+        </a>
+    </li>
+}
