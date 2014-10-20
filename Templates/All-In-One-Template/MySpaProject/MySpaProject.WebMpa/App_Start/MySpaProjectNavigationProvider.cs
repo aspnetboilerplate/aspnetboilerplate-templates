@@ -18,14 +18,14 @@ namespace MySpaProject.WebMpa
                     new MenuItemDefinition(
                         "Home",
                         new LocalizableString("HomePage", MySpaProjectConsts.LocalizationSourceName),
-                        url: "#/",
+                        url: "/",
                         icon: "fa fa-home"
                         )
                 ).AddItem(
                     new MenuItemDefinition(
                         "About",
                         new LocalizableString("About", MySpaProjectConsts.LocalizationSourceName),
-                        url: "#/about",
+                        url: "/About",
                         icon: "fa fa-info"
                         )
                 );
