@@ -174,12 +174,6 @@
     <Content Include="Abp\Framework\styles\abp.css" />
     <Content Include="Abp\Framework\styles\abp.min.css" />
     <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
-    <Content Include="App\Common\styles\main.css">
-      <DependentUpon>main.less</DependentUpon>
-    </Content>
-    <Content Include="App\Common\styles\main.min.css">
-      <DependentUpon>main.css</DependentUpon>
-    </Content>
     <Content Include="App\Main\app.js" />
     <Content Include="App\Main\images\abp-logo.png" />
     <Content Include="App\Main\main.css">
@@ -282,7 +276,6 @@
     <Content Include="App\Main\views\home\home.cshtml" />
     <Content Include="App\Main\views\about\about.cshtml" />
     <Content Include="App\Main\web.config" />
-    <Content Include="App\Common\styles\main.less" />
     <Content Include="log4net.config" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -1091,8 +1084,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\Common\images\" />
-    <Folder Include="App\Common\scripts\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
