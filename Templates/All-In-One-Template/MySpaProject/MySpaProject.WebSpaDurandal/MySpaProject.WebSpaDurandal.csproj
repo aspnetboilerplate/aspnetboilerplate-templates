@@ -267,7 +267,7 @@
     <Content Include="App\Main\main.less" />
     <Content Include="App\Main\views\layout.cshtml" />
     <Content Include="App\Main\views\home.cshtml" />
-    <Content Include="App\Main\views\web.config" />
+    <Content Include="App\Main\web.config" />
     <Content Include="App\Main\main.css.map">
       <DependentUpon>main.css</DependentUpon>
     </Content>
@@ -321,7 +321,7 @@
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="App\Main\shell.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />

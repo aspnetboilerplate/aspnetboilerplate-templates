@@ -6,7 +6,7 @@ namespace MySpaProject.WebSpaDurandal.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View("~/App/Main/shell.cshtml"); //Layout of the durandal application.
         }
 	}
 }

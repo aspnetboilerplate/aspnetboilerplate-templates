@@ -17,6 +17,11 @@
 
     @Styles.Render("~/Bundles/App/vendor/css")
     @Styles.Render("~/Bundles/App/Main/css")
+    
+    <script type="text/javascript">
+    //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+    var abp = abp || {}; abp.appPath = '@ApplicationPath';
+    </script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
