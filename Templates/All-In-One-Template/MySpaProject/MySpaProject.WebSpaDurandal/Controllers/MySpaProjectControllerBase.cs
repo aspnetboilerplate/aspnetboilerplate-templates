@@ -6,7 +6,7 @@ namespace MySpaProject.WebSpaDurandal.Controllers
     {
         protected MySpaProjectControllerBase()
         {
-            LocalizationSourceName = "MySpaProject";
+            LocalizationSourceName = MySpaProjectConsts.LocalizationSourceName;
         }
     }
 }

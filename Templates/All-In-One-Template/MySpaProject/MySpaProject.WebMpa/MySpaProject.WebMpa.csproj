@@ -184,6 +184,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -225,6 +227,7 @@
     <Content Include="css\main.min.css">
       <DependentUpon>main.css</DependentUpon>
     </Content>
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="images\abp-logo.png" />
     <Content Include="Content\bootstrap-cosmo.min.css" />
@@ -232,6 +235,7 @@
     <Content Include="Content\flags\famfamfam-flags.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="js\main.js" />
     <Content Include="Localization\AbpWeb\AbpWeb.tr.xml" />
     <Content Include="Localization\AbpWeb\AbpWeb.xml" />
     <Content Include="Localization\MySpaProject\MySpaProject.tr.xml">
@@ -252,6 +256,10 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Abp\Framework\styles\abp.less" />
     <Content Include="Abp\Framework\styles\abp.css.map" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -285,6 +293,8 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\MySpaProjectNavigationProvider.cs" />
     <Compile Include="App_Start\MySpaProjectWebModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />

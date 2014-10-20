@@ -11,7 +11,7 @@ namespace MySpaProject.WebSpaDurandal.Views
     {
         protected MySpaProjectWebViewPageBase()
         {
-            LocalizationSourceName = "MySpaProject";
+            LocalizationSourceName = MySpaProjectConsts.LocalizationSourceName;
         }
     }
 }

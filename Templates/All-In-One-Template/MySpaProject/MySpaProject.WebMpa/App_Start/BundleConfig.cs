@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace MySpaProject.WebSpaAngular
+namespace MySpaProject.WebMpa
 {
     public static class BundleConfig
     {
@@ -10,9 +10,9 @@ namespace MySpaProject.WebSpaAngular
 
             //VENDOR RESOURCES
 
-            //~/Bundles/App/vendor/css
+            //~/Bundles/vendor/css
             bundles.Add(
-                new StyleBundle("~/Bundles/App/vendor/css")
+                new StyleBundle("~/Bundles/vendor/css")
                     .Include(
                         "~/Content/themes/base/all.css",
                         "~/Content/bootstrap-cosmo.min.css",
@@ -22,54 +22,52 @@ namespace MySpaProject.WebSpaAngular
                     )
                 );
 
-            //~/Bundles/App/vendor/js
+            //~/Bundles/vendor/js/top (These scripts should be included in the head of the page)
             bundles.Add(
-                new ScriptBundle("~/Bundles/App/vendor/js")
+                new ScriptBundle("~/Bundles/vendor/js/top")
                     .Include(
                         "~/Abp/Framework/scripts/utils/ie10fix.js",
+                        "~/Scripts/modernizr-2.8.3.js"
+                    )
+                );
+
+            //~/Bundles/vendor/bottom (Included in the bottom for fast page load)
+            bundles.Add(
+                new ScriptBundle("~/Bundles/vendor/js/bottom")
+                    .Include(
                         "~/Scripts/json2.min.js",
 
-                        "~/Scripts/modernizr-2.8.3.js",
-                        
                         "~/Scripts/jquery-2.1.1.min.js",
                         "~/Scripts/jquery-ui.min-1.11.1.js",
 
                         "~/Scripts/bootstrap.min.js",
 
+                        "~/Scripts/jquery.validate.min.js",
                         "~/Scripts/jquery.blockUI.min.js",
                         "~/Scripts/toastr.min.js",
                         "~/Scripts/others/spinjs/spin.js",
                         "~/Scripts/others/spinjs/jquery.spin.js",
 
-                        "~/Scripts/angular.min.js",
-                        "~/Scripts/angular-animate.min.js",
-                        "~/Scripts/angular-sanitize.min.js",
-                        "~/Scripts/angular-ui-router.min.js",
-                        "~/Scripts/angular-ui/ui-bootstrap.min.js",
-                        "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js",
-                        "~/Scripts/angular-ui/ui-utils.min.js",
-
                         "~/Abp/Framework/scripts/abp.js",
                         "~/Abp/Framework/scripts/libs/abp.jquery.js",
                         "~/Abp/Framework/scripts/libs/abp.toastr.js",
                         "~/Abp/Framework/scripts/libs/abp.blockUI.js",
-                        "~/Abp/Framework/scripts/libs/abp.spin.js",
-                        "~/Abp/Framework/scripts/libs/angularjs/abp.ng.js"
+                        "~/Abp/Framework/scripts/libs/abp.spin.js"
                     )
                 );
 
             //APPLICATION RESOURCES
 
-            //~/Bundles/App/Main/css //TODO: Does it includes both .css and .min.css?
+            //~/Bundles/css
             bundles.Add(
-                new StyleBundle("~/Bundles/App/Main/css")
-                    .IncludeDirectory("~/App/Main", "*.css", true)
+                new StyleBundle("~/Bundles/css")
+                    .Include("~/css/main.css")
                 );
 
-            //~/Bundles/App/Main/js //TODO: Does it includes both .js and .min.js?
+            //~/Bundles/js
             bundles.Add(
-                new ScriptBundle("~/Bundles/App/Main/js")
-                    .IncludeDirectory("~/App/Main", "*.js", true)
+                new ScriptBundle("~/Bundles/js")
+                    .Include("~/js/main.js")
                 );
         }
     }

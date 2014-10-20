@@ -9,7 +9,7 @@ namespace MySpaProject.WebSpaAngular.Controllers
     {
         protected MySpaProjectControllerBase()
         {
-            LocalizationSourceName = "MySpaProject";
+            LocalizationSourceName = MySpaProjectConsts.LocalizationSourceName;
         }
     }
 }
