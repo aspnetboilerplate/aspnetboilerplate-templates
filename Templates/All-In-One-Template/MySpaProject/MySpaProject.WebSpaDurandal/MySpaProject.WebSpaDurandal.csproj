@@ -357,9 +357,9 @@
       <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
       <Name>MySpaProject.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MySpaProject.Infrastructure.EntityFramework\MySpaProject.Infrastructure.EntityFramework.csproj">
-      <Project>{3979f157-deb0-4878-ab1d-4cef6b5a1300}</Project>
-      <Name>MySpaProject.Infrastructure.EntityFramework</Name>
+    <ProjectReference Include="..\MySpaProject.EntityFramework\MySpaProject.EntityFramework.csproj">
+      <Project>{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}</Project>
+      <Name>MySpaProject.EntityFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\MySpaProject.WebApi\MySpaProject.WebApi.csproj">
       <Project>{5eb52d3d-09fd-463a-b02a-8d9856bd3724}</Project>

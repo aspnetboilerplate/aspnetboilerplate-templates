@@ -12,9 +12,9 @@ namespace MySpaProject
     {
         public override void PreInitialize()
         {
-            var connStr = ConfigurationManager.ConnectionStrings["MainDb"].ConnectionString;
+            Configuration.DefaultNameOrConnectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
             Configuration.Modules.AbpNHibernate().FluentConfiguration
-                .Database(MsSqlConfiguration.MsSql2008.ConnectionString(connStr))
+                .Database(MsSqlConfiguration.MsSql2008.ConnectionString(Configuration.DefaultNameOrConnectionString))
                 .Mappings(m => m.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()));
         }
 

@@ -1,5 +1,4 @@
 ﻿(function () {
-
     var controllerId = 'app.views.layout.header';
     angular.module('app').controller(controllerId, [
         '$rootScope', '$state', function ($rootScope, $state) {

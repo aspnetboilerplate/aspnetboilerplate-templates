@@ -7,6 +7,11 @@ namespace MySpaProject
     [DependsOn(typeof(AbpEntityFrameworkModule), typeof(MySpaProjectCoreModule))]
     public class MySpaProjectDataModule : AbpModule
     {
+        public override void PreInitialize()
+        {
+            Configuration.DefaultNameOrConnectionString = "Default";
+        }
+
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());

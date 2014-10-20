@@ -1,7 +1,6 @@
 ﻿@using System.Web.Optimization
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +8,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="shortcut icon" href="~/favicon.ico">
-
     <title>MySpaProject</title>
+
+    <link rel="shortcut icon" href="~/favicon.ico">
 
     @Styles.Render("~/Bundles/App/vendor/css")
     @Styles.Render("~/Bundles/App/Main/css")
@@ -36,7 +35,6 @@
 
     @Scripts.Render("~/Bundles/App/Main/js")
 </head>
-
 <body>
     <div ng-app="app">
         <div ng-controller="app.views.layout as vm">
@@ -49,5 +47,4 @@
         </div>
     </div>
 </body>
-
 </html>

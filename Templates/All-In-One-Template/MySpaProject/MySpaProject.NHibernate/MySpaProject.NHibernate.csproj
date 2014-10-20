@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MySpaProject</RootNamespace>
-    <AssemblyName>MySpaProject.Infrastructure.NHibernate</AssemblyName>
+    <AssemblyName>MySpaProject.NHibernate</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

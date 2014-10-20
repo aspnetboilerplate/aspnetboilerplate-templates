@@ -12,6 +12,7 @@
         'abp'
     ]);
 
+    //Configuration for Angular UI routing.
     app.config([
         '$stateProvider', '$urlRouterProvider',
         function($stateProvider, $urlRouterProvider) {
