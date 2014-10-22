@@ -263,7 +263,6 @@
     <Content Include="Scripts\durandal\plugins\serializer.js" />
     <Content Include="Scripts\durandal\plugins\widget.js" />
     <Content Include="Scripts\durandal\system.js" />
-    <Content Include="Scripts\durandal\transitions\entrance.js" />
     <Content Include="App\Main\main.less" />
     <Content Include="App\Main\views\layout.cshtml" />
     <Content Include="App\Main\views\home.cshtml" />
@@ -287,6 +286,7 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\durandal\transitions\entrance.js" />
     <Content Include="Scripts\durandal\viewEngine.js" />
     <Content Include="Scripts\durandal\viewLocator.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
