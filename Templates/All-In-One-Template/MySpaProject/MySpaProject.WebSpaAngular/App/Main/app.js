@@ -26,7 +26,7 @@
                 .state('about', {
                     url: '/about',
                     templateUrl: '/App/Main/views/about/about.cshtml',
-                    menu: 'About' //Matches to name of 'Home' menu in MySpaProjectNavigationProvider
+                    menu: 'About' //Matches to name of 'About' menu in MySpaProjectNavigationProvider
                 });
         }
     ]);
