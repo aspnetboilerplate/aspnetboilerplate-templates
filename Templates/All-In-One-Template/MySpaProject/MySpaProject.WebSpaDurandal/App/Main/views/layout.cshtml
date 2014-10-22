@@ -17,9 +17,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="" data-toggle="dropdown"><i data-bind="css: currentLanguage.icon"></i> <span data-bind="text: currentLanguage.displayName"></span> <b class="caret"></b></a>
+                    <a href="" data-toggle="dropdown"><i class="{{currentLanguage.icon}}"></i> <span>{{currentLanguage.displayName}}</span> <b class="caret"></b></a>
                     <ul class="dropdown-menu" data-bind="foreach: languages">
-                        <li data-bind="visible: $parent.currentLanguage.name != name"><a data-bind="attr: { href: '/AbpLocalization/ChangeCulture?cultureName=' +  name }"><i data-bind="css: icon"></i> <span data-bind="text: displayName"></span></a></li>
+                        <li data-bind="visible: $parent.currentLanguage.name != name"><a href="{{'/AbpLocalization/ChangeCulture?cultureName=' +  name}}"><i class="{{icon}}"></i> {{displayName}}</a></li>
                     </ul>
                 </li>
             </ul>

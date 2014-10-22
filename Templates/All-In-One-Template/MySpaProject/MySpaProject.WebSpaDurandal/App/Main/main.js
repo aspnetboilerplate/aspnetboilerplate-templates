@@ -18,6 +18,8 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/vie
     function (system, app, viewLocator, viewEngine, activator, ko) {
         //system.debug(true); //TODO: remove in production code
 
+        ko.punches.enableAll();
+
         //TODO: Move to framework?
         viewEngine.convertViewIdToRequirePath = function (viewId) {
             return this.viewPlugin + '!/AbpAppView/Load?viewUrl=/App/Main/' + viewId + '.cshtml';
