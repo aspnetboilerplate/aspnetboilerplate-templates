@@ -1,43 +1,13 @@
 ﻿define(['plugins/router'],
     function (router) {
 
-        var languages = [
-            {
-                name: 'tr',
-                displayName: 'Türkçe',
-                iconClass: 'famfamfam-flag-tr'
-            },
-            {
-                name: 'en',
-                displayName: 'English',
-                iconClass: 'famfamfam-flag-england'
-            }
-        ];
-
         return new function () {
             var that = this;
 
             that.router = router;
 
-            that.getLanguageFlagClass = function (lang) {
-                for (var i = 0; i < languages.length; i++) {
-                    if (lang.indexOf(languages[i].name) == 0) {
-                        return languages[i].iconClass;
-                    }
-                }
-
-                return '';
-            };
-
-            that.getLanguageName = function (lang) {
-                for (var i = 0; i < languages.length; i++) {
-                    if (lang.indexOf(languages[i].name) == 0) {
-                        return languages[i].displayName;
-                    }
-                }
-
-                return '';
-            };
+            that.languages = abp.localization.languages;
+            that.currentLanguage = abp.localization.currentLanguage;
 
             that.activate = function () {
                 router.map([

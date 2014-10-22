@@ -17,10 +17,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="famfamfam-flag-tr" data-bind="css: getLanguageFlagClass(abp.localization.currentCulture.name)"></i> <span data-bind="text: getLanguageName(abp.localization.currentCulture.name)"></span> <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li data-bind="visible: !abp.localization.isCurrentCulture('tr')"><a href="/AbpLocalization/ChangeCulture?cultureName=tr"><i class="famfamfam-flag-tr"></i> Türkçe</a></li>
-                        <li data-bind="visible: !abp.localization.isCurrentCulture('en')"><a href="/AbpLocalization/ChangeCulture?cultureName=en"><i class="famfamfam-flag-england"></i> English</a></li>
+                    <a href="" data-toggle="dropdown"><i data-bind="css: currentLanguage.icon"></i> <span data-bind="text: currentLanguage.displayName"></span> <b class="caret"></b></a>
+                    <ul class="dropdown-menu" data-bind="foreach: languages">
+                        <li data-bind="visible: $parent.currentLanguage.name != name"><a data-bind="attr: { href: '/AbpLocalization/ChangeCulture?cultureName=' +  name }"><i data-bind="css: icon"></i> <span data-bind="text: displayName"></span></a></li>
                     </ul>
                 </li>
             </ul>
