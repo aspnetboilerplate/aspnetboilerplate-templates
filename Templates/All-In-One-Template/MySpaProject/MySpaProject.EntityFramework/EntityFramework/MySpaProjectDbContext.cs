@@ -1,6 +1,4 @@
-﻿using System.Data.Entity;
-using Abp.Domain.Entities;
-using Abp.EntityFramework;
+﻿using Abp.EntityFramework;
 
 namespace MySpaProject.EntityFramework
 {
@@ -8,7 +6,8 @@ namespace MySpaProject.EntityFramework
     {
         //TODO: Define an IDbSet for each Entity...
 
-        public virtual IDbSet<User> Users { get; set; } //Example
+        //Example:
+        //public virtual IDbSet<User> Users { get; set; }
 
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
@@ -31,10 +30,11 @@ namespace MySpaProject.EntityFramework
         }
     }
 
-    public class User : Entity
-    {
-        public string Name { get; set; }
+    //Example:
+    //public class User : Entity
+    //{
+    //    public string Name { get; set; }
 
-        public string Password { get; set; }
-    }
+    //    public string Password { get; set; }
+    //}
 }
