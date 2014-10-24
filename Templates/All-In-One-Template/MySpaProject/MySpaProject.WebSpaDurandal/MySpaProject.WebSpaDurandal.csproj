@@ -353,9 +353,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\Common\images\" />
-    <Folder Include="App\Common\scripts\" />
-    <Folder Include="App\Common\styles\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
