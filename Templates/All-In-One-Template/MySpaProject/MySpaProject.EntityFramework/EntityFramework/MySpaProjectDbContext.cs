@@ -25,6 +25,7 @@ namespace MySpaProject.EntityFramework
          *   Notice that, actually you will not directly create an instance of MySpaProjectDbContext since ABP automatically handles it.
          */
         public MySpaProjectDbContext(string nameOrConnectionString)
+            : base(nameOrConnectionString)
         {
 
         }

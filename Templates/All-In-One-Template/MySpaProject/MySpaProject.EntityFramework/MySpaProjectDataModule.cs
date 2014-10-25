@@ -1,6 +1,8 @@
-﻿using System.Reflection;
+﻿using System.Data.Entity;
+using System.Reflection;
 using Abp.EntityFramework;
 using Abp.Modules;
+using MySpaProject.EntityFramework;
 
 namespace MySpaProject
 {
@@ -15,6 +17,7 @@ namespace MySpaProject
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            Database.SetInitializer<MySpaProjectDbContext>(null);
         }
     }
 }
