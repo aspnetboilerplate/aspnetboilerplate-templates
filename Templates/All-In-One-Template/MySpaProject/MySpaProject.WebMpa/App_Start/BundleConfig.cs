@@ -42,6 +42,7 @@ namespace MySpaProject.WebMpa
 
                         "~/Scripts/bootstrap.min.js",
 
+                        "~/Scripts/moment-with-locales.min.js",
                         "~/Scripts/jquery.validate.min.js",
                         "~/Scripts/jquery.blockUI.min.js",
                         "~/Scripts/toastr.min.js",
