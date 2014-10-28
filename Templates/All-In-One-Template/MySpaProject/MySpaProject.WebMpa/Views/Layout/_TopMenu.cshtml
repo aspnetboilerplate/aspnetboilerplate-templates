@@ -1,7 +1,7 @@
 ﻿@model MySpaProject.WebMpa.Models.Layout.TopMenuViewModel
 @foreach (var menuItem in Model.MainMenu.Items)
 {
-    <li class="@(ViewBag.CurrentPage == menuItem.Name ? "active" : "")">
+    <li class="@(Model.ActiveMenuItemName == menuItem.Name ? "active" : "")">
         <a href="@menuItem.Url">
             @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
             {

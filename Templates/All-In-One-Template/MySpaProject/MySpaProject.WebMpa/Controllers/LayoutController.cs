@@ -17,11 +17,12 @@ namespace MySpaProject.WebMpa.Controllers
         }
 
         [ChildActionOnly]
-        public PartialViewResult TopMenu()
+        public PartialViewResult TopMenu(string activeMenu = "")
         {
             var model = new TopMenuViewModel
                         {
-                            MainMenu = _userNavigationManager.GetMenu("MainMenu", CurrentSession.UserId)
+                            MainMenu = _userNavigationManager.GetMenu("MainMenu", CurrentSession.UserId),
+                            ActiveMenuItemName = activeMenu
                         };
 
             return PartialView("_TopMenu", model);

@@ -7,7 +7,7 @@ namespace MySpaProject.WebMpa
     /// This class defines menus for the application.
     /// It uses ABP's menu system.
     /// When you add menu items here, they are automatically appear in angular application.
-    /// See .cshtml and .js files under App/Main/views/layout/header to know how to render menu.
+    /// See _TopMenu.cshtml file under Views/Shared/ to know how to render menu.
     /// </summary>
     public class MySpaProjectNavigationProvider : INavigationProvider
     {
