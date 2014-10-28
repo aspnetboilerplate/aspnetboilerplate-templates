@@ -6,12 +6,12 @@ namespace MySpaProject.WebSpaDurandal
     /// <summary>
     /// This class defines menus for the application.
     /// It uses ABP's menu system.
-    /// When you add menu items here, they are automatically appear in angular application.
-    /// See .cshtml and .js files under App/Main/views/layout/header to know how to render menu.
+    /// When you add menu items here, they are automatically appear in durandal application.
+    /// See App/Main/views/layout.cshtml and App/Main/viewmodels/layout.js to know how to render menu.
     /// </summary>
-    public class MySpaProjectNavigationProvider : INavigationProvider
+    public class MySpaProjectNavigationProvider : NavigationProvider
     {
-        public void SetNavigation(INavigationProviderContext context)
+        public override void SetNavigation(INavigationProviderContext context)
         {
             context.Manager.MainMenu
                 .AddItem(
