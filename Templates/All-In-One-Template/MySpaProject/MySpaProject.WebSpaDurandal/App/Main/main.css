@@ -1,4 +1,6 @@
 ﻿body {
   padding-top: 80px;
 }
-/*# sourceMappingURL=main.css.map */
+.durandal-animation-container {
+  position: relative;
+}
