@@ -18,6 +18,14 @@ namespace MySpaProject.WebMpa
             Configuration.Localization.Languages.Add(new LanguageInfo("en", "English", "famfamfam-flag-england", true));
             Configuration.Localization.Languages.Add(new LanguageInfo("tr", "Türkçe", "famfamfam-flag-tr"));
 
+            //Add/remove localization sources here
+            Configuration.Localization.Sources.Add(
+                new XmlLocalizationSource(
+                    MySpaProjectConsts.LocalizationSourceName,
+                    HttpContext.Current.Server.MapPath("~/Localization/MySpaProject")
+                    )
+                );
+
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<MySpaProjectNavigationProvider>();
         }
@@ -25,13 +33,6 @@ namespace MySpaProject.WebMpa
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
-
-            Configuration.Localization.Sources.Add(
-                new XmlLocalizationSource(
-                    MySpaProjectConsts.LocalizationSourceName,
-                    HttpContext.Current.Server.MapPath("~/Localization/MySpaProject")
-                    )
-                );
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
