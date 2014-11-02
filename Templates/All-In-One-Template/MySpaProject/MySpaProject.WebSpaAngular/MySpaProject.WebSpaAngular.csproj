@@ -40,21 +40,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp, Version=0.4.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.0.4.0.0\lib\net451\Abp.dll</HintPath>
+      <HintPath>..\packages\Abp.0.4.1.0\lib\net451\Abp.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Web, Version=0.4.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Web.0.4.0.0\lib\net451\Abp.Web.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.0.4.1.0\lib\net451\Abp.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Api, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Web.Api, Version=0.4.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Web.Api.0.4.0.0\lib\net451\Abp.Web.Api.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.Api.0.4.1.0\lib\net451\Abp.Web.Api.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Mvc, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Web.Mvc, Version=0.4.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Web.Mvc.0.4.0.0\lib\net451\Abp.Web.Mvc.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.Mvc.0.4.1.0\lib\net451\Abp.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
@@ -289,6 +289,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="App\Main\views\layout\header.cshtml" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Abp\Framework\styles\abp.less" />
+    <Content Include="Abp\Framework\styles\abp.css.map" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -300,13 +307,6 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
-    <Content Include="App\Main\views\layout\header.cshtml" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="Abp\Framework\styles\abp.less" />
-    <Content Include="Abp\Framework\styles\abp.css.map" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -459,8 +459,6 @@
     <Content Include="Scripts\i18n\angular-locale_en-cx.js" />
     <Content Include="Scripts\i18n\angular-locale_en-dg.js" />
     <Content Include="Scripts\i18n\angular-locale_en-dm.js" />
-    <Content Include="Scripts\i18n\angular-locale_en-dsrt-us.js" />
-    <Content Include="Scripts\i18n\angular-locale_en-dsrt.js" />
     <Content Include="Scripts\i18n\angular-locale_en-er.js" />
     <Content Include="Scripts\i18n\angular-locale_en-fj.js" />
     <Content Include="Scripts\i18n\angular-locale_en-fk.js" />
@@ -782,12 +780,10 @@
     <Content Include="Scripts\i18n\angular-locale_mn.js" />
     <Content Include="Scripts\i18n\angular-locale_mr-in.js" />
     <Content Include="Scripts\i18n\angular-locale_mr.js" />
-    <Content Include="Scripts\i18n\angular-locale_ms-bn.js" />
     <Content Include="Scripts\i18n\angular-locale_ms-latn-bn.js" />
     <Content Include="Scripts\i18n\angular-locale_ms-latn-my.js" />
     <Content Include="Scripts\i18n\angular-locale_ms-latn-sg.js" />
     <Content Include="Scripts\i18n\angular-locale_ms-latn.js" />
-    <Content Include="Scripts\i18n\angular-locale_ms-my.js" />
     <Content Include="Scripts\i18n\angular-locale_ms.js" />
     <Content Include="Scripts\i18n\angular-locale_mt-mt.js" />
     <Content Include="Scripts\i18n\angular-locale_mt.js" />
@@ -1081,8 +1077,8 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Scripts\version.json" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\version.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
