@@ -32,7 +32,7 @@ namespace MySpaProject.WebSpaAngular
                         "~/Scripts/modernizr-2.8.3.js",
                         
                         "~/Scripts/jquery-2.1.1.min.js",
-                        "~/Scripts/jquery-ui.min-1.11.1.js",
+                        "~/Scripts/jquery-ui-1.11.2.min.js",
 
                         "~/Scripts/bootstrap.min.js",
 
