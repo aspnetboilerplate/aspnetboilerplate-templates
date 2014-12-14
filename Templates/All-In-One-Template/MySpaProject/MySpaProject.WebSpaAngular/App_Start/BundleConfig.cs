@@ -37,7 +37,7 @@ namespace MySpaProject.WebSpaAngular
                         "~/Scripts/bootstrap.min.js",
 
                         "~/Scripts/moment-with-locales.min.js",
-                        "~/Scripts/jquery.blockUI.min.js",
+                        "~/Scripts/jquery.blockUI.js",
                         "~/Scripts/toastr.min.js",
                         "~/Scripts/others/spinjs/spin.js",
                         "~/Scripts/others/spinjs/jquery.spin.js",
