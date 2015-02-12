@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using Abp.Application.Navigation;
 using Abp.Localization;
+using Abp.Threading;
 using MySpaProject.WebMpa.Models.Layout;
 
 namespace MySpaProject.WebMpa.Controllers
@@ -21,7 +22,7 @@ namespace MySpaProject.WebMpa.Controllers
         {
             var model = new TopMenuViewModel
                         {
-                            MainMenu = _userNavigationManager.GetMenu("MainMenu", CurrentSession.UserId),
+                            MainMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("MainMenu", CurrentSession.UserId)),
                             ActiveMenuItemName = activeMenu
                         };
 
