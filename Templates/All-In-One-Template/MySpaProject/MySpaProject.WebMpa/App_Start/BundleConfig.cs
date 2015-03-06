@@ -17,6 +17,7 @@ namespace MySpaProject.WebMpa
                         "~/Content/themes/base/all.css",
                         "~/Content/bootstrap-cosmo.min.css",
                         "~/Content/toastr.min.css",
+                        "~/Scripts/sweetalert/sweet-alert.css",
                         "~/Content/flags/famfamfam-flags.css",
                         "~/Content/font-awesome.min.css"
                     )
@@ -46,6 +47,7 @@ namespace MySpaProject.WebMpa
                         "~/Scripts/jquery.validate.min.js",
                         "~/Scripts/jquery.blockUI.js",
                         "~/Scripts/toastr.min.js",
+                        "~/Scripts/sweetalert/sweet-alert.min.js",
                         "~/Scripts/others/spinjs/spin.js",
                         "~/Scripts/others/spinjs/jquery.spin.js",
 
