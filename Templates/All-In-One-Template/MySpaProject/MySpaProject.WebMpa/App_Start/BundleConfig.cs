@@ -38,8 +38,8 @@ namespace MySpaProject.WebMpa
                     .Include(
                         "~/Scripts/json2.min.js",
 
-                        "~/Scripts/jquery-2.1.1.min.js",
-                        "~/Scripts/jquery-ui-1.11.2.min.js",
+                        "~/Scripts/jquery-2.1.3.min.js",
+                        "~/Scripts/jquery-ui-1.11.4.min.js",
 
                         "~/Scripts/bootstrap.min.js",
 
