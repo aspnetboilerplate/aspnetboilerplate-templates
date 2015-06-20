@@ -1,6 +1,6 @@
 ﻿using Abp.Application.Navigation;
 
-namespace MySpaProject.WebMpa.Models.Layout
+namespace MyCompany.MySpaProject.WebMpa.Models.Layout
 {
     public class TopMenuViewModel
     {

@@ -1,6 +1,6 @@
 ﻿using Abp.EntityFramework;
 
-namespace MySpaProject.EntityFramework
+namespace MyCompany.MySpaProject.EntityFramework
 {
     public class MySpaProjectDbContext : AbpDbContext
     {

@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace MySpaProject.WebSpaDurandal.Controllers
+namespace MyCompany.MySpaProject.WebSpaDurandal.Controllers
 {
     public class HomeController : MySpaProjectControllerBase
     {

@@ -2,9 +2,9 @@
 using Abp.Application.Navigation;
 using Abp.Localization;
 using Abp.Threading;
-using MySpaProject.WebMpa.Models.Layout;
+using MyCompany.MySpaProject.WebMpa.Models.Layout;
 
-namespace MySpaProject.WebMpa.Controllers
+namespace MyCompany.MySpaProject.WebMpa.Controllers
 {
     public class LayoutController : MySpaProjectControllerBase
     {

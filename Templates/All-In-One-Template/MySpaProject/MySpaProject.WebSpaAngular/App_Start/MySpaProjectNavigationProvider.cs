@@ -1,7 +1,7 @@
 ﻿using Abp.Application.Navigation;
 using Abp.Localization;
 
-namespace MySpaProject.WebSpaAngular
+namespace MyCompany.MySpaProject.WebSpaAngular
 {
     /// <summary>
     /// This class defines menus for the application.

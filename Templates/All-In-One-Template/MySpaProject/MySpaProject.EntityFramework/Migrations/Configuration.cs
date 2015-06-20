@@ -1,10 +1,7 @@
-namespace MySpaProject.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+using System.Data.Entity.Migrations;
 
+namespace MyCompany.MySpaProject.Migrations
+{
     internal sealed class Configuration : DbMigrationsConfiguration<MySpaProject.EntityFramework.MySpaProjectDbContext>
     {
         public Configuration()

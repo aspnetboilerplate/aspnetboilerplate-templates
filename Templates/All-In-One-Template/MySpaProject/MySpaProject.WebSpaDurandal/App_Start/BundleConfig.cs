@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace MySpaProject.WebSpaDurandal
+namespace MyCompany.MySpaProject.WebSpaDurandal
 {
     public static class BundleConfig
     {

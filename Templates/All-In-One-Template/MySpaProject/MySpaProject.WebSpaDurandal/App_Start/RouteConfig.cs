@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace MySpaProject.WebSpaDurandal
+namespace MyCompany.MySpaProject.WebSpaDurandal
 {
     public class RouteConfig
     {

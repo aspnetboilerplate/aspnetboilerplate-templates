@@ -1,6 +1,6 @@
 ﻿using FluentMigrator.VersionTableInfo;
 
-namespace MySpaProject.DbMigrations
+namespace MyCompany.MySpaProject.DbMigrations
 {
     [VersionTableMetaData]
     public class VersionTable : DefaultVersionTableMetaData

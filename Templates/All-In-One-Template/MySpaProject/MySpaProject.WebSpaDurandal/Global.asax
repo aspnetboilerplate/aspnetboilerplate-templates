@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="MySpaProject.WebSpaDurandal.MvcApplication" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="MyCompany.MySpaProject.WebSpaDurandal.MvcApplication" Language="C#" %>

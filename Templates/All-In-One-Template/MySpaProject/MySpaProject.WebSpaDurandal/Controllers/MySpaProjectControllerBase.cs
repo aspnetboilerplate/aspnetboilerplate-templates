@@ -1,6 +1,6 @@
 ﻿using Abp.Web.Mvc.Controllers;
 
-namespace MySpaProject.WebSpaDurandal.Controllers
+namespace MyCompany.MySpaProject.WebSpaDurandal.Controllers
 {
     public abstract class MySpaProjectControllerBase : AbpController
     {

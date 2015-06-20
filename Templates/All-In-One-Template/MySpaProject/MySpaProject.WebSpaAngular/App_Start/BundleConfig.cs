@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace MySpaProject.WebSpaAngular
+namespace MyCompany.MySpaProject.WebSpaAngular
 {
     public static class BundleConfig
     {

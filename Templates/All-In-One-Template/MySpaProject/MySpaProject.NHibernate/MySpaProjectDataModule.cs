@@ -5,7 +5,7 @@ using Abp.Modules;
 using Abp.NHibernate;
 using FluentNHibernate.Cfg.Db;
 
-namespace MySpaProject
+namespace MyCompany.MySpaProject
 {
     [DependsOn(typeof(AbpNHibernateModule), typeof(MySpaProjectCoreModule))]
     public class MySpaProjectDataModule : AbpModule

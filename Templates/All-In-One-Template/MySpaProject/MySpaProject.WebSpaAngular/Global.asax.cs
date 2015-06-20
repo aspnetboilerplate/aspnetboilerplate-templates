@@ -3,7 +3,7 @@ using Abp.Dependency;
 using Abp.Web;
 using Castle.Facilities.Logging;
 
-namespace MySpaProject.WebSpaAngular
+namespace MyCompany.MySpaProject.WebSpaAngular
 {
     public class MvcApplication : AbpWebApplication
     {

@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace MySpaProject.WebSpaAngular
+namespace MyCompany.MySpaProject.WebSpaAngular
 {
     public static class RouteConfig
     {

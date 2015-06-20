@@ -2,7 +2,7 @@
 using Abp.EntityFramework;
 using Abp.EntityFramework.Repositories;
 
-namespace MySpaProject.EntityFramework.Repositories
+namespace MyCompany.MySpaProject.EntityFramework.Repositories
 {
     public abstract class MySpaProjectRepositoryBase<TEntity, TPrimaryKey> : EfRepositoryBase<MySpaProjectDbContext, TEntity, TPrimaryKey>
         where TEntity : class, IEntity<TPrimaryKey>

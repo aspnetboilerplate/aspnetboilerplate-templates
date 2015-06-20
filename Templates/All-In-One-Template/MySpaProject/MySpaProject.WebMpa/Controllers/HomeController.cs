@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace MySpaProject.WebMpa.Controllers
+namespace MyCompany.MySpaProject.WebMpa.Controllers
 {
     public class HomeController : MySpaProjectControllerBase
     {

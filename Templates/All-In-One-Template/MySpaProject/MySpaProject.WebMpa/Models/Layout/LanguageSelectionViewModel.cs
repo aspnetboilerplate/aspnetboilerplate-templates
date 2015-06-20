@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Abp.Localization;
 
-namespace MySpaProject.WebMpa.Models.Layout
+namespace MyCompany.MySpaProject.WebMpa.Models.Layout
 {
     public class LanguageSelectionViewModel
     {

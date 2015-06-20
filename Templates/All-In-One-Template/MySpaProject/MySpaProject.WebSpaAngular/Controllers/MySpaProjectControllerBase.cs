@@ -1,6 +1,6 @@
 ﻿using Abp.Web.Mvc.Controllers;
 
-namespace MySpaProject.WebSpaAngular.Controllers
+namespace MyCompany.MySpaProject.WebSpaAngular.Controllers
 {
     /// <summary>
     /// Derive all Controllers from this class.

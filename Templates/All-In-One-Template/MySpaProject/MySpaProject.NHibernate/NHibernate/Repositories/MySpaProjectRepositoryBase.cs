@@ -2,7 +2,7 @@
 using Abp.NHibernate;
 using Abp.NHibernate.Repositories;
 
-namespace MySpaProject.NHibernate.Repositories
+namespace MyCompany.MySpaProject.NHibernate.Repositories
 {
     /// <summary>
     /// Base class for all repositories in this application

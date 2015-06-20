@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MySpaProject.WebSpaAngular</RootNamespace>
-    <AssemblyName>MySpaProject.WebSpaAngular</AssemblyName>
+    <RootNamespace>MyCompany.MySpaProject.WebSpaAngular</RootNamespace>
+    <AssemblyName>MyCompany.MySpaProject.WebSpaAngular</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -1136,21 +1136,21 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MySpaProject.Application\MySpaProject.Application.csproj">
+    <ProjectReference Include="..\MySpaProject.Application\MyCompany.MySpaProject.Application.csproj">
       <Project>{EDF5D964-4C0F-4F19-B674-58A38A5E5401}</Project>
-      <Name>MySpaProject.Application</Name>
+      <Name>MyCompany.MySpaProject.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MySpaProject.Core\MySpaProject.Core.csproj">
+    <ProjectReference Include="..\MySpaProject.Core\MyCompany.MySpaProject.Core.csproj">
       <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
-      <Name>MySpaProject.Core</Name>
+      <Name>MyCompany.MySpaProject.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MySpaProject.EntityFramework\MySpaProject.EntityFramework.csproj">
+    <ProjectReference Include="..\MySpaProject.EntityFramework\MyCompany.MySpaProject.EntityFramework.csproj">
       <Project>{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}</Project>
-      <Name>MySpaProject.EntityFramework</Name>
+      <Name>MyCompany.MySpaProject.EntityFramework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MySpaProject.WebApi\MySpaProject.WebApi.csproj">
+    <ProjectReference Include="..\MySpaProject.WebApi\MyCompany.MySpaProject.WebApi.csproj">
       <Project>{5EB52D3D-09FD-463A-B02A-8D9856BD3724}</Project>
-      <Name>MySpaProject.WebApi</Name>
+      <Name>MyCompany.MySpaProject.WebApi</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

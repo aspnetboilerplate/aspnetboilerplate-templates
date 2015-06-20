@@ -1,6 +1,6 @@
 ﻿using Abp.Application.Services;
 
-namespace MySpaProject
+namespace MyCompany.MySpaProject
 {
     /// <summary>
     /// Derive your application services from this class.

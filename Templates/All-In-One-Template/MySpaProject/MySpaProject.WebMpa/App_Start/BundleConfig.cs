@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace MySpaProject.WebMpa
+namespace MyCompany.MySpaProject.WebMpa
 {
     public static class BundleConfig
     {

@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace MySpaProject.WebMpa
+namespace MyCompany.MySpaProject.WebMpa
 {
     public class RouteConfig
     {

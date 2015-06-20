@@ -7,7 +7,7 @@ using Abp.Localization;
 using Abp.Localization.Sources.Xml;
 using Abp.Modules;
 
-namespace MySpaProject.WebSpaAngular
+namespace MyCompany.MySpaProject.WebSpaAngular
 {
     [DependsOn(typeof(MySpaProjectDataModule), typeof(MySpaProjectApplicationModule), typeof(MySpaProjectWebApiModule))]
     public class MySpaProjectWebModule : AbpModule

@@ -1,6 +1,6 @@
 ﻿using Abp.Web.Mvc.Views;
 
-namespace MySpaProject.WebMpa.Views
+namespace MyCompany.MySpaProject.WebMpa.Views
 {
     public abstract class MySpaProjectWebViewPageBase : MySpaProjectWebViewPageBase<dynamic>
     {

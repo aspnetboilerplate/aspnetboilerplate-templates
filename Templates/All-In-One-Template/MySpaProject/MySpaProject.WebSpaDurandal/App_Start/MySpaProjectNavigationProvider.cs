@@ -1,7 +1,7 @@
 ﻿using Abp.Application.Navigation;
 using Abp.Localization;
 
-namespace MySpaProject.WebSpaDurandal
+namespace MyCompany.MySpaProject.WebSpaDurandal
 {
     /// <summary>
     /// This class defines menus for the application.

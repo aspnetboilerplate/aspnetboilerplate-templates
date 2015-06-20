@@ -2,9 +2,9 @@
 using System.Reflection;
 using Abp.EntityFramework;
 using Abp.Modules;
-using MySpaProject.EntityFramework;
+using MyCompany.MySpaProject.EntityFramework;
 
-namespace MySpaProject
+namespace MyCompany.MySpaProject
 {
     [DependsOn(typeof(AbpEntityFrameworkModule), typeof(MySpaProjectCoreModule))]
     public class MySpaProjectDataModule : AbpModule

@@ -1,4 +1,4 @@
-﻿namespace MySpaProject
+﻿namespace MyCompany.MySpaProject
 {
     public class MySpaProjectConsts
     {

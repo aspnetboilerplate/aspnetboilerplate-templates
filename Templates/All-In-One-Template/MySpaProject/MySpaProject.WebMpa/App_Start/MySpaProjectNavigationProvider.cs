@@ -1,7 +1,7 @@
 ﻿using Abp.Application.Navigation;
 using Abp.Localization;
 
-namespace MySpaProject.WebMpa
+namespace MyCompany.MySpaProject.WebMpa
 {
     /// <summary>
     /// This class defines menus for the application.

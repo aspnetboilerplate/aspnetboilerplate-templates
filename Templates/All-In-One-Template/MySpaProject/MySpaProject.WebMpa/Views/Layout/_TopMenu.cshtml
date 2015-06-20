@@ -1,5 +1,5 @@
 ﻿@using Abp.Collections.Extensions
-@model MySpaProject.WebMpa.Models.Layout.TopMenuViewModel
+@model MyCompany.MySpaProject.WebMpa.Models.Layout.TopMenuViewModel
 @foreach (var menuItem in Model.MainMenu.Items)
 {
     <li class="@(Model.ActiveMenuItemName == menuItem.Name ? "active" : "")">

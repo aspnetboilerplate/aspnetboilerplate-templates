@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Abp.Modules;
 
-namespace MySpaProject
+namespace MyCompany.MySpaProject
 {
     [DependsOn(typeof(MySpaProjectCoreModule))]
     public class MySpaProjectApplicationModule : AbpModule
