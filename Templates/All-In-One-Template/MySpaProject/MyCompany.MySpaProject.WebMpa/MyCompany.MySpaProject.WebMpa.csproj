@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E3DBB7F7-406D-4AE6-AD0A-59BF69DF536F}</ProjectGuid>
+    <ProjectGuid>{404A6D3B-AA85-4E4C-AEEE-1E5026D5F135}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyCompany.MySpaProject.WebSpaDurandal</RootNamespace>
-    <AssemblyName>MyCompany.MySpaProject.WebSpaDurandal</AssemblyName>
+    <RootNamespace>MyCompany.MySpaProject.WebMpa</RootNamespace>
+    <AssemblyName>MyCompany.MySpaProject.WebMpa</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -165,9 +165,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="System.Web.WebPages.Deployment">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -198,30 +198,12 @@
     <Content Include="Abp\Framework\styles\abp.css" />
     <Content Include="Abp\Framework\styles\abp.min.css" />
     <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
-    <Content Include="App\Main\images\abp-logo.png" />
-    <Content Include="App\Main\main.css">
-      <DependentUpon>main.less</DependentUpon>
-    </Content>
-    <Content Include="App\Main\main.min.css">
-      <DependentUpon>main.css</DependentUpon>
-    </Content>
-    <Content Include="App\Main\main.js" />
-    <Content Include="App\Main\viewmodels\layout.js" />
-    <Content Include="App\Main\viewmodels\home.js" />
-    <Content Include="App\Main\viewmodels\about.js" />
-    <Content Include="Content\bootstrap-cosmo.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\durandal.css" />
-    <Content Include="Content\flags\famfamfam-flags.css" />
-    <Content Include="Content\flags\famfamfam-flags.png" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\images\icon.png" />
-    <Content Include="Content\images\ios-startup-image-landscape.png" />
-    <Content Include="Content\images\ios-startup-image-portrait.png" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -257,45 +239,38 @@
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
-    <Content Include="favicon.ico" />
-    <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Global.asax" />
-    <Content Include="Icon.png" />
-    <Content Include="Localization\MySpaProject\MySpaProject.tr.xml" />
-    <Content Include="Localization\MySpaProject\MySpaProject.xml" />
-    <Content Include="Scripts\almond-custom.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\durandal\activator.js" />
-    <Content Include="Scripts\durandal\app.js" />
-    <Content Include="Scripts\durandal\binder.js" />
-    <Content Include="Scripts\durandal\composition.js" />
-    <Content Include="Scripts\durandal\events.js" />
-    <Content Include="Scripts\durandal\plugins\dialog.js" />
-    <Content Include="Scripts\durandal\plugins\history.js" />
-    <Content Include="Scripts\durandal\plugins\http.js" />
-    <Content Include="Scripts\durandal\plugins\observable.js" />
-    <Content Include="Scripts\durandal\plugins\router.js" />
-    <Content Include="Scripts\durandal\plugins\serializer.js" />
-    <Content Include="Scripts\durandal\plugins\widget.js" />
-    <Content Include="Scripts\durandal\system.js" />
-    <Content Include="App\Main\main.less" />
-    <Content Include="App\Main\views\layout.cshtml" />
-    <Content Include="App\Main\views\home.cshtml" />
-    <Content Include="App\Main\web.config" />
-    <Content Include="App\Main\main.css.map">
+    <Content Include="css\main.css">
+      <DependentUpon>main.less</DependentUpon>
+    </Content>
+    <Content Include="css\main.min.css">
       <DependentUpon>main.css</DependentUpon>
     </Content>
-    <Content Include="App\Main\views\about.cshtml" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Icon.png" />
+    <Content Include="images\abp-logo.png" />
+    <Content Include="Content\bootstrap-cosmo.min.css" />
+    <Content Include="Content\flags\famfamfam-flags.css" />
+    <Content Include="Content\flags\famfamfam-flags.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="js\main.js" />
+    <Content Include="Localization\MySpaProject\MySpaProject-zh-CN.xml" />
+    <Content Include="Localization\MySpaProject\MySpaProject.tr.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Localization\MySpaProject\MySpaProject.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="css\main.less" />
+    <Content Include="css\main.css.map">
+      <DependentUpon>main.css</DependentUpon>
+    </Content>
     <Content Include="log4net.config" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="Scripts\durandal\transitions\entrance.js" />
-    <Content Include="Scripts\durandal\viewEngine.js" />
-    <Content Include="Scripts\durandal\viewLocator.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -306,6 +281,8 @@
     <Content Include="Content\toastr.less" />
     <Content Include="Abp\Framework\styles\abp.less" />
     <Content Include="Abp\Framework\styles\abp.css.map" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
@@ -318,10 +295,6 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\knockout-3.3.0.debug.js" />
-    <Content Include="Scripts\knockout-3.3.0.js" />
-    <Content Include="Scripts\knockout.punches.js" />
-    <Content Include="Scripts\knockout.punches.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\moment-with-locales.js" />
     <Content Include="Scripts\moment-with-locales.min.js" />
@@ -335,41 +308,42 @@
     <Content Include="Scripts\others\spinjs\spin.js" />
     <Content Include="Scripts\json2.js" />
     <Content Include="Scripts\json2.min.js" />
-    <Content Include="Scripts\knockout.mapping-latest.debug.js" />
-    <Content Include="Scripts\knockout.mapping-latest.js" />
-    <Content Include="Scripts\r.js" />
-    <Content Include="Scripts\require.js" />
     <Content Include="Scripts\sweetalert\ie9.css" />
     <Content Include="Scripts\sweetalert\sweet-alert.css" />
     <Content Include="Scripts\sweetalert\sweet-alert.html" />
     <Content Include="Scripts\sweetalert\sweet-alert.js" />
     <Content Include="Scripts\sweetalert\sweet-alert.min.js" />
-    <Content Include="Scripts\text.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="App\Main\shell.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\MySpaProjectNavigationProvider.cs" />
     <Compile Include="App_Start\MySpaProjectWebModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\Layout\LanguageSelectionViewModel.cs" />
+    <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="Controllers\MySpaProjectControllerBase.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Layout\TopMenuViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\MySpaProjectWebViewPageBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="packages.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="packages.config" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Shared\_TopBar.cshtml" />
+    <Content Include="Views\Layout\_LanguageSelection.cshtml" />
+    <Content Include="Views\Layout\_TopMenu.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Scripts\sweetalert\sweet-alert.scss" />
     <None Include="Web.Debug.config">
@@ -380,22 +354,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MySpaProject.Application\MyCompany.MySpaProject.Application.csproj">
-      <Project>{EDF5D964-4C0F-4F19-B674-58A38A5E5401}</Project>
+    <ProjectReference Include="..\MyCompany.MySpaProject.Application\MyCompany.MySpaProject.Application.csproj">
+      <Project>{edf5d964-4c0f-4f19-b674-58a38a5e5401}</Project>
       <Name>MyCompany.MySpaProject.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MySpaProject.Core\MyCompany.MySpaProject.Core.csproj">
+    <ProjectReference Include="..\MyCompany.MySpaProject.Core\MyCompany.MySpaProject.Core.csproj">
       <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
       <Name>MyCompany.MySpaProject.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MySpaProject.EntityFramework\MyCompany.MySpaProject.EntityFramework.csproj">
-      <Project>{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}</Project>
+    <ProjectReference Include="..\MyCompany.MySpaProject.EntityFramework\MyCompany.MySpaProject.EntityFramework.csproj">
+      <Project>{3979f157-deb0-4878-ab1d-4cef6b5a1300}</Project>
       <Name>MyCompany.MySpaProject.EntityFramework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MySpaProject.WebApi\MyCompany.MySpaProject.WebApi.csproj">
+    <ProjectReference Include="..\MyCompany.MySpaProject.WebApi\MyCompany.MySpaProject.WebApi.csproj">
       <Project>{5eb52d3d-09fd-463a-b02a-8d9856bd3724}</Project>
       <Name>MyCompany.MySpaProject.WebApi</Name>
     </ProjectReference>
@@ -415,7 +386,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>61814</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:61791/</IISUrl>
+          <IISUrl>http://localhost:61754/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

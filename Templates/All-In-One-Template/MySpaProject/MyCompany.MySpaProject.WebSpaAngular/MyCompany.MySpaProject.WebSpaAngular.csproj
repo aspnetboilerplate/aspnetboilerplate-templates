@@ -1136,20 +1136,20 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MySpaProject.Application\MyCompany.MySpaProject.Application.csproj">
-      <Project>{EDF5D964-4C0F-4F19-B674-58A38A5E5401}</Project>
+    <ProjectReference Include="..\MyCompany.MySpaProject.Application\MyCompany.MySpaProject.Application.csproj">
+      <Project>{edf5d964-4c0f-4f19-b674-58a38a5e5401}</Project>
       <Name>MyCompany.MySpaProject.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MySpaProject.Core\MyCompany.MySpaProject.Core.csproj">
+    <ProjectReference Include="..\MyCompany.MySpaProject.Core\MyCompany.MySpaProject.Core.csproj">
       <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
       <Name>MyCompany.MySpaProject.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MySpaProject.EntityFramework\MyCompany.MySpaProject.EntityFramework.csproj">
-      <Project>{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}</Project>
+    <ProjectReference Include="..\MyCompany.MySpaProject.EntityFramework\MyCompany.MySpaProject.EntityFramework.csproj">
+      <Project>{3979f157-deb0-4878-ab1d-4cef6b5a1300}</Project>
       <Name>MyCompany.MySpaProject.EntityFramework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MySpaProject.WebApi\MyCompany.MySpaProject.WebApi.csproj">
-      <Project>{5EB52D3D-09FD-463A-B02A-8D9856BD3724}</Project>
+    <ProjectReference Include="..\MyCompany.MySpaProject.WebApi\MyCompany.MySpaProject.WebApi.csproj">
+      <Project>{5eb52d3d-09fd-463a-b02a-8d9856bd3724}</Project>
       <Name>MyCompany.MySpaProject.WebApi</Name>
     </ProjectReference>
   </ItemGroup>
