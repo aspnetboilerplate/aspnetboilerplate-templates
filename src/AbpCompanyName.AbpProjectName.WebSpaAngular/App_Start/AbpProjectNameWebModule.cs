@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Abp.Localization;
+using Abp.Localization.Sources;
 using Abp.Localization.Sources.Xml;
 using Abp.Modules;
 
@@ -21,9 +22,11 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
 
             //Add/remove localization sources here
             Configuration.Localization.Sources.Add(
-                new XmlLocalizationSource(
+                new DictionaryBasedLocalizationSource(
                     AbpProjectNameConsts.LocalizationSourceName,
-                    HttpContext.Current.Server.MapPath("~/Localization/AbpProjectName")
+                    new XmlFileLocalizationDictionaryProvider(
+                        HttpContext.Current.Server.MapPath("~/Localization/AbpProjectName")
+                        )
                     )
                 );
 
