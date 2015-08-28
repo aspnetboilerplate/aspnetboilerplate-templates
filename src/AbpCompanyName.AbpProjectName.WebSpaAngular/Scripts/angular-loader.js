@@ -1,11 +1,10 @@
 /**
- * @license AngularJS v1.4.4
+ * @license AngularJS v1.4.0
  * (c) 2010-2015 Google, Inc. http://angularjs.org
  * License: MIT
  */
 
 (function() {'use strict';
-    function isFunction(value) {return typeof value === 'function';};
 
 /**
  * @description
@@ -59,7 +58,7 @@ function minErr(module, ErrorConstructor) {
       return match;
     });
 
-    message += '\nhttp://errors.angularjs.org/1.4.4/' +
+    message += '\nhttp://errors.angularjs.org/1.4.0/' +
       (module ? module + '/' : '') + code;
 
     for (i = SKIP_INDEXES, paramPrefix = '?'; i < templateArgs.length; i++, paramPrefix = '&') {
@@ -109,8 +108,8 @@ function setupModuleLoader(window) {
      * All modules (angular core or 3rd party) that should be available to an application must be
      * registered using this mechanism.
      *
-     * Passing one argument retrieves an existing {@link angular.Module},
-     * whereas passing more than one argument creates a new {@link angular.Module}
+     * When passed two or more arguments, a new module is created.  If passed only one argument, an
+     * existing module (the name passed as the first argument to `module`) is retrieved.
      *
      *
      * # Module
@@ -217,7 +216,7 @@ function setupModuleLoader(window) {
            * @description
            * See {@link auto.$provide#provider $provide.provider()}.
            */
-          provider: invokeLaterAndSetModuleName('$provide', 'provider'),
+          provider: invokeLater('$provide', 'provider'),
 
           /**
            * @ngdoc method
@@ -228,7 +227,7 @@ function setupModuleLoader(window) {
            * @description
            * See {@link auto.$provide#factory $provide.factory()}.
            */
-          factory: invokeLaterAndSetModuleName('$provide', 'factory'),
+          factory: invokeLater('$provide', 'factory'),
 
           /**
            * @ngdoc method
@@ -239,7 +238,7 @@ function setupModuleLoader(window) {
            * @description
            * See {@link auto.$provide#service $provide.service()}.
            */
-          service: invokeLaterAndSetModuleName('$provide', 'service'),
+          service: invokeLater('$provide', 'service'),
 
           /**
            * @ngdoc method
@@ -274,7 +273,7 @@ function setupModuleLoader(window) {
            * @description
            * See {@link auto.$provide#decorator $provide.decorator()}.
            */
-          decorator: invokeLaterAndSetModuleName('$provide', 'decorator'),
+          decorator: invokeLater('$provide', 'decorator'),
 
           /**
            * @ngdoc method
@@ -308,7 +307,7 @@ function setupModuleLoader(window) {
            * See {@link ng.$animateProvider#register $animateProvider.register()} and
            * {@link ngAnimate ngAnimate module} for more information.
            */
-          animation: invokeLaterAndSetModuleName('$animateProvider', 'register'),
+          animation: invokeLater('$animateProvider', 'register'),
 
           /**
            * @ngdoc method
@@ -326,7 +325,7 @@ function setupModuleLoader(window) {
            * (`myapp_subsection_filterx`).
            * </div>
            */
-          filter: invokeLaterAndSetModuleName('$filterProvider', 'register'),
+          filter: invokeLater('$filterProvider', 'register'),
 
           /**
            * @ngdoc method
@@ -338,7 +337,7 @@ function setupModuleLoader(window) {
            * @description
            * See {@link ng.$controllerProvider#register $controllerProvider.register()}.
            */
-          controller: invokeLaterAndSetModuleName('$controllerProvider', 'register'),
+          controller: invokeLater('$controllerProvider', 'register'),
 
           /**
            * @ngdoc method
@@ -351,7 +350,7 @@ function setupModuleLoader(window) {
            * @description
            * See {@link ng.$compileProvider#directive $compileProvider.directive()}.
            */
-          directive: invokeLaterAndSetModuleName('$compileProvider', 'directive'),
+          directive: invokeLater('$compileProvider', 'directive'),
 
           /**
            * @ngdoc method
@@ -398,19 +397,6 @@ function setupModuleLoader(window) {
           if (!queue) queue = invokeQueue;
           return function() {
             queue[insertMethod || 'push']([provider, method, arguments]);
-            return moduleInstance;
-          };
-        }
-
-        /**
-         * @param {string} provider
-         * @param {string} method
-         * @returns {angular.Module}
-         */
-        function invokeLaterAndSetModuleName(provider, method) {
-          return function(recipeName, factoryFunction) {
-            if (factoryFunction && isFunction(factoryFunction)) factoryFunction.$$moduleName = name;
-            invokeQueue.push([provider, method, arguments]);
             return moduleInstance;
           };
         }

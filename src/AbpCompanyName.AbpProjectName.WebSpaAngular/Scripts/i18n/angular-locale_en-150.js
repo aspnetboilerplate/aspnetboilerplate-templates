@@ -22,8 +22,8 @@ function getVF(n, opt_precision) {
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
-      "AM",
-      "PM"
+      "am",
+      "pm"
     ],
     "DAY": [
       "Sunday",
@@ -84,14 +84,14 @@ $provide.value("$locale", {
       5,
       6
     ],
-    "fullDate": "EEEE, d MMMM y",
-    "longDate": "d MMMM y",
-    "medium": "dd MMM y h:mm:ss a",
+    "fullDate": "EEEE d MMMM y",
+    "longDate": "d MMM y",
+    "medium": "dd MMM y HH:mm:ss",
     "mediumDate": "dd MMM y",
-    "mediumTime": "h:mm:ss a",
-    "short": "dd/MM/yy h:mm a",
+    "mediumTime": "HH:mm:ss",
+    "short": "dd/MM/yy HH:mm",
     "shortDate": "dd/MM/yy",
-    "shortTime": "h:mm a"
+    "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "$",

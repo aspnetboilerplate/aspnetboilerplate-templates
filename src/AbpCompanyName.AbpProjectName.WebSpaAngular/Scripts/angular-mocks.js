@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.4.4
+ * @license AngularJS v1.4.0
  * (c) 2010-2015 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -762,26 +762,24 @@ angular.mock.animate = angular.module('ngAnimateMock', ['ng'])
 
   .config(['$provide', function($provide) {
 
-    $provide.factory('$$forceReflow', function() {
-      function reflowFn() {
-        reflowFn.totalReflows++;
-      }
-      reflowFn.totalReflows = 0;
-      return reflowFn;
+    var reflowQueue = [];
+    $provide.value('$$animateReflow', function(fn) {
+      var index = reflowQueue.length;
+      reflowQueue.push(fn);
+      return function cancel() {
+        reflowQueue.splice(index, 1);
+      };
     });
 
-    $provide.decorator('$animate', ['$delegate', '$timeout', '$browser', '$$rAF', '$$forceReflow',
-                            function($delegate,   $timeout,   $browser,   $$rAF,   $$forceReflow) {
-
+    $provide.decorator('$animate', ['$delegate', '$$asyncCallback', '$timeout', '$browser', '$$rAF',
+                            function($delegate,   $$asyncCallback,   $timeout,   $browser,   $$rAF) {
       var animate = {
         queue: [],
         cancel: $delegate.cancel,
-        get reflows() {
-          return $$forceReflow.totalReflows;
-        },
         enabled: $delegate.enabled,
         triggerCallbackEvents: function() {
           $$rAF.flush();
+          $$asyncCallback.flush();
         },
         triggerCallbackPromise: function() {
           $timeout.flush(0);
@@ -789,6 +787,12 @@ angular.mock.animate = angular.module('ngAnimateMock', ['ng'])
         triggerCallbacks: function() {
           this.triggerCallbackEvents();
           this.triggerCallbackPromise();
+        },
+        triggerReflow: function() {
+          angular.forEach(reflowQueue, function(fn) {
+            fn();
+          });
+          reflowQueue = [];
         }
       };
 
@@ -1086,7 +1090,7 @@ angular.mock.dump = function(object) {
          $httpBackend.flush();
 
          $httpBackend.expectPOST('/add-msg.py', undefined, function(headers) {
-           // check if the header was sent, if it wasn't the expectation won't
+           // check if the header was send, if it wasn't the expectation won't
            // match the request and the test will fail
            return headers['Authorization'] == 'xxx';
          }).respond(201, '');
@@ -1767,6 +1771,20 @@ angular.mock.$RAFDecorator = ['$delegate', function($delegate) {
   return rafFn;
 }];
 
+angular.mock.$AsyncCallbackDecorator = ['$delegate', function($delegate) {
+  var callbacks = [];
+  var addFn = function(fn) {
+    callbacks.push(fn);
+  };
+  addFn.flush = function() {
+    angular.forEach(callbacks, function(fn) {
+      fn();
+    });
+    callbacks = [];
+  };
+  return addFn;
+}];
+
 /**
  *
  */
@@ -1873,6 +1891,7 @@ angular.module('ngMock', ['ng']).provider({
 }).config(['$provide', function($provide) {
   $provide.decorator('$timeout', angular.mock.$TimeoutDecorator);
   $provide.decorator('$$rAF', angular.mock.$RAFDecorator);
+  $provide.decorator('$$asyncCallback', angular.mock.$AsyncCallbackDecorator);
   $provide.decorator('$rootScope', angular.mock.$RootScopeDecorator);
   $provide.decorator('$controller', angular.mock.$ControllerDecorator);
 }]);
