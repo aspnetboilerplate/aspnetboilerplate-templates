@@ -8,8 +8,8 @@
 
     abp.ng.http = {
         defaultError: {
-            message: 'Ajax request is not succeed!',
-            details: 'Error detail is not sent by server.'
+            message: 'Ajax request did not succeed!',
+            details: 'Error detail not sent by server.'
         },
 
         logError: function (error) {
@@ -56,7 +56,7 @@
                 if (originalData.targetUrl) {
                     abp.ng.http.handleTargetUrl(originalData.targetUrl);
                 }
-            } else { //data.success === false
+            } else if(originalData.success === false) {
                 var messagePromise = null;
 
                 if (originalData.error) {
@@ -116,7 +116,7 @@
 
                         abp.ng.http.logError(error);
 
-                        return $q.reject(error);
+                        return $q.reject(ngError);
                     }
 
                 };
