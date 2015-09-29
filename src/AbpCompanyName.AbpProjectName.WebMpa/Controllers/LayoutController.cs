@@ -22,7 +22,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
         {
             var model = new TopMenuViewModel
                         {
-                            MainMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("MainMenu", CurrentSession.UserId)),
+                            MainMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("MainMenu", AbpSession.UserId)),
                             ActiveMenuItemName = activeMenu
                         };
 
