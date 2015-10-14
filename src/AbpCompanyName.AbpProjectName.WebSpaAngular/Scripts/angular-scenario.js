@@ -9190,7 +9190,7 @@ return jQuery;
 }));
 
 /**
- * @license AngularJS v1.4.6
+ * @license AngularJS v1.4.7
  * (c) 2010-2015 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -9249,7 +9249,7 @@ function minErr(module, ErrorConstructor) {
       return match;
     });
 
-    message += '\nhttp://errors.angularjs.org/1.4.6/' +
+    message += '\nhttp://errors.angularjs.org/1.4.7/' +
       (module ? module + '/' : '') + code;
 
     for (i = SKIP_INDEXES, paramPrefix = '?'; i < templateArgs.length; i++, paramPrefix = '&') {
@@ -11533,6 +11533,7 @@ function toDebugString(obj) {
   $HttpParamSerializerProvider,
   $HttpParamSerializerJQLikeProvider,
   $HttpBackendProvider,
+  $xhrFactoryProvider,
   $LocationProvider,
   $LogProvider,
   $ParseProvider,
@@ -11570,11 +11571,11 @@ function toDebugString(obj) {
  * - `codeName` – `{string}` – Code name of the release, such as "jiggling-armfat".
  */
 var version = {
-  full: '1.4.6',    // all of these placeholder strings will be replaced by grunt's
+  full: '1.4.7',    // all of these placeholder strings will be replaced by grunt's
   major: 1,    // package task
   minor: 4,
-  dot: 6,
-  codeName: 'multiplicative-elevation'
+  dot: 7,
+  codeName: 'dark-luminescence'
 };
 
 
@@ -11691,6 +11692,7 @@ function publishExternalAPI(angular) {
         $httpParamSerializer: $HttpParamSerializerProvider,
         $httpParamSerializerJQLike: $HttpParamSerializerJQLikeProvider,
         $httpBackend: $HttpBackendProvider,
+        $xhrFactory: $xhrFactoryProvider,
         $location: $LocationProvider,
         $log: $LogProvider,
         $parse: $ParseProvider,
@@ -11865,10 +11867,10 @@ function camelCase(name) {
     replace(MOZ_HACK_REGEXP, 'Moz$1');
 }
 
-var SINGLE_TAG_REGEXP = /^<(\w+)\s*\/?>(?:<\/\1>|)$/;
+var SINGLE_TAG_REGEXP = /^<([\w-]+)\s*\/?>(?:<\/\1>|)$/;
 var HTML_REGEXP = /<|&#?\w+;/;
-var TAG_NAME_REGEXP = /<([\w:]+)/;
-var XHTML_TAG_REGEXP = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([\w:]+)[^>]*)\/>/gi;
+var TAG_NAME_REGEXP = /<([\w:-]+)/;
+var XHTML_TAG_REGEXP = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([\w:-]+)[^>]*)\/>/gi;
 
 var wrapMap = {
   'option': [1, '<select multiple="multiple">', '</select>'],
@@ -14600,6 +14602,13 @@ var $CoreAnimateCssProvider = function() {
     };
 
     return function(element, options) {
+      // there is no point in applying the styles since
+      // there is no animation that goes on at all in
+      // this version of $animateCss.
+      if (options.cleanupStyles) {
+        options.from = options.to = null;
+      }
+
       if (options.from) {
         element.css(options.from);
         options.from = null;
@@ -15067,10 +15076,10 @@ function $BrowserProvider() {
            $scope.keys = [];
            $scope.cache = $cacheFactory('cacheId');
            $scope.put = function(key, value) {
-             if (isUndefined($scope.cache.get(key))) {
+             if (angular.isUndefined($scope.cache.get(key))) {
                $scope.keys.push(key);
              }
-             $scope.cache.put(key, isUndefined(value) ? null : value);
+             $scope.cache.put(key, angular.isUndefined(value) ? null : value);
            };
          }]);
      </file>
@@ -17827,7 +17836,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
         compile: function() {
             return {
               pre: function attrInterpolatePreLinkFn(scope, element, attr) {
-                var $$observers = (attr.$$observers || (attr.$$observers = {}));
+                var $$observers = (attr.$$observers || (attr.$$observers = createMap()));
 
                 if (EVENT_HANDLER_ATTR_REGEXP.test(name)) {
                   throw $compileMinErr('nodomevents',
@@ -18879,28 +18888,18 @@ function $HttpProvider() {
      *
      *
      * ## General usage
-     * The `$http` service is a function which takes a single argument — a configuration object —
+     * The `$http` service is a function which takes a single argument — a {@link $http#usage configuration object} —
      * that is used to generate an HTTP request and returns  a {@link ng.$q promise}.
      *
      * ```js
-     *   // Simple GET request example :
-     *   $http.get('/someUrl').
-     *     then(function(response) {
+     *   // Simple GET request example:
+     *   $http({
+     *     method: 'GET',
+     *     url: '/someUrl'
+     *   }).then(function successCallback(response) {
      *       // this callback will be called asynchronously
      *       // when the response is available
-     *     }, function(response) {
-     *       // called asynchronously if an error occurs
-     *       // or server returns response with an error status.
-     *     });
-     * ```
-     *
-     * ```js
-     *   // Simple POST request example (passing data) :
-     *   $http.post('/someUrl', {msg:'hello word!'}).
-     *     then(function(response) {
-     *       // this callback will be called asynchronously
-     *       // when the response is available
-     *     }, function(response) {
+     *     }, function errorCallback(response) {
      *       // called asynchronously if an error occurs
      *       // or server returns response with an error status.
      *     });
@@ -18920,25 +18919,16 @@ function $HttpProvider() {
      * XMLHttpRequest will transparently follow it, meaning that the error callback will not be
      * called for such responses.
      *
-     * ## Writing Unit Tests that use $http
-     * When unit testing (using {@link ngMock ngMock}), it is necessary to call
-     * {@link ngMock.$httpBackend#flush $httpBackend.flush()} to flush each pending
-     * request using trained responses.
-     *
-     * ```
-     * $httpBackend.expectGET(...);
-     * $http.get(...);
-     * $httpBackend.flush();
-     * ```
      *
      * ## Shortcut methods
      *
      * Shortcut methods are also available. All shortcut methods require passing in the URL, and
-     * request data must be passed in for POST/PUT requests.
+     * request data must be passed in for POST/PUT requests. An optional config can be passed as the
+     * last argument.
      *
      * ```js
-     *   $http.get('/someUrl').then(successCallback);
-     *   $http.post('/someUrl', data).then(successCallback);
+     *   $http.get('/someUrl', config).then(successCallback, errorCallback);
+     *   $http.post('/someUrl', data, config).then(successCallback, errorCallback);
      * ```
      *
      * Complete list of shortcut methods:
@@ -18951,6 +18941,17 @@ function $HttpProvider() {
      * - {@link ng.$http#jsonp $http.jsonp}
      * - {@link ng.$http#patch $http.patch}
      *
+     *
+     * ## Writing Unit Tests that use $http
+     * When unit testing (using {@link ngMock ngMock}), it is necessary to call
+     * {@link ngMock.$httpBackend#flush $httpBackend.flush()} to flush each pending
+     * request using trained responses.
+     *
+     * ```
+     * $httpBackend.expectGET(...);
+     * $http.get(...);
+     * $httpBackend.flush();
+     * ```
      *
      * ## Deprecation Notice
      * <div class="alert alert-danger">
@@ -19109,7 +19110,7 @@ function $HttpProvider() {
      *
      * There are two kinds of interceptors (and two kinds of rejection interceptors):
      *
-     *   * `request`: interceptors get called with a http `config` object. The function is free to
+     *   * `request`: interceptors get called with a http {@link $http#usage config} object. The function is free to
      *     modify the `config` object or create a new one. The function needs to return the `config`
      *     object directly, or a promise containing the `config` or a new `config` object.
      *   * `requestError`: interceptor gets called when a previous interceptor threw an error or
@@ -19775,8 +19776,33 @@ function $HttpProvider() {
   }];
 }
 
-function createXhr() {
-    return new window.XMLHttpRequest();
+/**
+ * @ngdoc service
+ * @name $xhrFactory
+ *
+ * @description
+ * Factory function used to create XMLHttpRequest objects.
+ *
+ * Replace or decorate this service to create your own custom XMLHttpRequest objects.
+ *
+ * ```
+ * angular.module('myApp', [])
+ * .factory('$xhrFactory', function() {
+ *   return function createXhr(method, url) {
+ *     return new window.XMLHttpRequest({mozSystem: true});
+ *   };
+ * });
+ * ```
+ *
+ * @param {string} method HTTP method of the request (GET, POST, PUT, ..)
+ * @param {string} url URL of the request.
+ */
+function $xhrFactoryProvider() {
+  this.$get = function() {
+    return function createXhr() {
+      return new window.XMLHttpRequest();
+    };
+  };
 }
 
 /**
@@ -19784,6 +19810,7 @@ function createXhr() {
  * @name $httpBackend
  * @requires $window
  * @requires $document
+ * @requires $xhrFactory
  *
  * @description
  * HTTP backend used by the {@link ng.$http service} that delegates to
@@ -19796,8 +19823,8 @@ function createXhr() {
  * $httpBackend} which can be trained with responses.
  */
 function $HttpBackendProvider() {
-  this.$get = ['$browser', '$window', '$document', function($browser, $window, $document) {
-    return createHttpBackend($browser, createXhr, $browser.defer, $window.angular.callbacks, $document[0]);
+  this.$get = ['$browser', '$window', '$document', '$xhrFactory', function($browser, $window, $document, $xhrFactory) {
+    return createHttpBackend($browser, $xhrFactory, $browser.defer, $window.angular.callbacks, $document[0]);
   }];
 }
 
@@ -19821,7 +19848,7 @@ function createHttpBackend($browser, createXhr, $browserDefer, callbacks, rawDoc
       });
     } else {
 
-      var xhr = createXhr();
+      var xhr = createXhr(method, url);
 
       xhr.open(method, url, true);
       forEach(headers, function(value, key) {
@@ -21690,20 +21717,30 @@ var $parseMinErr = minErr('$parse');
 
 
 function ensureSafeMemberName(name, fullExpression) {
+  if (name === "__defineGetter__" || name === "__defineSetter__"
+      || name === "__lookupGetter__" || name === "__lookupSetter__"
+      || name === "__proto__") {
+    throw $parseMinErr('isecfld',
+        'Attempting to access a disallowed field in Angular expressions! '
+        + 'Expression: {0}', fullExpression);
+  }
+  return name;
+}
+
+function getStringValue(name, fullExpression) {
   // From the JavaScript docs:
   // Property names must be strings. This means that non-string objects cannot be used
   // as keys in an object. Any non-string object, including a number, is typecasted
   // into a string via the toString method.
   //
   // So, to ensure that we are checking the same `name` that JavaScript would use,
-  // we cast it to a string, if possible
-  name =  (isObject(name) && name.toString) ? name.toString() : name;
-
-  if (name === "__defineGetter__" || name === "__defineSetter__"
-      || name === "__lookupGetter__" || name === "__lookupSetter__"
-      || name === "__proto__") {
-    throw $parseMinErr('isecfld',
-        'Attempting to access a disallowed field in Angular expressions! '
+  // we cast it to a string, if possible.
+  // Doing `name + ''` can cause a repl error if the result to `toString` is not a string,
+  // this is, this will handle objects that misbehave.
+  name = name + '';
+  if (!isString(name)) {
+    throw $parseMinErr('iseccst',
+        'Cannot convert object to primitive value! '
         + 'Expression: {0}', fullExpression);
   }
   return name;
@@ -21750,6 +21787,16 @@ function ensureSafeFunction(obj, fullExpression) {
       throw $parseMinErr('isecff',
         'Referencing call, apply or bind in Angular expressions is disallowed! Expression: {0}',
         fullExpression);
+    }
+  }
+}
+
+function ensureSafeAssignContext(obj, fullExpression) {
+  if (obj) {
+    if (obj === (0).constructor || obj === (false).constructor || obj === ''.constructor ||
+        obj === {}.constructor || obj === [].constructor || obj === Function.constructor) {
+      throw $parseMinErr('isecaf',
+        'Assigning to a constructor is disallowed! Expression: {0}', fullExpression);
     }
   }
 }
@@ -22468,6 +22515,8 @@ ASTCompiler.prototype = {
         'ensureSafeMemberName',
         'ensureSafeObject',
         'ensureSafeFunction',
+        'getStringValue',
+        'ensureSafeAssignContext',
         'ifDefined',
         'plus',
         'text',
@@ -22476,6 +22525,8 @@ ASTCompiler.prototype = {
           ensureSafeMemberName,
           ensureSafeObject,
           ensureSafeFunction,
+          getStringValue,
+          ensureSafeAssignContext,
           ifDefined,
           plusFn,
           expression);
@@ -22619,6 +22670,7 @@ ASTCompiler.prototype = {
           if (ast.computed) {
             right = self.nextId();
             self.recurse(ast.property, right);
+            self.getStringValue(right);
             self.addEnsureSafeMemberName(right);
             if (create && create !== 1) {
               self.if_(self.not(self.computedMember(left, right)), self.lazyAssign(self.computedMember(left, right), '{}'));
@@ -22702,6 +22754,7 @@ ASTCompiler.prototype = {
         self.if_(self.notNull(left.context), function() {
           self.recurse(ast.right, right);
           self.addEnsureSafeObject(self.member(left.context, left.name, left.computed));
+          self.addEnsureSafeAssignContext(left.context);
           expression = self.member(left.context, left.name, left.computed) + ast.operator + right;
           self.assign(intoId, expression);
           recursionFn(intoId || expression);
@@ -22827,6 +22880,10 @@ ASTCompiler.prototype = {
     this.current().body.push(this.ensureSafeFunction(item), ';');
   },
 
+  addEnsureSafeAssignContext: function(item) {
+    this.current().body.push(this.ensureSafeAssignContext(item), ';');
+  },
+
   ensureSafeObject: function(item) {
     return 'ensureSafeObject(' + item + ',text)';
   },
@@ -22837,6 +22894,14 @@ ASTCompiler.prototype = {
 
   ensureSafeFunction: function(item) {
     return 'ensureSafeFunction(' + item + ',text)';
+  },
+
+  getStringValue: function(item) {
+    this.assign(item, 'getStringValue(' + item + ',text)');
+  },
+
+  ensureSafeAssignContext: function(item) {
+    return 'ensureSafeAssignContext(' + item + ',text)';
   },
 
   lazyRecurse: function(ast, intoId, nameId, recursionFn, create, skipWatchIdCheck) {
@@ -23016,6 +23081,7 @@ ASTInterpreter.prototype = {
         var lhs = left(scope, locals, assign, inputs);
         var rhs = right(scope, locals, assign, inputs);
         ensureSafeObject(lhs.value, self.expression);
+        ensureSafeAssignContext(lhs.context);
         lhs.context[lhs.name] = rhs;
         return context ? {value: rhs} : rhs;
       };
@@ -23213,6 +23279,7 @@ ASTInterpreter.prototype = {
       var value;
       if (lhs != null) {
         rhs = right(scope, locals, assign, inputs);
+        rhs = getStringValue(rhs);
         ensureSafeMemberName(rhs, expression);
         if (create && create !== 1 && lhs && !(lhs[rhs])) {
           lhs[rhs] = {};
@@ -27849,6 +27916,7 @@ function formatNumber(number, pattern, groupSep, decimalSep, fractionSize) {
     if (fractionSize > 0 && number < 1) {
       formatedText = number.toFixed(fractionSize);
       number = parseFloat(formatedText);
+      formatedText = formatedText.replace(DECIMAL_SEP, decimalSep);
     }
   }
 
@@ -33644,7 +33712,7 @@ var ngInitDirective = ngDirective({
  *   </file>
  * </example>
  *
- * ### Example - splitting on whitespace
+ * ### Example - splitting on newline
  * <example name="ngList-directive-newlines">
  *   <file name="index.html">
  *    <textarea ng-model="list" ng-list="&#10;" ng-trim="false"></textarea>
@@ -33729,7 +33797,9 @@ var ngModelMinErr = minErr('ngModel');
  * @ngdoc type
  * @name ngModel.NgModelController
  *
- * @property {string} $viewValue Actual string value in the view.
+ * @property {*} $viewValue The actual value from the control's view. For `input` elements, this is a
+ * String. See {@link ngModel.NgModelController#$setViewValue} for information about when the $viewValue
+ * is set.
  * @property {*} $modelValue The value in the model that the control is bound to.
  * @property {Array.<Function>} $parsers Array of functions to execute, as a pipeline, whenever
        the control reads value from the DOM. The functions are called in array order, each passing
@@ -35680,11 +35750,16 @@ var ngOptionsDirective = ['$compile', '$parse', function($compile, $parse) {
       function updateOptionElement(option, element) {
         option.element = element;
         element.disabled = option.disabled;
-        if (option.value !== element.value) element.value = option.selectValue;
+        // NOTE: The label must be set before the value, otherwise IE10/11/EDGE create unresponsive
+        // selects in certain circumstances when multiple selects are next to each other and display
+        // the option list in listbox style, i.e. the select is [multiple], or specifies a [size].
+        // See https://github.com/angular/angular.js/issues/11314 for more info.
+        // This is unfortunately untestable with unit / e2e tests
         if (option.label !== element.label) {
           element.label = option.label;
           element.textContent = option.label;
         }
+        if (option.value !== element.value) element.value = option.selectValue;
       }
 
       function addOrReuseElement(parent, current, type, templateElement) {
@@ -35725,7 +35800,10 @@ var ngOptionsDirective = ['$compile', '$parse', function($compile, $parse) {
         if (emptyOption_ || unknownOption_) {
           while (current &&
                 (current === emptyOption_ ||
-                current === unknownOption_)) {
+                current === unknownOption_ ||
+                emptyOption_ && emptyOption_.nodeType === NODE_TYPE_COMMENT)) {
+            // Empty options might have directives that transclude
+            // and insert comments (e.g. ngIf)
             current = current.nextSibling;
           }
         }
@@ -37473,7 +37551,7 @@ var SelectController =
  *     </select><br>
  *
  *     <label for="singleSelect"> Single select with "not selected" option and dynamic option values: </label><br>
- *     <select name="singleSelect" ng-model="data.singleSelect">
+ *     <select name="singleSelect" id="singleSelect" ng-model="data.singleSelect">
  *       <option value="">---Please select---</option> <!-- not selected / blank option -->
  *       <option value="{{data.option1}}">Option 1</option> <!-- interpolation -->
  *       <option value="option-2">Option 2</option>
@@ -37514,7 +37592,7 @@ var SelectController =
  * <div ng-controller="ExampleController">
  *   <form name="myForm">
  *     <label for="repeatSelect"> Repeat select: </label>
- *     <select name="repeatSelect" ng-model="data.repeatSelect">
+ *     <select name="repeatSelect" id="repeatSelect" ng-model="data.repeatSelect">
  *       <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
  *     </select>
  *   </form>
@@ -37526,7 +37604,7 @@ var SelectController =
  *  angular.module('ngrepeatSelect', [])
  *    .controller('ExampleController', ['$scope', function($scope) {
  *      $scope.data = {
- *       singleSelect: null,
+ *       repeatSelect: null,
  *       availableOptions: [
  *         {id: '1', name: 'Option A'},
  *         {id: '2', name: 'Option B'},
