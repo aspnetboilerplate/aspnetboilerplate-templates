@@ -59,6 +59,10 @@
     <script src="~/Abp/Framework/scripts/libs/abp.spin.js"></script>
     <script src="~/Abp/Framework/scripts/libs/abp.sweet-alert.js"></script>
 
+    <script>
+        abp.localization.defaultSourceName = '@LocalizationSourceName';
+    </script>
+
     <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
     <script src="~/api/AbpServiceProxies/GetAll"></script>
     <script src="~/AbpScripts/GetScripts" type="text/javascript"></script>
