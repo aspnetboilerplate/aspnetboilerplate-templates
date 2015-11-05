@@ -7,10 +7,15 @@ using Abp.Localization;
 using Abp.Localization.Dictionaries;
 using Abp.Localization.Dictionaries.Xml;
 using Abp.Modules;
+using Abp.Web.Mvc;
 
 namespace AbpCompanyName.AbpProjectName.WebMpa
 {
-    [DependsOn(typeof(AbpProjectNameDataModule), typeof(AbpProjectNameApplicationModule), typeof(AbpProjectNameWebApiModule))]
+    [DependsOn(
+        typeof(AbpWebMvcModule),
+        typeof(AbpProjectNameDataModule), 
+        typeof(AbpProjectNameApplicationModule), 
+        typeof(AbpProjectNameWebApiModule))]
     public class AbpProjectNameWebModule : AbpModule
     {
         public override void PreInitialize()
