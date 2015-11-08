@@ -10,7 +10,7 @@
         {
             if (language.Name != Model.CurrentLanguage.Name)
             {
-                <li><a href="/AbpLocalization/ChangeCulture?cultureName=@(language.Name)&returnUrl=@(Request.Url)"><i class="@language.Icon"></i> @language.DisplayName</a></li>
+                <li><a href="@Url.Action("ChangeCulture", "AbpLocalization")?cultureName=@(language.Name)&returnUrl=@(Request.Url)"><i class="@language.Icon"></i> @language.DisplayName</a></li>
             }
         }
     </ul>
