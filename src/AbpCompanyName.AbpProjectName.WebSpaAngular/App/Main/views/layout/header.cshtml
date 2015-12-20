@@ -16,7 +16,13 @@
                     <a ng-if="menuItem.items.length" href="" data-toggle="dropdown"><i class="{{menuItem.icon}}" ng-if="menuItem.icon"></i> {{menuItem.displayName}} </a>
                     <ul ng-if="menuItem.items.length" class="dropdown-menu">
                         <li ng-repeat="menuSubItem in menuItem.items">
-                            <a ng-href="{{menuSubItem.url}}"><i class="{{menuSubItem.icon}}" ng-if="menuSubItem.icon"></i> {{menuSubItem.displayName}}</a>
+                            <a ng-if="!menuSubItem.items.length" ng-href="{{menuSubItem.url}}"><i class="{{menuSubItem.icon}}" ng-if="menuSubItem.icon"></i> {{menuSubItem.displayName}}</a>
+                            <a ng-if="menuSubItem.items.length" href="" data-toggle="dropdown"><i class="{{menuSubItem.icon}}" ng-if="menuSubItem.icon"></i> {{menuSubItem.displayName}} </a>
+                            <ul ng-if="menuSubItem.items.length" class="dropdown-menu">
+                                <li ng-repeat="menuSubItem2 in menuSubItem.items">
+                                    <a ng-href="{{menuSubItem2.url}}"><i class="{{menuSubItem2.icon}}" ng-if="menuSubItem2.icon"></i> {{menuSubItem2.displayName}}</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
