@@ -50,7 +50,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaDurandal
                         "~/Scripts/others/spinjs/spin.js",
                         "~/Scripts/others/spinjs/jquery.spin.js",
 
-                        "~/Scripts/knockout-3.3.0.js",
+                        "~/Scripts/knockout-3.4.0.js",
                         "~/Scripts/knockout.mapping-latest.js",
                         "~/Scripts/knockout.punches.min.js",
 
