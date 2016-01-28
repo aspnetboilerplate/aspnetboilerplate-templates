@@ -1,5 +1,6 @@
 ﻿@using System.Threading
 @using System.Web.Optimization
+@using Abp.Timing
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +36,7 @@
 
     <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
     <script src="~/api/AbpServiceProxies/GetAll?type=angular"></script>
-    <script src="~/AbpScripts/GetScripts" type="text/javascript"></script>
+    <script src="~/AbpScripts/GetScripts?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
 
     @Scripts.Render("~/Bundles/App/Main/js")
 
