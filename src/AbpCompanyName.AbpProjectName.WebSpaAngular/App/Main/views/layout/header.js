@@ -13,6 +13,10 @@
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
                 vm.currentMenuName = toState.menu;
             });
+
+            abp.event.on('abp.notifications.received', function (userNotification) {
+                console.log(userNotification);
+            });
         }
     ]);
 })();
