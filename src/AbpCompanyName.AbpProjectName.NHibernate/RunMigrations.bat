@@ -1,2 +1,2 @@
-..\packages\FluentMigrator.1.6.1\tools\Migrate.exe /connection "Server=localhost; Database=AbpProjectNameDb; Trusted_Connection=True;" /db sqlserver /target "bin\Debug\AbpProjectName.Infrastructure.NHibernate.dll"
+..\packages\FluentMigrator.1.6.1\tools\Migrate.exe /connection "Server=localhost; Database=AbpProjectName; Trusted_Connection=True;" /db sqlserver /target "bin\Debug\AbpCompanyName.AbpProjectName.NHibernate.dll"
 pause
