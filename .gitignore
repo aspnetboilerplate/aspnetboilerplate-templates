@@ -109,3 +109,4 @@ UpgradeLog*.XML
 Templates/All-In-One-Template/MySpaProject/MySpaProject.WebMpa/Logs/Logs.txt
 /Templates/All-In-One-Template/MySpaProject/MySpaProject.WebSpaAngular/Logs/Logs.txt
 /Templates/All-In-One-Template/MySpaProject/MySpaProject.WebSpaDurandal/Logs/Logs.txt
+/src/.vs/config/applicationhost.config
