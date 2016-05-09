@@ -345,6 +345,7 @@
     <Compile Include="Models\Layout\TopMenuViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\AbpProjectNameWebViewPageBase.cs" />
+    <Compile Include="Views\UrlChecker.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

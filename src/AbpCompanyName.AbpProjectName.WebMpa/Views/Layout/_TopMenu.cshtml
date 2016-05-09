@@ -1,11 +1,28 @@
 ﻿@using Abp.Collections.Extensions
+@using AbpCompanyName.AbpProjectName.WebMpa.Views
 @model AbpCompanyName.AbpProjectName.WebMpa.Models.Layout.TopMenuViewModel
+@{
+    var calculateMenuUrl = new Func<string, string>((url) =>
+    {
+        if (string.IsNullOrEmpty(url))
+        {
+            return ApplicationPath;
+        }
+
+        if (UrlChecker.IsRooted(url))
+        {
+            return url;
+        }
+
+        return ApplicationPath + url;
+    });
+}
 @foreach (var menuItem in Model.MainMenu.Items)
 {
     <li class="@(Model.ActiveMenuItemName == menuItem.Name ? "active" : "")">
         @if (menuItem.Items.IsNullOrEmpty())
         {
-            <a href="@menuItem.Url">
+            <a href="@calculateMenuUrl(menuItem.Url)">
                 @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
                 {
                     <i class="@menuItem.Icon"></i>
@@ -26,7 +43,7 @@
                 @foreach (var subMenuItem in menuItem.Items)
                 {
                     <li>
-                        <a href="@subMenuItem.Url">
+                        <a href="@calculateMenuUrl(subMenuItem.Url)">
                             @if (!string.IsNullOrWhiteSpace(subMenuItem.Icon))
                             {
                                 <i class="@subMenuItem.Icon"></i>

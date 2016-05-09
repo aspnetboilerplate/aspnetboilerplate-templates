@@ -15,7 +15,7 @@
             });
 
             abp.event.on('abp.notifications.received', function (userNotification) {
-                console.log(userNotification);
+                abp.notifications.showUiNotifyForUserNotification(userNotification);
             });
         }
     ]);

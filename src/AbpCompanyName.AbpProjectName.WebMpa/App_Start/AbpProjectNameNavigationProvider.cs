@@ -18,14 +18,14 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                     new MenuItemDefinition(
                         "Home",
                         new LocalizableString("HomePage", AbpProjectNameConsts.LocalizationSourceName),
-                        url: "/",
+                        url: "",
                         icon: "fa fa-home"
                         )
                 ).AddItem(
                     new MenuItemDefinition(
                         "About",
                         new LocalizableString("About", AbpProjectNameConsts.LocalizationSourceName),
-                        url: "/About",
+                        url: "About",
                         icon: "fa fa-info"
                         )
                 );
