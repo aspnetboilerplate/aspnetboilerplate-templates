@@ -262,6 +262,7 @@
     <Content Include="Global.asax" />
     <Content Include="js\main.js" />
     <Content Include="Localization\AbpProjectName\AbpProjectName-zh-CN.xml" />
+    <Content Include="Localization\AbpProjectName\AbpProjectName.ja.xml" />
     <Content Include="Localization\AbpProjectName\AbpProjectName.tr.xml">
       <SubType>Designer</SubType>
     </Content>
