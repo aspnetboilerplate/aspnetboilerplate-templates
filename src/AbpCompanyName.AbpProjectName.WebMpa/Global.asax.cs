@@ -4,7 +4,7 @@ using Castle.Facilities.Logging;
 
 namespace AbpCompanyName.AbpProjectName.WebMpa
 {
-    public class MvcApplication : AbpWebApplication
+    public class MvcApplication : AbpWebApplication<AbpProjectNameWebModule>
     {
         protected override void Application_Start(object sender, EventArgs e)
         {
