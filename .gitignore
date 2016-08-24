@@ -110,3 +110,5 @@ Templates/All-In-One-Template/MySpaProject/MySpaProject.WebMpa/Logs/Logs.txt
 /Templates/All-In-One-Template/MySpaProject/MySpaProject.WebSpaAngular/Logs/Logs.txt
 /Templates/All-In-One-Template/MySpaProject/MySpaProject.WebSpaDurandal/Logs/Logs.txt
 /src/.vs/config/applicationhost.config
+/src/AbpCompanyName.AbpProjectName.WebSpaAngular/App_Data/Logs/Logs.txt
+/src/AbpCompanyName.AbpProjectName.WebMpa/App_Data/Logs/Logs.txt
