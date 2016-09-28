@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using Abp.Application.Services;
+using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.WebApi;
-using Abp.WebApi.Controllers.Dynamic.Builders;
 
 namespace AbpCompanyName.AbpProjectName
 {
@@ -13,7 +13,7 @@ namespace AbpCompanyName.AbpProjectName
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
-            DynamicApiControllerBuilder
+            Configuration.Modules.AbpWebApi().DynamicApiControllerBuilder
                 .ForAll<IApplicationService>(typeof(AbpProjectNameApplicationModule).Assembly, "app")
                 .Build();
         }

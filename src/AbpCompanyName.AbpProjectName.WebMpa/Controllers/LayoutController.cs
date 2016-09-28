@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using Abp.Application.Navigation;
 using Abp.Localization;
+using Abp.Runtime.Session;
 using Abp.Threading;
 using AbpCompanyName.AbpProjectName.WebMpa.Models.Layout;
 
@@ -9,12 +10,15 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
     public class LayoutController : AbpProjectNameControllerBase
     {
         private readonly IUserNavigationManager _userNavigationManager;
-        private readonly ILocalizationManager _localizationManager;
+        private readonly ILanguageManager _languageManager;
 
-        public LayoutController(IUserNavigationManager userNavigationManager, ILocalizationManager localizationManager)
+        public LayoutController(
+            IUserNavigationManager userNavigationManager, 
+            ILocalizationManager localizationManager,
+            ILanguageManager languageManager)
         {
             _userNavigationManager = userNavigationManager;
-            _localizationManager = localizationManager;
+            _languageManager = languageManager;
         }
 
         [ChildActionOnly]
@@ -22,7 +26,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
         {
             var model = new TopMenuViewModel
                         {
-                            MainMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("MainMenu", AbpSession.UserId)),
+                            MainMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("MainMenu", AbpSession.ToUserIdentifier())),
                             ActiveMenuItemName = activeMenu
                         };
 
@@ -34,8 +38,8 @@ namespace AbpCompanyName.AbpProjectName.WebMpa.Controllers
         {
             var model = new LanguageSelectionViewModel
                         {
-                            CurrentLanguage = _localizationManager.CurrentLanguage,
-                            Languages = _localizationManager.GetAllLanguages()
+                            CurrentLanguage = _languageManager.CurrentLanguage,
+                            Languages = _languageManager.GetLanguages()
                         };
 
             return PartialView("_LanguageSelection", model);
