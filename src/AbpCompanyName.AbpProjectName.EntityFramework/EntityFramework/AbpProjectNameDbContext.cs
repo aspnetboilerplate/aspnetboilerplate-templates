@@ -1,4 +1,5 @@
-﻿using Abp.EntityFramework;
+﻿using System.Data.Common;
+using Abp.EntityFramework;
 
 namespace AbpCompanyName.AbpProjectName.EntityFramework
 {
@@ -26,6 +27,19 @@ namespace AbpCompanyName.AbpProjectName.EntityFramework
          */
         public AbpProjectNameDbContext(string nameOrConnectionString)
             : base(nameOrConnectionString)
+        {
+
+        }
+
+        //This constructor is used in tests
+        public AbpProjectNameDbContext(DbConnection existingConnection)
+         : base(existingConnection, false)
+        {
+
+        }
+
+        public AbpProjectNameDbContext(DbConnection existingConnection, bool contextOwnsConnection)
+         : base(existingConnection, contextOwnsConnection)
         {
 
         }
