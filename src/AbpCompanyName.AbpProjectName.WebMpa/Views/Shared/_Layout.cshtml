@@ -49,7 +49,7 @@
 
     <script>
         abp.localization.defaultSourceName = '@LocalizationSourceName';
-        moment.locale('@Thread.CurrentThread.CurrentUICulture.Name'); //Localizing momentjs
+        moment.locale('@Thread.CurrentThread.CurrentUICulture.Name.ToLower()'); //Localizing momentjs
     </script>
 
     <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
