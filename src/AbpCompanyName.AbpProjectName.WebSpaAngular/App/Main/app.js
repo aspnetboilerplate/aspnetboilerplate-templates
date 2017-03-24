@@ -14,9 +14,12 @@
 
     //Configuration for Angular UI routing.
     app.config([
-        '$stateProvider', '$urlRouterProvider',
-        function($stateProvider, $urlRouterProvider) {
+        '$stateProvider', '$urlRouterProvider', '$locationProvider', '$qProvider',
+        function ($stateProvider, $urlRouterProvider, $locationProvider, $qProvider) {
+            $locationProvider.hashPrefix('');
             $urlRouterProvider.otherwise('/');
+            $qProvider.errorOnUnhandledRejections(false);
+
             $stateProvider
                 .state('home', {
                     url: '/',

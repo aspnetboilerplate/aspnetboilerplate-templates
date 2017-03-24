@@ -62,6 +62,20 @@ $provide.value("$locale", {
       "Kas",
       "Ara"
     ],
+    "STANDALONEMONTH": [
+      "Ocak",
+      "\u015eubat",
+      "Mart",
+      "Nisan",
+      "May\u0131s",
+      "Haziran",
+      "Temmuz",
+      "A\u011fustos",
+      "Eyl\u00fcl",
+      "Ekim",
+      "Kas\u0131m",
+      "Aral\u0131k"
+    ],
     "WEEKENDRANGE": [
       5,
       6
@@ -71,8 +85,8 @@ $provide.value("$locale", {
     "medium": "d MMM y HH:mm:ss",
     "mediumDate": "d MMM y",
     "mediumTime": "HH:mm:ss",
-    "short": "d MM y HH:mm",
-    "shortDate": "d MM y",
+    "short": "d.MM.y HH:mm",
+    "shortDate": "d.MM.y",
     "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
@@ -105,6 +119,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "tr-tr",
+  "localeID": "tr_TR",
   "pluralCat": function(n, opt_precision) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

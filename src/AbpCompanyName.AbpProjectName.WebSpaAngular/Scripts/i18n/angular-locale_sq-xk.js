@@ -4,8 +4,8 @@ var PLURAL_CATEGORY = {ZERO: "zero", ONE: "one", TWO: "two", FEW: "few", MANY: "
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
-      "paradite",
-      "pasdite"
+      "e paradites",
+      "e pasdites"
     ],
     "DAY": [
       "e diel",
@@ -62,6 +62,20 @@ $provide.value("$locale", {
       "N\u00ebn",
       "Dhj"
     ],
+    "STANDALONEMONTH": [
+      "Janar",
+      "Shkurt",
+      "Mars",
+      "Prill",
+      "Maj",
+      "Qershor",
+      "Korrik",
+      "Gusht",
+      "Shtator",
+      "Tetor",
+      "N\u00ebntor",
+      "Dhjetor"
+    ],
     "WEEKENDRANGE": [
       5,
       6
@@ -105,6 +119,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "sq-xk",
+  "localeID": "sq_XK",
   "pluralCat": function(n, opt_precision) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

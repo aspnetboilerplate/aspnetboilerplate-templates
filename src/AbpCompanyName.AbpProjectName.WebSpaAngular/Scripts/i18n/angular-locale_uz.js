@@ -17,15 +17,52 @@ $provide.value("$locale", {
       "shanba"
     ],
     "ERANAMES": [
-      "M.A.",
-      "E"
+      "miloddan avvalgi",
+      "milodiy"
     ],
     "ERAS": [
-      "M.A.",
-      "E"
+      "m.a.",
+      "milodiy"
     ],
     "FIRSTDAYOFWEEK": 0,
     "MONTH": [
+      "yanvar",
+      "fevral",
+      "mart",
+      "aprel",
+      "may",
+      "iyun",
+      "iyul",
+      "avgust",
+      "Sentabr",
+      "Oktabr",
+      "noyabr",
+      "dekabr"
+    ],
+    "SHORTDAY": [
+      "Ya",
+      "Du",
+      "Se",
+      "Ch",
+      "Pa",
+      "Ju",
+      "Sh"
+    ],
+    "SHORTMONTH": [
+      "yan",
+      "fev",
+      "mar",
+      "apr",
+      "may",
+      "iyn",
+      "iyl",
+      "avg",
+      "sen",
+      "okt",
+      "noy",
+      "dek"
+    ],
+    "STANDALONEMONTH": [
       "Yanvar",
       "Fevral",
       "Mart",
@@ -39,40 +76,17 @@ $provide.value("$locale", {
       "Noyabr",
       "Dekabr"
     ],
-    "SHORTDAY": [
-      "Yaksh",
-      "Dush",
-      "Sesh",
-      "Chor",
-      "Pay",
-      "Jum",
-      "Shan"
-    ],
-    "SHORTMONTH": [
-      "Yanv",
-      "Fev",
-      "Mar",
-      "Apr",
-      "May",
-      "Iyun",
-      "Iyul",
-      "Avg",
-      "Sen",
-      "Okt",
-      "Noya",
-      "Dek"
-    ],
     "WEEKENDRANGE": [
       5,
       6
     ],
     "fullDate": "EEEE, y MMMM dd",
-    "longDate": "y MMMM d",
-    "medium": "y MMM d HH:mm:ss",
-    "mediumDate": "y MMM d",
+    "longDate": "d-MMMM, y",
+    "medium": "d-MMM, y HH:mm:ss",
+    "mediumDate": "d-MMM, y",
     "mediumTime": "HH:mm:ss",
-    "short": "yy/MM/dd HH:mm",
-    "shortDate": "yy/MM/dd",
+    "short": "dd/MM/yy HH:mm",
+    "shortDate": "dd/MM/yy",
     "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
@@ -105,6 +119,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "uz",
+  "localeID": "uz",
   "pluralCat": function(n, opt_precision) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);
