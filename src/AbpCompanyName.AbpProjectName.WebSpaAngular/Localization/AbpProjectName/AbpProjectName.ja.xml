@@ -3,7 +3,7 @@
   <texts>
     <text name="HomePage" value="ホームーページ" />
     <text name="About" value="About" />
-    <text name="WellcomeMessage" value="ようこそ AbpProjectName!へ" />
+    <text name="WelcomeMessage" value="ようこそ AbpProjectName!へ" />
     <text name="Home_ThisIsATemplate" value="このプロジェクトテンプレートは、ウェブアプリケーションを開発する出発点です…" />
     <text name="Home_AspNetDescription" value="ASP.NET MVCは、あなたの関心事の明確な分離を可能にするダイナミックなWebサイトを構築するための強力で、パターンベースの方法を提供し、楽しいアジャイル開発のためのマークアップ上で、あなたは完全に制御することができます" />
     <text name="Home_AspNetBoilerplateDescription" value="ASP.NETボイラープレートは、最もよい習慣および最もポピュラーなツールで、ウェブベースのアプリケーションを組み立てる枠組である" />
