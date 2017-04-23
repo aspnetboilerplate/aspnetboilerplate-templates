@@ -3,7 +3,7 @@
   <texts>
     <text name="HomePage" value="主页" />
     <text name="About" value="关于我们" />
-    <text name="WellcomeMessage" value="欢迎使用 AbpProjectName!" />
+    <text name="WelcomeMessage" value="欢迎使用 AbpProjectName!" />
     <text name="Home_ThisIsATemplate" value="AbpProjectName项目模板是Web应用开发的起点,它采用..." />
     <text name="Home_AspNetDescription" value="ASP.NET MVC提供了强大的、基于模式的途径，来搭建动态Web应用。它使您做到清晰的关注点分离，享受完全可控的、有趣的、敏捷的开发." />
     <text name="Home_AspNetBoilerplateDescription" value="ASP.NET Boilerplate是一个Web开发框架，它吸纳和提供了Web开发的一些最佳实践，以及流行的框架工具集." />
