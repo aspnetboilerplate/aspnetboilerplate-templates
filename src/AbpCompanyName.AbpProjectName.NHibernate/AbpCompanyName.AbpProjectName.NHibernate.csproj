@@ -35,14 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.3.1.0\lib\netstandard2.0\Abp.dll</HintPath>
+    <Reference Include="Abp, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.3.1.1\lib\netstandard2.0\Abp.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.FluentMigrator, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.FluentMigrator.3.1.0\lib\net461\Abp.FluentMigrator.dll</HintPath>
+    <Reference Include="Abp.FluentMigrator, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.FluentMigrator.3.1.1\lib\net461\Abp.FluentMigrator.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.NHibernate, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.NHibernate.3.1.0\lib\net461\Abp.NHibernate.dll</HintPath>
+    <Reference Include="Abp.NHibernate, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.NHibernate.3.1.1\lib\net461\Abp.NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
