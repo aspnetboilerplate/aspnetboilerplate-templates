@@ -112,3 +112,10 @@ Templates/All-In-One-Template/MySpaProject/MySpaProject.WebMpa/Logs/Logs.txt
 /src/.vs/config/applicationhost.config
 /src/AbpCompanyName.AbpProjectName.WebSpaAngular/App_Data/Logs/Logs.txt
 /src/AbpCompanyName.AbpProjectName.WebMpa/App_Data/Logs/Logs.txt
+/src/.vs/AbpCompanyName.AbpProjectName/v15/Server/sqlite3/db.lock
+/src/.vs/AbpCompanyName.AbpProjectName/v15/sqlite3/db.lock
+/src/.vs/AbpCompanyName.AbpProjectName/v15/Server/sqlite3/storage.ide-wal
+/src/.vs/AbpCompanyName.AbpProjectName/v15/Server/sqlite3/storage.ide-shm
+/src/.vs/AbpCompanyName.AbpProjectName/v15/Server/sqlite3/storage.ide
+/src/.vs/AbpCompanyName.AbpProjectName/v15/sqlite3/storage.ide-wal
+/src/.vs/AbpCompanyName.AbpProjectName/v15/sqlite3/storage.ide-shm
