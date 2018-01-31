@@ -30,7 +30,7 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
 
                         "~/Scripts/modernizr-2.8.3.js",
                         
-                        "~/Scripts/jquery-3.2.1.min.js",
+                        "~/Scripts/jquery-3.3.1.min.js",
                         "~/Scripts/jquery-ui-1.12.1.min.js",
 
                         "~/Scripts/bootstrap.min.js",

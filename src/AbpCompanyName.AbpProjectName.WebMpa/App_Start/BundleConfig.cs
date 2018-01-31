@@ -36,7 +36,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                     .Include(
                         "~/Scripts/json2.min.js",
 
-                        "~/Scripts/jquery-3.2.1.min.js",
+                        "~/Scripts/jquery-3.3.1.min.js",
                         "~/Scripts/jquery-ui-1.12.1.min.js",
 
                         "~/Scripts/bootstrap.min.js",
