@@ -1,6 +1,6 @@
 /**
- * @license AngularJS v1.6.6
- * (c) 2010-2017 Google, Inc. http://angularjs.org
+ * @license AngularJS v1.7.2
+ * (c) 2010-2018 Google, Inc. http://angularjs.org
  * License: MIT
  */
 (function(window, angular) {
@@ -803,7 +803,7 @@ angular.mock.TzDate.prototype = Date.prototype;
  * You need to require the `ngAnimateMock` module in your test suite for instance `beforeEach(module('ngAnimateMock'))`
  */
 angular.mock.animate = angular.module('ngAnimateMock', ['ng'])
-  .info({ angularVersion: '1.6.6' })
+  .info({ angularVersion: '1.7.2' })
 
   .config(['$provide', function($provide) {
 
@@ -969,7 +969,7 @@ angular.mock.animate = angular.module('ngAnimateMock', ['ng'])
  *
  * *NOTE*: This is not an injectable instance, just a globally available function.
  *
- * Method for serializing common angular objects (scope, elements, etc..) into strings.
+ * Method for serializing common AngularJS objects (scope, elements, etc..) into strings.
  * It is useful for logging objects to the console when debugging.
  *
  * @param {*} object - any object to turn into string.
@@ -1051,7 +1051,7 @@ angular.mock.dump = function(object) {
  * This mock implementation can be used to respond with static or dynamic responses via the
  * `expect` and `when` apis and their shortcuts (`expectGET`, `whenPOST`, etc).
  *
- * When an Angular application needs some data from a server, it calls the $http service, which
+ * When an AngularJS application needs some data from a server, it calls the $http service, which
  * sends the request to a real server using $httpBackend service. With dependency injection, it is
  * easy to inject $httpBackend mock (which has the same API as $httpBackend) and use it to verify
  * the requests and respond with some testing data without sending a request to a real server.
@@ -1349,6 +1349,7 @@ angular.mock.$httpBackendDecorator =
 function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
   var definitions = [],
       expectations = [],
+      matchLatestDefinition = false,
       responses = [],
       responsesPush = angular.bind(responses, responses.push),
       copy = angular.copy,
@@ -1385,9 +1386,13 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
     function wrapResponse(wrapped) {
       if (!$browser && timeout) {
         if (timeout.then) {
-          timeout.then(handleTimeout);
+          timeout.then(function() {
+            handlePrematureEnd(angular.isDefined(timeout.$$timeoutId) ? 'timeout' : 'abort');
+          });
         } else {
-          $timeout(handleTimeout, timeout);
+          $timeout(function() {
+            handlePrematureEnd('timeout');
+          }, timeout);
         }
       }
 
@@ -1401,11 +1406,11 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
                  copy(response[3] || ''), copy(response[4]));
       }
 
-      function handleTimeout() {
+      function handlePrematureEnd(reason) {
         for (var i = 0, ii = responses.length; i < ii; i++) {
           if (responses[i] === handleResponse) {
             responses.splice(i, 1);
-            callback(-1, undefined, '', undefined, 'timeout');
+            callback(-1, undefined, '', undefined, reason);
             break;
           }
         }
@@ -1433,8 +1438,9 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
       wasExpected = true;
     }
 
-    var i = -1, definition;
-    while ((definition = definitions[++i])) {
+    var i = matchLatestDefinition ? definitions.length : -1, definition;
+
+    while ((definition = definitions[matchLatestDefinition ? --i : ++i])) {
       if (definition.match(method, url, data, headers || {})) {
         if (definition.response) {
           // if $browser specified, we do auto flush all requests
@@ -1445,10 +1451,16 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
         return;
       }
     }
-    throw wasExpected ?
+    var error = wasExpected ?
         new Error('No response defined !') :
         new Error('Unexpected request: ' + method + ' ' + url + '\n' +
                   (expectation ? 'Expected ' + expectation : 'No more request expected'));
+
+    // In addition to be being converted to a rejection, this error also needs to be passed to
+    // the $exceptionHandler and be rethrown (so that the test fails).
+    error.$$passToExceptionHandler = true;
+
+    throw error;
   }
 
   /**
@@ -1506,13 +1518,55 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
 
   /**
    * @ngdoc method
+   * @name  $httpBackend#matchLatestDefinition
+   * @description
+   * This method can be used to change which mocked responses `$httpBackend` returns, when defining
+   * them with {@link ngMock.$httpBackend#when $httpBackend.when()} (and shortcut methods).
+   * By default, `$httpBackend` returns the first definition that matches. When setting
+   * `$http.matchLatestDefinition(true)`, it will use the last response that matches, i.e. the
+   * one that was added last.
+   *
+   * ```js
+   * hb.when('GET', '/url1').respond(200, 'content', {});
+   * hb.when('GET', '/url1').respond(201, 'another', {});
+   * hb('GET', '/url1'); // receives "content"
+   *
+   * $http.matchLatestDefinition(true)
+   * hb('GET', '/url1'); // receives "another"
+   *
+   * hb.when('GET', '/url1').respond(201, 'onemore', {});
+   * hb('GET', '/url1'); // receives "onemore"
+   * ```
+   *
+   * This is useful if a you have a default response that is overriden inside specific tests.
+   *
+   * Note that different from config methods on providers, `matchLatestDefinition()` can be changed
+   * even when the application is already running.
+   *
+   * @param  {Boolean=} value value to set, either `true` or `false`. Default is `false`.
+   *                          If omitted, it will return the current value.
+   * @return {$httpBackend|Boolean} self when used as a setter, and the current value when used
+   *                                as a getter
+   */
+  $httpBackend.matchLatestDefinitionEnabled = function(value) {
+    if (isDefined(value)) {
+      matchLatestDefinition = value;
+      return this;
+    } else {
+      return matchLatestDefinition;
+    }
+  };
+
+  /**
+   * @ngdoc method
    * @name $httpBackend#whenGET
    * @description
    * Creates a new backend definition for GET requests. For more info see `when()`.
    *
    * @param {string|RegExp|function(string)=} url HTTP url or function that receives a url
    *   and returns true if the url matches the current definition.
-   * @param {(Object|function(Object))=} headers HTTP headers.
+   * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
+   *   object and returns true if the headers match the current definition.
    * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    * request is handled. You can save this object for later use and invoke `respond` again in
@@ -1527,7 +1581,8 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *
    * @param {string|RegExp|function(string)=} url HTTP url or function that receives a url
    *   and returns true if the url matches the current definition.
-   * @param {(Object|function(Object))=} headers HTTP headers.
+   * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
+   *   object and returns true if the headers match the current definition.
    * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    * request is handled. You can save this object for later use and invoke `respond` again in
@@ -1542,7 +1597,8 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *
    * @param {string|RegExp|function(string)=} url HTTP url or function that receives a url
    *   and returns true if the url matches the current definition.
-   * @param {(Object|function(Object))=} headers HTTP headers.
+   * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
+   *   object and returns true if the headers match the current definition.
    * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    * request is handled. You can save this object for later use and invoke `respond` again in
@@ -1559,7 +1615,8 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *   and returns true if the url matches the current definition.
    * @param {(string|RegExp|function(string))=} data HTTP request body or function that receives
    *   data string and returns true if the data is as expected.
-   * @param {(Object|function(Object))=} headers HTTP headers.
+   * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
+   *   object and returns true if the headers match the current definition.
    * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    * request is handled. You can save this object for later use and invoke `respond` again in
@@ -1576,7 +1633,8 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *   and returns true if the url matches the current definition.
    * @param {(string|RegExp|function(string))=} data HTTP request body or function that receives
    *   data string and returns true if the data is as expected.
-   * @param {(Object|function(Object))=} headers HTTP headers.
+   * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
+   *   object and returns true if the headers match the current definition.
    * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    * request is handled. You can save this object for later use and invoke `respond` again in
@@ -1608,7 +1666,8 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    * @param {string} url HTTP url string that supports colon param matching.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    * request is handled. You can save this object for later use and invoke `respond` again in
-   * order to change how a matched request is handled. See #when for more info.
+   * order to change how a matched request is handled.
+   * See {@link ngMock.$httpBackend#when `when`} for more info.
    */
   $httpBackend.whenRoute = function(method, url) {
     var pathObj = parseRoute(url);
@@ -1697,8 +1756,9 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    * Creates a new request expectation for GET requests. For more info see `expect()`.
    *
    * @param {string|RegExp|function(string)=} url HTTP url or function that receives a url
-   *   and returns true if the url matches the current definition.
-   * @param {Object=} headers HTTP headers.
+   *   and returns true if the url matches the current expectation.
+   * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
+   *   object and returns true if the headers match the current expectation.
    * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    * request is handled. You can save this object for later use and invoke `respond` again in
@@ -1712,8 +1772,9 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    * Creates a new request expectation for HEAD requests. For more info see `expect()`.
    *
    * @param {string|RegExp|function(string)=} url HTTP url or function that receives a url
-   *   and returns true if the url matches the current definition.
-   * @param {Object=} headers HTTP headers.
+   *   and returns true if the url matches the current expectation.
+   * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
+   *   object and returns true if the headers match the current expectation.
    * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    *   request is handled. You can save this object for later use and invoke `respond` again in
@@ -1727,8 +1788,9 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    * Creates a new request expectation for DELETE requests. For more info see `expect()`.
    *
    * @param {string|RegExp|function(string)=} url HTTP url or function that receives a url
-   *   and returns true if the url matches the current definition.
-   * @param {Object=} headers HTTP headers.
+   *   and returns true if the url matches the current expectation.
+   * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
+   *   object and returns true if the headers match the current expectation.
    * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    *   request is handled. You can save this object for later use and invoke `respond` again in
@@ -1742,11 +1804,12 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    * Creates a new request expectation for POST requests. For more info see `expect()`.
    *
    * @param {string|RegExp|function(string)=} url HTTP url or function that receives a url
-   *   and returns true if the url matches the current definition.
+   *   and returns true if the url matches the current expectation.
    * @param {(string|RegExp|function(string)|Object)=} data HTTP request body or function that
    *  receives data string and returns true if the data is as expected, or Object if request body
    *  is in JSON format.
-   * @param {Object=} headers HTTP headers.
+   * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
+   *   object and returns true if the headers match the current expectation.
    * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    *   request is handled. You can save this object for later use and invoke `respond` again in
@@ -1760,11 +1823,12 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    * Creates a new request expectation for PUT requests. For more info see `expect()`.
    *
    * @param {string|RegExp|function(string)=} url HTTP url or function that receives a url
-   *   and returns true if the url matches the current definition.
+   *   and returns true if the url matches the current expectation.
    * @param {(string|RegExp|function(string)|Object)=} data HTTP request body or function that
    *  receives data string and returns true if the data is as expected, or Object if request body
    *  is in JSON format.
-   * @param {Object=} headers HTTP headers.
+   * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
+   *   object and returns true if the headers match the current expectation.
    * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    *   request is handled. You can save this object for later use and invoke `respond` again in
@@ -1778,11 +1842,12 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    * Creates a new request expectation for PATCH requests. For more info see `expect()`.
    *
    * @param {string|RegExp|function(string)=} url HTTP url or function that receives a url
-   *   and returns true if the url matches the current definition.
+   *   and returns true if the url matches the current expectation.
    * @param {(string|RegExp|function(string)|Object)=} data HTTP request body or function that
    *  receives data string and returns true if the data is as expected, or Object if request body
    *  is in JSON format.
-   * @param {Object=} headers HTTP headers.
+   * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
+   *   object and returns true if the headers match the current expectation.
    * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    *   request is handled. You can save this object for later use and invoke `respond` again in
@@ -1796,7 +1861,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    * Creates a new request expectation for JSONP requests. For more info see `expect()`.
    *
    * @param {string|RegExp|function(string)=} url HTTP url or function that receives an url
-   *   and returns true if the url matches the current definition.
+   *   and returns true if the url matches the current expectation.
    * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    *   request is handled. You can save this object for later use and invoke `respond` again in
@@ -1814,7 +1879,8 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    * @param {string} url HTTP url string that supports colon param matching.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    * request is handled. You can save this object for later use and invoke `respond` again in
-   * order to change how a matched request is handled. See #expect for more info.
+   * order to change how a matched request is handled.
+   * See {@link ngMock.$httpBackend#expect `expect`} for more info.
    */
   $httpBackend.expectRoute = function(method, url) {
     var pathObj = parseRoute(url);
@@ -2091,13 +2157,13 @@ function MockXhr() {
     var header = this.$$respHeaders[name];
     if (header) return header;
 
-    name = angular.lowercase(name);
+    name = angular.$$lowercase(name);
     header = this.$$respHeaders[name];
     if (header) return header;
 
     header = undefined;
     angular.forEach(this.$$respHeaders, function(headerVal, headerName) {
-      if (!header && angular.lowercase(headerName) === name) header = headerVal;
+      if (!header && angular.$$lowercase(headerName) === name) header = headerVal;
     });
     return header;
   };
@@ -2111,10 +2177,14 @@ function MockXhr() {
     return lines.join('\n');
   };
 
-  this.abort = angular.noop;
+  this.abort = function() {
+    if (isFunction(this.onabort)) {
+      this.onabort();
+    }
+  };
 
   // This section simulates the events on a real XHR object (and the upload object)
-  // When we are testing $httpBackend (inside the angular project) we make partial use of this
+  // When we are testing $httpBackend (inside the AngularJS project) we make partial use of this
   // but store the events directly ourselves on `$$events`, instead of going through the `addEventListener`
   this.$$events = {};
   this.addEventListener = function(name, listener) {
@@ -2225,11 +2295,6 @@ angular.mock.$RootElementProvider = function() {
  * A decorator for {@link ng.$controller} with additional `bindings` parameter, useful when testing
  * controllers of directives that use {@link $compile#-bindtocontroller- `bindToController`}.
  *
- * Depending on the value of
- * {@link ng.$compileProvider#preAssignBindingsEnabled `preAssignBindingsEnabled()`}, the properties
- * will be bound before or after invoking the constructor.
- *
- *
  * ## Example
  *
  * ```js
@@ -2275,8 +2340,6 @@ angular.mock.$RootElementProvider = function() {
  *
  *    * check if a controller with given name is registered via `$controllerProvider`
  *    * check if evaluating the string on the current scope returns a constructor
- *    * if $controllerProvider#allowGlobals, check `window[constructor]` on the global
- *      `window` object (deprecated, not recommended)
  *
  *    The string can use the `controller as property` syntax, where the controller instance is published
  *    as the specified property on the `scope`; the `scope` must be injected into `locals` param for this
@@ -2287,22 +2350,13 @@ angular.mock.$RootElementProvider = function() {
  *                           the `bindToController` feature and simplify certain kinds of tests.
  * @return {Object} Instance of given controller.
  */
-function createControllerDecorator(compileProvider) {
+function createControllerDecorator() {
   angular.mock.$ControllerDecorator = ['$delegate', function($delegate) {
     return function(expression, locals, later, ident) {
       if (later && typeof later === 'object') {
-        var preAssignBindingsEnabled = compileProvider.preAssignBindingsEnabled();
-
         var instantiate = $delegate(expression, locals, true, ident);
-        if (preAssignBindingsEnabled) {
-          angular.extend(instantiate.instance, later);
-        }
-
         var instance = instantiate();
-        if (!preAssignBindingsEnabled || instance !== instantiate.instance) {
-          angular.extend(instance, later);
-        }
-
+        angular.extend(instance, later);
         return instance;
       }
       return $delegate(expression, locals, later, ident);
@@ -2373,14 +2427,9 @@ angular.mock.$ComponentControllerProvider = ['$compileProvider',
  * @packageName angular-mocks
  * @description
  *
- * # ngMock
- *
- * The `ngMock` module provides support to inject and mock Angular services into unit tests.
- * In addition, ngMock also extends various core ng services such that they can be
+ * The `ngMock` module provides support to inject and mock AngularJS services into unit tests.
+ * In addition, ngMock also extends various core AngularJS services such that they can be
  * inspected and controlled in a synchronous manner within test code.
- *
- *
- * <div doc-module-components="ngMock"></div>
  *
  * @installation
  *
@@ -2425,7 +2474,7 @@ angular.module('ngMock', ['ng']).provider({
   $provide.decorator('$rootScope', angular.mock.$RootScopeDecorator);
   $provide.decorator('$controller', createControllerDecorator($compileProvider));
   $provide.decorator('$httpBackend', angular.mock.$httpBackendDecorator);
-}]).info({ angularVersion: '1.6.6' });
+}]).info({ angularVersion: '1.7.2' });
 
 /**
  * @ngdoc module
@@ -2434,13 +2483,13 @@ angular.module('ngMock', ['ng']).provider({
  * @packageName angular-mocks
  * @description
  *
- * The `ngMockE2E` is an angular module which contains mocks suitable for end-to-end testing.
+ * The `ngMockE2E` is an AngularJS module which contains mocks suitable for end-to-end testing.
  * Currently there is only one mock present in this module -
  * the {@link ngMockE2E.$httpBackend e2e $httpBackend} mock.
  */
 angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
   $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
-}]).info({ angularVersion: '1.6.6' });
+}]).info({ angularVersion: '1.7.2' });
 
 /**
  * @ngdoc service
@@ -2494,7 +2543,7 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  *
  * Afterwards, bootstrap your app with this new module.
  *
- * ## Example
+ * @example
  * <example name="httpbackend-e2e-testing" module="myAppE2E" deps="angular-mocks.js">
  * <file name="app.js">
  *   var myApp = angular.module('myApp', []);
@@ -2726,6 +2775,39 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
  *   control how a matched request is handled. You can save this object for later use and invoke
  *   `respond` or `passThrough` again in order to change how a matched request is handled.
+ */
+/**
+ * @ngdoc method
+ * @name  $httpBackend#matchLatestDefinition
+ * @module ngMockE2E
+ * @description
+ * This method can be used to change which mocked responses `$httpBackend` returns, when defining
+ * them with {@link ngMock.$httpBackend#when $httpBackend.when()} (and shortcut methods).
+ * By default, `$httpBackend` returns the first definition that matches. When setting
+ * `$http.matchLatestDefinition(true)`, it will use the last response that matches, i.e. the
+ * one that was added last.
+ *
+ * ```js
+ * hb.when('GET', '/url1').respond(200, 'content', {});
+ * hb.when('GET', '/url1').respond(201, 'another', {});
+ * hb('GET', '/url1'); // receives "content"
+ *
+ * $http.matchLatestDefinition(true)
+ * hb('GET', '/url1'); // receives "another"
+ *
+ * hb.when('GET', '/url1').respond(201, 'onemore', {});
+ * hb('GET', '/url1'); // receives "onemore"
+ * ```
+ *
+ * This is useful if a you have a default response that is overriden inside specific tests.
+ *
+ * Note that different from config methods on providers, `matchLatestDefinition()` can be changed
+ * even when the application is already running.
+ *
+ * @param  {Boolean=} value value to set, either `true` or `false`. Default is `false`.
+ *                          If omitted, it will return the current value.
+ * @return {$httpBackend|Boolean} self when used as a setter, and the current value when used
+ *                                as a getter
  */
 angular.mock.e2e = {};
 angular.mock.e2e.$httpBackendDecorator =
@@ -3222,13 +3304,56 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
 
 (function() {
   /**
-   * Triggers a browser event. Attempts to choose the right event if one is
-   * not specified.
+   * @ngdoc function
+   * @name browserTrigger
+   * @description
+   *
+   * This is a global (window) function that is only available when the {@link ngMock} module is
+   * included.
+   *
+   * It can be used to trigger a native browser event on an element, which is useful for unit testing.
+   *
    *
    * @param {Object} element Either a wrapped jQuery/jqLite node or a DOMElement
-   * @param {string} eventType Optional event type
-   * @param {Object=} eventData An optional object which contains additional event data (such as x,y
-   * coordinates, keys, etc...) that are passed into the event when triggered
+   * @param {string=} eventType Optional event type. If none is specified, the function tries
+   *                            to determine the right event type for the element, e.g. `change` for
+   *                            `input[text]`.
+   * @param {Object=} eventData An optional object which contains additional event data that is used
+   *                            when creating the event:
+   *
+   *  - `bubbles`: [Event.bubbles](https://developer.mozilla.org/docs/Web/API/Event/bubbles).
+   *    Not applicable to all events.
+   *
+   *  - `cancelable`: [Event.cancelable](https://developer.mozilla.org/docs/Web/API/Event/cancelable).
+   *    Not applicable to all events.
+   *
+   *  - `charcode`: [charCode](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/charcode)
+   *    for keyboard events (keydown, keypress, and keyup).
+   *
+   *  - `elapsedTime`: the elapsedTime for
+   *    [TransitionEvent](https://developer.mozilla.org/docs/Web/API/TransitionEvent)
+   *    and [AnimationEvent](https://developer.mozilla.org/docs/Web/API/AnimationEvent).
+   *
+   *  - `keycode`: [keyCode](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/keycode)
+   *    for keyboard events (keydown, keypress, and keyup).
+   *
+   *  - `keys`: an array of possible modifier keys (ctrl, alt, shift, meta) for
+   *    [MouseEvent](https://developer.mozilla.org/docs/Web/API/MouseEvent) and
+   *    keyboard events (keydown, keypress, and keyup).
+   *
+   *  - `relatedTarget`: the
+   *    [relatedTarget](https://developer.mozilla.org/docs/Web/API/MouseEvent/relatedTarget)
+   *    for [MouseEvent](https://developer.mozilla.org/docs/Web/API/MouseEvent).
+   *
+   *  - `which`: [which](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/which)
+   *    for keyboard events (keydown, keypress, and keyup).
+   *
+   *  - `x`: x-coordinates for [MouseEvent](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+   *    and [TouchEvent](https://developer.mozilla.org/docs/Web/API/TouchEvent).
+   *
+   *  - `y`: y-coordinates for [MouseEvent](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+   *    and [TouchEvent](https://developer.mozilla.org/docs/Web/API/TouchEvent).
+   *
    */
   window.browserTrigger = function browserTrigger(element, eventType, eventData) {
     if (element && !element.nodeName) element = element[0];
@@ -3275,25 +3400,25 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
     if (/transitionend/.test(eventType)) {
       if (window.WebKitTransitionEvent) {
         evnt = new window.WebKitTransitionEvent(eventType, eventData);
-        evnt.initEvent(eventType, false, true);
+        evnt.initEvent(eventType, eventData.bubbles, true);
       } else {
         try {
           evnt = new window.TransitionEvent(eventType, eventData);
         } catch (e) {
           evnt = window.document.createEvent('TransitionEvent');
-          evnt.initTransitionEvent(eventType, null, null, null, eventData.elapsedTime || 0);
+          evnt.initTransitionEvent(eventType, eventData.bubbles, null, null, eventData.elapsedTime || 0);
         }
       }
     } else if (/animationend/.test(eventType)) {
       if (window.WebKitAnimationEvent) {
         evnt = new window.WebKitAnimationEvent(eventType, eventData);
-        evnt.initEvent(eventType, false, true);
+        evnt.initEvent(eventType, eventData.bubbles, true);
       } else {
         try {
           evnt = new window.AnimationEvent(eventType, eventData);
         } catch (e) {
           evnt = window.document.createEvent('AnimationEvent');
-          evnt.initAnimationEvent(eventType, null, null, null, eventData.elapsedTime || 0);
+          evnt.initAnimationEvent(eventType, eventData.bubbles, null, null, eventData.elapsedTime || 0);
         }
       }
     } else if (/touch/.test(eventType) && supportsTouchEvents()) {
@@ -3309,6 +3434,24 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
       evnt.keyCode = eventData.keyCode;
       evnt.charCode = eventData.charCode;
       evnt.which = eventData.which;
+    } else if (/composition/.test(eventType)) {
+      try {
+        evnt = new window.CompositionEvent(eventType, {
+          data: eventData.data
+        });
+      } catch (e) {
+        // Support: IE9+
+        evnt = window.document.createEvent('CompositionEvent', {});
+        evnt.initCompositionEvent(
+          eventType,
+          eventData.bubbles,
+          eventData.cancelable,
+          window,
+          eventData.data,
+          null
+        );
+      }
+
     } else {
       evnt = window.document.createEvent('MouseEvents');
       x = x || 0;
@@ -3324,30 +3467,11 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
 
     if (!evnt) return;
 
-    var originalPreventDefault = evnt.preventDefault,
-        appWindow = element.ownerDocument.defaultView,
-        fakeProcessDefault = true,
-        finalProcessDefault,
-        angular = appWindow.angular || {};
-
-    // igor: temporary fix for https://bugzilla.mozilla.org/show_bug.cgi?id=684208
-    angular['ff-684208-preventDefault'] = false;
-    evnt.preventDefault = function() {
-      fakeProcessDefault = false;
-      return originalPreventDefault.apply(evnt, arguments);
-    };
-
     if (!eventData.bubbles || supportsEventBubblingInDetachedTree() || isAttachedToDocument(element)) {
-      element.dispatchEvent(evnt);
+      return element.dispatchEvent(evnt);
     } else {
       triggerForPath(element, evnt);
     }
-
-    finalProcessDefault = !(angular['ff-684208-preventDefault'] || !fakeProcessDefault);
-
-    delete angular['ff-684208-preventDefault'];
-
-    return finalProcessDefault;
   };
 
   function supportsTouchEvents() {
