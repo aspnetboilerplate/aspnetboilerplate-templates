@@ -69,13 +69,13 @@ var abp = abp || {};
 
         // Add query string: https://github.com/aspnet/SignalR/issues/680
         if (abp.signalr.qs) {
-            url += '?' + abp.signalr.qs;
+            url += (url.indexOf('?') == -1 ? '?' : '&') + abp.signalr.qs;
         }
 
         return function start(transport) {
             abp.log.debug('Starting connection using ' + signalR.HttpTransportType[transport] + ' transport');
             var connection = new signalR.HubConnectionBuilder()
-                .withUrl(url, transport)
+                .withUrl(abp.appPath + url, transport)
                 .build();
             if (configureConnection && typeof configureConnection === 'function') {
                 configureConnection(connection);
