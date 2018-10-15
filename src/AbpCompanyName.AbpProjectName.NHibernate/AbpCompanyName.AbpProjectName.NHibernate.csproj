@@ -35,11 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=3.8.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.3.8.3\lib\netstandard2.0\Abp.dll</HintPath>
+    <Reference Include="Abp, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.3.9.0\lib\netstandard2.0\Abp.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.FluentMigrator, Version=3.8.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.FluentMigrator.3.8.3\lib\net461\Abp.FluentMigrator.dll</HintPath>
+    <Reference Include="Abp.FluentMigrator, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.FluentMigrator.3.9.0\lib\net461\Abp.FluentMigrator.dll</HintPath>
     </Reference>
     <Reference Include="Abp.NHibernate, Version=3.8.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Abp.NHibernate.3.8.3\lib\net461\Abp.NHibernate.dll</HintPath>

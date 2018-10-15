@@ -51,26 +51,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=3.8.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.3.8.3\lib\netstandard2.0\Abp.dll</HintPath>
+    <Reference Include="Abp, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.3.9.0\lib\netstandard2.0\Abp.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.AutoMapper, Version=3.8.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.AutoMapper.3.8.3\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
+    <Reference Include="Abp.AutoMapper, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.AutoMapper.3.9.0\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Castle.Log4Net, Version=3.8.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Castle.Log4Net.3.8.3\lib\netstandard2.0\Abp.Castle.Log4Net.dll</HintPath>
+    <Reference Include="Abp.Castle.Log4Net, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Castle.Log4Net.3.9.0\lib\netstandard2.0\Abp.Castle.Log4Net.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web, Version=3.8.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.3.8.3\lib\net461\Abp.Web.dll</HintPath>
+    <Reference Include="Abp.Web, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.3.9.0\lib\net461\Abp.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Api, Version=3.8.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Api.3.8.3\lib\net461\Abp.Web.Api.dll</HintPath>
+    <Reference Include="Abp.Web.Api, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Api.3.9.0\lib\net461\Abp.Web.Api.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Common, Version=3.8.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Common.3.8.3\lib\netstandard2.0\Abp.Web.Common.dll</HintPath>
+    <Reference Include="Abp.Web.Common, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Common.3.9.0\lib\netstandard2.0\Abp.Web.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Mvc, Version=3.8.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Mvc.3.8.3\lib\net461\Abp.Web.Mvc.dll</HintPath>
+    <Reference Include="Abp.Web.Mvc, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Mvc.3.9.0\lib\net461\Abp.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
