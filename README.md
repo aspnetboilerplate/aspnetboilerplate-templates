@@ -7,7 +7,7 @@ This document explains preparing a running Web Application from ASP.NET Boilerpl
 
 Go to http://www.aspnetboilerplate.com/Templates, select your architecture and ORM framework, enter a solution name and create your project.
 
-![ScreenShot](https://raw.github.com/aspnetboilerplate/templates/master/Docs/create_template_site_2.png)
+![ScreenShot](https://raw.github.com/aspnetboilerplate/templates/master/Docs/create_template_site_3.png)
 
 A zip file will be created and downloaded automatically for you.
 
