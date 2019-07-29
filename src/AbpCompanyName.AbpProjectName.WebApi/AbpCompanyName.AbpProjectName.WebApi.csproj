@@ -35,20 +35,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=4.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.4.8.0\lib\netstandard2.0\Abp.dll</HintPath>
+    <Reference Include="Abp, Version=4.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.4.8.1\lib\netstandard2.0\Abp.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.AutoMapper, Version=4.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.AutoMapper.4.8.0\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
+    <Reference Include="Abp.AutoMapper, Version=4.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.AutoMapper.4.8.1\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web, Version=4.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.4.8.0\lib\net461\Abp.Web.dll</HintPath>
+    <Reference Include="Abp.Web, Version=4.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.4.8.1\lib\net461\Abp.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Api, Version=4.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Api.4.8.0\lib\net461\Abp.Web.Api.dll</HintPath>
+    <Reference Include="Abp.Web.Api, Version=4.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Api.4.8.1\lib\net461\Abp.Web.Api.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Common, Version=4.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Common.4.8.0\lib\netstandard2.0\Abp.Web.Common.dll</HintPath>
+    <Reference Include="Abp.Web.Common, Version=4.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Common.4.8.1\lib\netstandard2.0\Abp.Web.Common.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper, Version=8.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.8.1.1\lib\net461\AutoMapper.dll</HintPath>
