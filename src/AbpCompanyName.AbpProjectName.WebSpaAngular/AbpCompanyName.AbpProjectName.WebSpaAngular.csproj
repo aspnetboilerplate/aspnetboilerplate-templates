@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\ConfigureAwait.Fody.3.3.1\build\ConfigureAwait.Fody.props" Condition="Exists('..\packages\ConfigureAwait.Fody.3.3.1\build\ConfigureAwait.Fody.props')" />
   <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -65,26 +66,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.6.0.0\lib\netstandard2.0\Abp.dll</HintPath>
+    <Reference Include="Abp, Version=6.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.6.1.1\lib\netstandard2.0\Abp.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.AutoMapper, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.AutoMapper.6.0.0\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
+    <Reference Include="Abp.AutoMapper, Version=6.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.AutoMapper.6.1.1\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Castle.Log4Net, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Castle.Log4Net.6.0.0\lib\netstandard2.0\Abp.Castle.Log4Net.dll</HintPath>
+    <Reference Include="Abp.Castle.Log4Net, Version=6.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Castle.Log4Net.6.1.1\lib\netstandard2.0\Abp.Castle.Log4Net.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.6.0.0\lib\net461\Abp.Web.dll</HintPath>
+    <Reference Include="Abp.Web, Version=6.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.6.1.1\lib\net461\Abp.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Api, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Api.6.0.0\lib\net461\Abp.Web.Api.dll</HintPath>
+    <Reference Include="Abp.Web.Api, Version=6.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Api.6.1.1\lib\net461\Abp.Web.Api.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Common, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Common.6.0.0\lib\netstandard2.0\Abp.Web.Common.dll</HintPath>
+    <Reference Include="Abp.Web.Common, Version=6.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Common.6.1.1\lib\netstandard2.0\Abp.Web.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Mvc, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Mvc.6.0.0\lib\net461\Abp.Web.Mvc.dll</HintPath>
+    <Reference Include="Abp.Web.Mvc, Version=6.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Mvc.6.1.1\lib\net461\Abp.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
@@ -109,6 +110,9 @@
     </Reference>
     <Reference Include="Castle.Windsor, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Windsor.5.1.0-beta001\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="ConfigureAwait, Version=3.3.1.0, Culture=neutral, PublicKeyToken=233850a516558a98, processorArchitecture=MSIL">
+      <HintPath>..\packages\ConfigureAwait.Fody.3.3.1\lib\net452\ConfigureAwait.dll</HintPath>
     </Reference>
     <Reference Include="dotnet-bundle, Version=3.2.435.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\BundlerMinifier.Core.3.2.435\lib\net452\dotnet-bundle.exe</HintPath>
@@ -1486,6 +1490,8 @@
     <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Fody.6.0.2\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.0.2\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\ConfigureAwait.Fody.3.3.1\build\ConfigureAwait.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ConfigureAwait.Fody.3.3.1\build\ConfigureAwait.Fody.props'))" />
   </Target>
   <Target Name="RemoveNetFxForceConflicts" AfterTargets="ResolveAssemblyReferences">
     <ItemGroup>
@@ -1495,6 +1501,7 @@
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Fody.6.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.6.0.2\build\Fody.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
