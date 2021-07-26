@@ -37,10 +37,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Abp, Version=6.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.6.4.0-rc1\lib\netstandard2.0\Abp.dll</HintPath>
+      <HintPath>..\packages\Abp.6.4.0\lib\netstandard2.0\Abp.dll</HintPath>
     </Reference>
     <Reference Include="Abp.AutoMapper, Version=6.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.AutoMapper.6.4.0-rc1\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
+      <HintPath>..\packages\Abp.AutoMapper.6.4.0\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
@@ -63,8 +63,8 @@
     <Reference Include="ConfigureAwait, Version=3.3.1.0, Culture=neutral, PublicKeyToken=233850a516558a98, processorArchitecture=MSIL">
       <HintPath>..\packages\ConfigureAwait.Fody.3.3.1\lib\net452\ConfigureAwait.dll</HintPath>
     </Reference>
-    <Reference Include="JetBrains.Annotations, Version=2020.3.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
-      <HintPath>..\packages\JetBrains.Annotations.2020.3.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    <Reference Include="JetBrains.Annotations, Version=2021.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2021.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
@@ -96,8 +96,8 @@
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Nito.AsyncEx.Context, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nito.AsyncEx.Context.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Context.dll</HintPath>
@@ -146,8 +146,8 @@
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.Linq.Dynamic.Core, Version=1.2.8.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Linq.Dynamic.Core.1.2.8\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.2.10.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.2.10\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
@@ -211,8 +211,8 @@
     <Reference Include="System.Xml.XPath.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Xml.XPath.XmlDocument.4.3.0\lib\net46\System.Xml.XPath.XmlDocument.dll</HintPath>
     </Reference>
-    <Reference Include="TimeZoneConverter, Version=3.4.0.0, Culture=neutral, PublicKeyToken=e20ab7d0d9479841, processorArchitecture=MSIL">
-      <HintPath>..\packages\TimeZoneConverter.3.4.0\lib\net461\TimeZoneConverter.dll</HintPath>
+    <Reference Include="TimeZoneConverter, Version=3.5.0.0, Culture=neutral, PublicKeyToken=e20ab7d0d9479841, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimeZoneConverter.3.5.0\lib\net461\TimeZoneConverter.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>

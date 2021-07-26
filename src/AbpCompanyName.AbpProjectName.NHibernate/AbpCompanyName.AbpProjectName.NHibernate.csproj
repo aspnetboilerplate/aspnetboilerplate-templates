@@ -37,13 +37,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Abp, Version=6.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.6.4.0-rc1\lib\netstandard2.0\Abp.dll</HintPath>
+      <HintPath>..\packages\Abp.6.4.0\lib\netstandard2.0\Abp.dll</HintPath>
     </Reference>
     <Reference Include="Abp.FluentMigrator, Version=6.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.FluentMigrator.6.4.0-rc1\lib\net461\Abp.FluentMigrator.dll</HintPath>
+      <HintPath>..\packages\Abp.FluentMigrator.6.4.0\lib\net461\Abp.FluentMigrator.dll</HintPath>
     </Reference>
     <Reference Include="Abp.NHibernate, Version=6.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.NHibernate.6.4.0-rc1\lib\netstandard2.0\Abp.NHibernate.dll</HintPath>
+      <HintPath>..\packages\Abp.NHibernate.6.4.0\lib\netstandard2.0\Abp.NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
@@ -63,65 +63,65 @@
     <Reference Include="ConfigureAwait, Version=3.3.1.0, Culture=neutral, PublicKeyToken=233850a516558a98, processorArchitecture=MSIL">
       <HintPath>..\packages\ConfigureAwait.Fody.3.3.1\lib\net452\ConfigureAwait.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.3.2.15\lib\net461\FluentMigrator.dll</HintPath>
+    <Reference Include="FluentMigrator, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.3.2.17\lib\net461\FluentMigrator.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Abstractions, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Abstractions.3.2.15\lib\net461\FluentMigrator.Abstractions.dll</HintPath>
+    <Reference Include="FluentMigrator.Abstractions, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Abstractions.3.2.17\lib\net461\FluentMigrator.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Extensions.Oracle, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Extensions.Oracle.3.2.15\lib\net461\FluentMigrator.Extensions.Oracle.dll</HintPath>
+    <Reference Include="FluentMigrator.Extensions.Oracle, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Extensions.Oracle.3.2.17\lib\net461\FluentMigrator.Extensions.Oracle.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Extensions.Postgres, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Extensions.Postgres.3.2.15\lib\net461\FluentMigrator.Extensions.Postgres.dll</HintPath>
+    <Reference Include="FluentMigrator.Extensions.Postgres, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Extensions.Postgres.3.2.17\lib\net461\FluentMigrator.Extensions.Postgres.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Extensions.SqlAnywhere, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Extensions.SqlAnywhere.3.2.15\lib\net461\FluentMigrator.Extensions.SqlAnywhere.dll</HintPath>
+    <Reference Include="FluentMigrator.Extensions.SqlAnywhere, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Extensions.SqlAnywhere.3.2.17\lib\net461\FluentMigrator.Extensions.SqlAnywhere.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Extensions.SqlServer, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Extensions.SqlServer.3.2.15\lib\net461\FluentMigrator.Extensions.SqlServer.dll</HintPath>
+    <Reference Include="FluentMigrator.Extensions.SqlServer, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Extensions.SqlServer.3.2.17\lib\net461\FluentMigrator.Extensions.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Runner, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Runner.3.2.15\lib\net461\FluentMigrator.Runner.dll</HintPath>
+    <Reference Include="FluentMigrator.Runner, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Runner.3.2.17\lib\net461\FluentMigrator.Runner.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Runner.Core, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Runner.Core.3.2.15\lib\net461\FluentMigrator.Runner.Core.dll</HintPath>
+    <Reference Include="FluentMigrator.Runner.Core, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Runner.Core.3.2.17\lib\net461\FluentMigrator.Runner.Core.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Runner.Db2, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Runner.Db2.3.2.15\lib\net461\FluentMigrator.Runner.Db2.dll</HintPath>
+    <Reference Include="FluentMigrator.Runner.Db2, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Runner.Db2.3.2.17\lib\net461\FluentMigrator.Runner.Db2.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Runner.Firebird, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Runner.Firebird.3.2.15\lib\net461\FluentMigrator.Runner.Firebird.dll</HintPath>
+    <Reference Include="FluentMigrator.Runner.Firebird, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Runner.Firebird.3.2.17\lib\net461\FluentMigrator.Runner.Firebird.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Runner.Hana, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Runner.Hana.3.2.15\lib\net461\FluentMigrator.Runner.Hana.dll</HintPath>
+    <Reference Include="FluentMigrator.Runner.Hana, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Runner.Hana.3.2.17\lib\net461\FluentMigrator.Runner.Hana.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Runner.Jet, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Runner.Jet.3.2.15\lib\net461\FluentMigrator.Runner.Jet.dll</HintPath>
+    <Reference Include="FluentMigrator.Runner.Jet, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Runner.Jet.3.2.17\lib\net461\FluentMigrator.Runner.Jet.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Runner.MySql, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Runner.MySql.3.2.15\lib\net461\FluentMigrator.Runner.MySql.dll</HintPath>
+    <Reference Include="FluentMigrator.Runner.MySql, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Runner.MySql.3.2.17\lib\net461\FluentMigrator.Runner.MySql.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Runner.Oracle, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Runner.Oracle.3.2.15\lib\net461\FluentMigrator.Runner.Oracle.dll</HintPath>
+    <Reference Include="FluentMigrator.Runner.Oracle, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Runner.Oracle.3.2.17\lib\net461\FluentMigrator.Runner.Oracle.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Runner.Postgres, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Runner.Postgres.3.2.15\lib\net461\FluentMigrator.Runner.Postgres.dll</HintPath>
+    <Reference Include="FluentMigrator.Runner.Postgres, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Runner.Postgres.3.2.17\lib\net461\FluentMigrator.Runner.Postgres.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Runner.Redshift, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Runner.Redshift.3.2.15\lib\net461\FluentMigrator.Runner.Redshift.dll</HintPath>
+    <Reference Include="FluentMigrator.Runner.Redshift, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Runner.Redshift.3.2.17\lib\net461\FluentMigrator.Runner.Redshift.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Runner.SqlAnywhere, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Runner.SqlAnywhere.3.2.15\lib\net461\FluentMigrator.Runner.SqlAnywhere.dll</HintPath>
+    <Reference Include="FluentMigrator.Runner.SqlAnywhere, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Runner.SqlAnywhere.3.2.17\lib\net461\FluentMigrator.Runner.SqlAnywhere.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Runner.SQLite, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Runner.SQLite.3.2.15\lib\net461\FluentMigrator.Runner.SQLite.dll</HintPath>
+    <Reference Include="FluentMigrator.Runner.SQLite, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Runner.SQLite.3.2.17\lib\net461\FluentMigrator.Runner.SQLite.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Runner.SqlServer, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Runner.SqlServer.3.2.15\lib\net461\FluentMigrator.Runner.SqlServer.dll</HintPath>
+    <Reference Include="FluentMigrator.Runner.SqlServer, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Runner.SqlServer.3.2.17\lib\net461\FluentMigrator.Runner.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator.Runner.SqlServerCe, Version=3.2.15.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Runner.SqlServerCe.3.2.15\lib\net461\FluentMigrator.Runner.SqlServerCe.dll</HintPath>
+    <Reference Include="FluentMigrator.Runner.SqlServerCe, Version=3.2.17.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Runner.SqlServerCe.3.2.17\lib\net461\FluentMigrator.Runner.SqlServerCe.dll</HintPath>
     </Reference>
     <Reference Include="FluentNHibernate, Version=3.1.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentNHibernate.3.1.0\lib\net461\FluentNHibernate.dll</HintPath>
@@ -129,11 +129,14 @@
     <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\Iesi.Collections.4.0.4\lib\net461\Iesi.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="JetBrains.Annotations, Version=2020.3.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
-      <HintPath>..\packages\JetBrains.Annotations.2020.3.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    <Reference Include="JetBrains.Annotations, Version=2021.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2021.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.SqlClient, Version=2.0.20168.4, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.SqlClient.2.1.2\lib\net46\Microsoft.Data.SqlClient.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
@@ -168,6 +171,24 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=4.21.1.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.4.21.1\lib\net461\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.8.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.8.0\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.6.8.0\lib\net461\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.6.8.0\lib\net461\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.8.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
       <Private>True</Private>
@@ -180,11 +201,11 @@
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\packages\NHibernate.5.3.6\lib\net461\NHibernate.dll</HintPath>
+      <HintPath>..\packages\NHibernate.5.3.9\lib\net461\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Nito.AsyncEx.Context, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nito.AsyncEx.Context.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Context.dll</HintPath>
@@ -241,14 +262,19 @@
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.8.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
     <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.Linq.Dynamic.Core, Version=1.2.8.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Linq.Dynamic.Core.1.2.8\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.2.10.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.2.10\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -295,6 +321,7 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -311,8 +338,8 @@
     <Reference Include="System.Xml.XPath.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Xml.XPath.XmlDocument.4.3.0\lib\net46\System.Xml.XPath.XmlDocument.dll</HintPath>
     </Reference>
-    <Reference Include="TimeZoneConverter, Version=3.4.0.0, Culture=neutral, PublicKeyToken=e20ab7d0d9479841, processorArchitecture=MSIL">
-      <HintPath>..\packages\TimeZoneConverter.3.4.0\lib\net461\TimeZoneConverter.dll</HintPath>
+    <Reference Include="TimeZoneConverter, Version=3.5.0.0, Culture=neutral, PublicKeyToken=e20ab7d0d9479841, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimeZoneConverter.3.5.0\lib\net461\TimeZoneConverter.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
@@ -346,11 +373,13 @@
     <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
     <Error Condition="!Exists('..\packages\Fody.6.0.2\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.0.2\build\Fody.targets'))" />
     <Error Condition="!Exists('..\packages\ConfigureAwait.Fody.3.3.1\build\ConfigureAwait.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ConfigureAwait.Fody.3.3.1\build\ConfigureAwait.Fody.props'))" />
-    <Error Condition="!Exists('..\packages\FluentMigrator.Runner.SqlServerCe.3.2.15\build\netstandard2.0\FluentMigrator.Runner.SqlServerCe.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\FluentMigrator.Runner.SqlServerCe.3.2.15\build\netstandard2.0\FluentMigrator.Runner.SqlServerCe.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Data.SqlClient.SNI.2.1.1\build\net46\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Data.SqlClient.SNI.2.1.1\build\net46\Microsoft.Data.SqlClient.SNI.targets'))" />
+    <Error Condition="!Exists('..\packages\FluentMigrator.Runner.SqlServerCe.3.2.17\build\netstandard2.0\FluentMigrator.Runner.SqlServerCe.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\FluentMigrator.Runner.SqlServerCe.3.2.17\build\netstandard2.0\FluentMigrator.Runner.SqlServerCe.targets'))" />
   </Target>
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Import Project="..\packages\Fody.6.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.6.0.2\build\Fody.targets')" />
-  <Import Project="..\packages\FluentMigrator.Runner.SqlServerCe.3.2.15\build\netstandard2.0\FluentMigrator.Runner.SqlServerCe.targets" Condition="Exists('..\packages\FluentMigrator.Runner.SqlServerCe.3.2.15\build\netstandard2.0\FluentMigrator.Runner.SqlServerCe.targets')" />
+  <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.2.1.1\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.2.1.1\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
+  <Import Project="..\packages\FluentMigrator.Runner.SqlServerCe.3.2.17\build\netstandard2.0\FluentMigrator.Runner.SqlServerCe.targets" Condition="Exists('..\packages\FluentMigrator.Runner.SqlServerCe.3.2.17\build\netstandard2.0\FluentMigrator.Runner.SqlServerCe.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
