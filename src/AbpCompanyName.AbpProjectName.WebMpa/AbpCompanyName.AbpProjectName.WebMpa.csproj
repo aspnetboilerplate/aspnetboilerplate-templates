@@ -66,33 +66,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Abp.7.0.0\lib\netstandard2.0\Abp.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Abp, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.7.1.0\lib\netstandard2.0\Abp.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.AutoMapper, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Abp.AutoMapper.7.0.0\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Abp.AutoMapper, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.AutoMapper.7.1.0\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Castle.Log4Net, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Abp.Castle.Log4Net.7.0.0\lib\netstandard2.0\Abp.Castle.Log4Net.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Abp.Castle.Log4Net, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Castle.Log4Net.7.1.0\lib\netstandard2.0\Abp.Castle.Log4Net.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Abp.Web.7.0.0\lib\net461\Abp.Web.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Abp.Web, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.7.1.0\lib\net461\Abp.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Api, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Abp.Web.Api.7.0.0\lib\net461\Abp.Web.Api.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Abp.Web.Api, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Api.7.1.0\lib\net461\Abp.Web.Api.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Abp.Web.Common.7.0.0\lib\netstandard2.0\Abp.Web.Common.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Abp.Web.Common, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Common.7.1.0\lib\netstandard2.0\Abp.Web.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Mvc, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Abp.Web.Mvc.7.0.0\lib\net461\Abp.Web.Mvc.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Abp.Web.Mvc, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Mvc.7.1.0\lib\net461\Abp.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -480,12 +473,8 @@
     <Content Include="Abp\Framework\scripts\utils\ie10fix.js" />
     <Content Include="Abp\Framework\scripts\utils\ie10fix.min.js" />
     <Content Include="Abp\Framework\styles\abp.css" />
-    <Content Include="Abp\Framework\styles\abp.css.map" />
-    <Content Include="Abp\Framework\styles\abp.less" />
     <Content Include="Abp\Framework\styles\abp.min.css" />
     <Content Include="Abp\Framework\styles\abp.mixings.css" />
-    <Content Include="Abp\Framework\styles\abp.mixings.css.map" />
-    <Content Include="Abp\Framework\styles\abp.mixings.less" />
     <Content Include="Abp\Framework\styles\abp.mixings.min.css" />
     <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -587,6 +576,10 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Abp\Framework\styles\abp.mixings.less" />
+    <Content Include="Abp\Framework\styles\abp.mixings.css.map" />
+    <Content Include="Abp\Framework\styles\abp.less" />
+    <Content Include="Abp\Framework\styles\abp.css.map" />
     <None Include="log4net.Production.config" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
